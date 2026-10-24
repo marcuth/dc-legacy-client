@@ -2,7 +2,7 @@ import { join } from "node:path"
 
 import type { Plugin } from "vite"
 
-import { MockServer, type Form } from "./server"
+import { MockServer, type Form } from "./server.ts"
 
 const PATHS = ["/game/", "/mobile/", "/packet/", "/player/", "/pvp/", "/users/", "/merge/", "/requests"]
 

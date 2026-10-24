@@ -2,8 +2,8 @@ import { createHmac, randomBytes } from "node:crypto"
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname } from "node:path"
 
-import { DEFAULT_HMAC_KEY } from "../src/game/network/mobile/signing"
-import { buildConfig } from "./catalog"
+import { DEFAULT_HMAC_KEY } from "../src/game/network/mobile/signing.ts"
+import { buildConfig } from "./catalog.ts"
 
 export type Form = Record<string, string>
 

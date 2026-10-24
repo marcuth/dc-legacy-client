@@ -5,9 +5,10 @@ import { fetchAssetBuffer } from "@/game/atlas/assetFiles"
 import { buildCCB } from "@/game/ccb/build"
 import { parseCCB } from "@/game/ccb/reader"
 import { loadCCBResources } from "@/game/ccb/resources"
-import { GameStore } from "@/game/core/gameStore"
+import { boot } from "@/game/boot"
 import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
+import { GameSession } from "@/game/session/GameSession"
 import { PopupLayer } from "@/game/screens/PopupLayer"
 import { breedingSpeedUp, confirmAccount } from "@/game/screens/popups"
 
@@ -48,30 +49,64 @@ const viewer = async (app: Application, params: URLSearchParams) => {
     app.ticker.add((t) => scene.update(t.deltaMS / 1000))
 }
 
-/** Default: the HUD bound to a store, with popups opened from its buttons. */
-const demo = async (app: Application, params: URLSearchParams) => {
-    const context = { locale: await localeOf(params), design: DESIGN }
-    const store = new GameStore()
-    store.set({ name: "Player", level: 12, xp: 5400, levelFloorXp: 5000, levelCeilXp: 6000, gold: 25_000, food: 3200, cash: 48, dragons: 7 })
+const AUTO_LOGIN_KEY = "dc.autoLogin"
 
-    const layer = new PopupLayer(DESIGN)
+const remembered = () => {
+    try {
+        return localStorage.getItem(AUTO_LOGIN_KEY) === "1"
+    } catch {
+        return false
+    }
+}
+
+/** Default: boot (logo, splash with login and loading bar), then the HUD bound to the session. */
+const game = async (app: Application, params: URLSearchParams) => {
+    const language = (params.get("lang") as LocaleCode) ?? "en"
+    const context = { locale: await loadLocale(language), design: DESIGN }
+    const session = GameSession.create({ language })
+
     const view = new Container()
     app.stage.addChild(view)
     fitTo(app, view)
+    const bootHost = new Container()
+    view.addChild(bootHost)
 
-    const hud = await createHud(context, store, {
-        onGems: () =>
-            void breedingSpeedUp(context, layer, { secondsLeft: 1740, gemCost: 3, gems: store.getSnapshot()?.cash ?? 0 }).then((r) =>
-                console.log("breeding popup:", r),
-            ),
-        onGold: () => void confirmAccount(context, layer, { chosen: 12, other: 30 }).then((r) => console.log("account popup:", r)),
-        onFood: () => {
-            const now = store.getSnapshot()!
-            store.set({ ...now, food: now.food + 100, xp: now.xp + 100 })
-        },
+    const layer = new PopupLayer(DESIGN)
+    let hud: Awaited<ReturnType<typeof createHud>> | undefined
+
+    const onTick = (callback: (deltaSeconds: number) => void) => {
+        const tick = (ticker: { deltaMS: number }) => callback(ticker.deltaMS / 1000)
+        app.ticker.add(tick)
+        return () => app.ticker.remove(tick)
+    }
+
+    await boot({ context, host: bootHost, onTick, autoLogin: remembered() && !params.has("fresh") }, session, async (report) => {
+        report(0.2, "Loading")
+        hud = await createHud(context, session.store, {
+            onFood: () => {
+                // A round trip through /packet/execution and /player/info: the server adds food, the HUD follows.
+                void session.client.execute({ cmd: "win_daily_bonus", args: [1] }).then(() => session.refresh())
+            },
+            onGems: () =>
+                void breedingSpeedUp(context, layer, {
+                    secondsLeft: 1740,
+                    gemCost: 3,
+                    gems: session.store.getSnapshot()?.cash ?? 0,
+                }).then((result) => {
+                    if (result === "speedUp") void session.client.execute({ cmd: "speed_breeding", args: [1] })
+                }),
+            onGold: () => void confirmAccount(context, layer, { chosen: 12, other: 30 }),
+        })
+        report(1)
     })
-    view.addChild(hud.view.root, layer.root)
-    ;(window as unknown as { demo: unknown }).demo = { store, layer, hud, context }
+    try {
+        localStorage.setItem(AUTO_LOGIN_KEY, "1")
+    } catch {
+        // Storage can be unavailable (private windows); the login choice is then asked every time.
+    }
+
+    view.addChild(hud!.view.root, layer.root)
+    ;(window as unknown as { game: unknown }).game = { session, layer, hud, context }
 }
 
 export default function App() {
@@ -85,7 +120,7 @@ export default function App() {
             if (disposed) return app.destroy(true)
             host.current?.appendChild(app.canvas)
             const params = new URLSearchParams(location.search)
-            await (params.has("ccb") ? viewer(app, params) : demo(app, params))
+            await (params.has("ccb") ? viewer(app, params) : game(app, params))
         }
         void start().catch((error) => console.error(error))
         return () => {
