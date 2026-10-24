@@ -1,0 +1,97 @@
+MIT License
+
+Copyright (c) 2026 Marcuth
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the original source code and documentation of this project (as delimited in
+"Scope of the MIT License" below) and associated files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+==============================================================================
+Scope of the MIT License
+==============================================================================
+
+The MIT License above covers only the original work written for this project:
+
+  - the TypeScript/TSX source code under `src/` (including `src/game/ccb`,
+    `src/game/atlas`, `src/game/world`, `src/game/screens`, `src/game/session`,
+    `src/game/locale`, `src/game/network` and `src/game/boot.ts`) and the
+    files `src/App.tsx`, `src/main.tsx`, `src/index.css`;
+  - the mock server under `mock-server/` (its game data is invented);
+  - the analysis scripts under `tools/` and the text of the documents written
+    by the author (`README.md`, `CLAUDE.md`, `docs/*.md`);
+  - the build and configuration files at the repository root.
+
+Everything listed in the next section is NOT covered by the MIT License.
+
+
+==============================================================================
+Legal notice: material that is not MIT licensed
+==============================================================================
+
+1. This is an unofficial, fan-made, non-commercial project. It is NOT
+   affiliated with, authorized, sponsored or endorsed by Social Point, its
+   owners or licensors, or by anyone who publishes Dragon City. "Dragon City",
+   "Social Point" and every related name, logo and character are trademarks or
+   copyrighted works of their respective owners.
+
+2. Game assets. The contents of `src/assets/` were copied unchanged from the
+   `assets/` folder of the official Dragon City 2.0 Android APK (11 May 2013):
+   images, user-interface files (`.ccbi`), fonts, sounds, shaders, animations,
+   masks, texts and localization tables. They are the property of their
+   respective owners, are NOT licensed under the MIT License, and no license
+   to them is granted by this repository. They are included only so the
+   project can run for study and preservation purposes. If you redistribute or
+   fork this repository, you are responsible for deciding whether you may
+   include them; the safe course is to remove `src/assets/` and use your own
+   lawfully obtained copy of the game.
+
+3. Data recovered from the game binary. `docs/re-output/` holds raw dumps
+   (symbol names, strings, command and key lists, the label colour table)
+   produced by analysing `libdc.so` from that APK. They are derived from
+   third-party software and are NOT licensed under the MIT License. A few
+   facts recovered the same way are embedded in the source for interoperability
+   (for example the response-signing key, the label colour table in
+   `src/game/ccb/palette.ts`, file formats, layout constants and message
+   formats). The author claims no ownership of them and they are used solely to
+   make an independent implementation compatible with the original.
+
+4. Code derived from the Flash client. Code that was ported from, or derived
+   from, the decompiled Flash client of the game (for example the number
+   formatter in `src/game/core/format.ts` and the older Flash-era code in
+   `src/game/core`, `src/game/engine`, `src/game/renderer` and
+   `GamePlayer.tsx`) is NOT covered by the MIT License. The decompiled client,
+   the original APK, `libdc.so` and the original servers are not part of this
+   repository and must not be added to it.
+
+5. Dependencies. Third-party packages (Pixi.js, pixi-viewport, React, Vite and
+   others) keep their own licenses, found in their packages.
+
+6. Purpose. The author does not intend to make any profit from this project:
+   it is not sold, has no advertising, no payments and no monetization, and it
+   is offered free of charge for learning, research, interoperability and
+   game preservation. It does not connect to the original game servers by
+   default; it talks to the mock server included here, whose data is invented.
+   Nobody may use this project to impersonate the original game or its
+   publisher.
+
+7. No warranty and takedown. The project is provided "as is", with no warranty
+   of any kind (see the MIT License above). This notice is not legal advice. If
+   you are a rights holder and believe any material here should not be
+   distributed, open an issue or contact the maintainer and it will be removed
+   promptly.
