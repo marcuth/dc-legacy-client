@@ -1,0 +1,13 @@
+/**
+ * DCLabel colour table (`DCLabel::getColorAtIndex`). Labels in the ccbi files store an index into it
+ * for textColor, upperColor, downColor and the stroke colours. Recovered from libdc.so with
+ * tools/re/palette.py (static initializer at 0x5d0c40, array at 0x980658).
+ */
+export const DC_PALETTE: readonly number[] = [
+    0x000000, 0xffffff, 0x660000, 0x6b0000, 0x0c2b33, 0x333333, 0x4e4c4d, 0x5c1900, 0x815100, 0xfeed01,
+    0xf67f23, 0x5c1900, 0xffffff, 0xfba02d, 0xf01f1d, 0x5c1900, 0xffffff, 0x327c11, 0x4b8092, 0xfc5215,
+    0x963223, 0x5d8533, 0x404242, 0x275e68, 0xf8fcfe, 0x8aa3b2, 0x092e51, 0xd4e4de, 0x83d809, 0x4f4c4c,
+    0x402900, 0x676767, 0x6c3900, 0x070a08, 0x0c2b33, 0x8a3611, 0xff3223, 0x5dc833, 0xaf0c10,
+]
+
+export const paletteColor = (index: number) => DC_PALETTE[index] ?? 0xffffff
