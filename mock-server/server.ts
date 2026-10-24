@@ -203,7 +203,11 @@ export class MockServer {
                     islandNumber: 1,
                     work: {},
                     resourceAlliesMarket: {},
-                    ownedDragons: {},
+                    // Dragons by uid: `type` is the item id and `habitatId` the uid of the building they live in [?].
+                    ownedDragons: {
+                        "1": { type: 1011, habitatId: "3", name: "Terra", xp: 0, nbKill: 0, work_id: 0, attack: [] },
+                        "2": { type: 1011, habitatId: "3", name: "Rocky", xp: 0, nbKill: 0, work_id: 0, attack: [] },
+                    },
                     store: {},
                     universAttackWin: 0,
                     receivedAssists: [],

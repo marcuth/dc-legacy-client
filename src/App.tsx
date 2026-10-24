@@ -8,7 +8,7 @@ import { parseCCB } from "@/game/ccb/reader"
 import { loadCCBResources } from "@/game/ccb/resources"
 import { boot } from "@/game/boot"
 import { IsoWorld } from "@/game/world/IsoWorld"
-import { buildingsFromMap } from "@/game/world/mapItems"
+import { buildingsFromMap, dragonsFromMap } from "@/game/world/mapItems"
 import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
 import { GameSession } from "@/game/session/GameSession"
@@ -59,8 +59,13 @@ const worldViewer = async (app: Application, params: URLSearchParams) => {
         { id: "c", itemId: 1, x: tx, y: ty + 8, width: 6, height: 6 },
         { id: "d", itemId: 999, x: tx + 8, y: ty + 8, width: 2, height: 2 },
     ])
+    await world.setDragons([
+        { id: "d1", itemId: 1011, habitatId: "b" },
+        { id: "d2", itemId: 1011, habitatId: "b" },
+    ])
     app.renderer.on("resize", () => world.resize(app.screen.width, app.screen.height))
     world.resize(app.screen.width, app.screen.height)
+    app.ticker.add((ticker) => world.update(ticker.deltaMS / 1000))
     ;(window as unknown as { world: unknown }).world = world
 }
 
@@ -114,6 +119,7 @@ const game = async (app: Application, params: URLSearchParams) => {
     const bootHost = new Container()
     view.addChild(bootHost)
     app.renderer.on("resize", () => world.resize(app.screen.width, app.screen.height))
+    app.ticker.add((ticker) => world.update(ticker.deltaMS / 1000))
 
     const layer = new PopupLayer(DESIGN)
     let hud: Awaited<ReturnType<typeof createHud>> | undefined
@@ -129,6 +135,7 @@ const game = async (app: Application, params: URLSearchParams) => {
         await world.load()
         world.resize(app.screen.width, app.screen.height)
         await world.setBuildings(buildingsFromMap(session.user, session.config))
+        await world.setDragons(dragonsFromMap(session.user))
         report(0.7)
         hud = await createHud(context, session.store, {
             onFood: () => {
