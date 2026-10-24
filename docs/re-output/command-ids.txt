@@ -1,0 +1,138 @@
+CommandActivate
+   {ctor} ['activate']
+CommandAdminAddResources
+   {ctor} ['admin_cm_add_resources', 'admin_cm_add_resources']
+CommandAdminBuyDragon
+   commonInit ['admin_create_dragon']
+CommandAdminCollectGameReset
+   {ctor} ['admin_collect_game_reset']
+CommandAdminDeletePVPPlayer
+   {ctor} ['admin_del_pvp_player']
+CommandAdminFastForward
+   validateResponse ['Restarting', 'RESTART']
+   {ctor} ['admin_fast_forward']
+CommandAdminReset
+   validateResponse ['Restarting', 'RESTART']
+   {ctor} ['admin_reset']
+CommandAdminResetGoals
+   validateResponse ['Restarting', 'RESTART']
+   commonInit ['admin_reset_goals']
+CommandAppCrash
+   {ctor} ['app_crash', 'android']
+CommandAssistNeighbour
+   {ctor} ['assist_neighbor']
+CommandAttackPlayer
+   {ctor} ['attack_player']
+   validateResponse ['result']
+CommandBeginTournament
+   {ctor} ['begin_tournament']
+CommandBreedDragon
+   {ctor} ['breed_dragon_2']
+   validateResponse ['result']
+CommandBuy
+   commonInit ['buy']
+CommandBuyArbitraryPromotion
+   {ctor} ['BuyArbitraryPromotion']
+CommandBuyCollectGameAddItem
+   {ctor} ['collect_game_add_item', 'cash']
+CommandBuyEgg
+   commonInit ['buy_egg']
+CommandBuyIsland
+   validateResponse ['cmd']
+   {ctor} ['expand_island']
+CommandBuySiHelp
+   {ctor} ['buy_si_help']
+CommandBuyTreasureNew
+   commonInit ['buy_treasure_new']
+CommandCleanReceivedAssist
+   {ctor} ['clean_received_assists']
+CommandCollect
+   {ctor} ['collect', 'collect']
+CommandCollectGameBuyAll
+   {ctor} ['collect_game_buy_all']
+CommandCollectGameSetTimeStamp
+   {ctor} ['collect_game_update_timestamp']
+CommandCollectGameSpeedUp
+   {ctor} ['collect_game_speedup']
+CommandCollectionComplete
+   {ctor} ['complete_collection']
+CommandCompleteGoal
+   {ctor} ['complete_goal']
+CommandCompleteTutorial
+   {ctor} ['complete_tutorial']
+CommandEndAttack
+   {ctor} ['end_attack']
+CommandEndTournament
+   {ctor} ['end_tournament']
+CommandExpand
+   {ctor} ['expand_cash', 'expand_gold']
+CommandFeedDragon
+   {ctor} ['feed_dragon']
+CommandFinishBreeding
+   {ctor} ['finish_breeding_2']
+   validateResponse ['result']
+CommandFinishBuilding
+   {ctor} ['finish_building']
+CommandFinishSi
+   {ctor} ['finish_si', 'finish_si']
+CommandHatchEgg
+   {ctor} ['hatch_egg']
+CommandHatchMysteryEgg
+   {ctor} ['mistery_egg_hatch']
+   validateResponse ['result', 'result', 'g>B']
+CommandLevelUp
+   {ctor} ['level_up']
+CommandMove
+   {ctor} ['move']
+CommandMoveDragon
+   {ctor} ['move_dragon']
+CommandPlaceStoredDragon
+   {ctor} ['place_stored_dragon']
+CommandPlaceStoredEgg
+   {ctor} ['place_stored_egg']
+CommandPlaceStoredItem
+   {ctor} ['place_stored_item']
+CommandQueue
+   validateResponse ['result']
+CommandRenameDragon
+   {ctor} ['rename_dragon']
+CommandSell
+   {ctor} ['sell']
+CommandSellDragon
+   {ctor} ['sell_dragon']
+CommandSellEgg
+   {ctor} ['sell_egg']
+CommandSellStoredDragon
+   {ctor} ['sell_stored_dragon']
+CommandSellStoredItem
+   {ctor} ['sell_stored_item']
+CommandSetAttackTeam
+   {ctor} ['set_attack_team', '[', 's', ',', ']']
+CommandSetGoal
+   {ctor} ['set_goals', '[', ',', ']']
+CommandSetLoginRewarded
+   {ctor} ['set_login_rewarded']
+CommandSetResourceAllies
+   {ctor} ['set_resource_allies']
+CommandSpeedBreeding
+   validateResponse ['cmd', 'finish_breeding_2']
+   {ctor} ['speed_breeding']
+CommandSpeedCollect
+   {ctor} ['speed_collect']
+CommandSpeedHatch
+   {ctor} ['speed_hatch']
+CommandStoreItem
+   {ctor} ['store_item']
+CommandTrainingFinish
+   {ctor} ['finish_training']
+CommandTrainingSpeedUp
+   {ctor} ['speed_training']
+CommandTrainingStart
+   {ctor} ['start_training']
+CommandUpgrade
+   {ctor} ['upgrade']
+CommandWinDailyBonus
+   {ctor} ['win_daily_bonus']
+CommandWinDailyReward
+   {ctor} ['hidden_reward_claim']
+   validateResponse ['result', 'id', 'em']

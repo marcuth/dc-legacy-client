@@ -1,0 +1,28 @@
+FriendPlayerInfoDragon::parseJSON(hydra::AttrDictionary const&)) 
+     ['iid']
+FriendPlayerInfo::parseMapJSON(hydra::AttrDictionary const&)) 
+     ['dragons']
+FriendPlayerInfo::parseJSON(hydra::AttrDictionary const&)) 
+     ['resources', 'full_name', 'data', 'VALIDATION ERROR']
+ModelManager::setStaticURL()) 
+     ['STATIC_URL']
+ModelManager::parseJSON(hydra::AttrDictionary*, JSONNodeFileType)) 
+     ['Parsing Player Information', 'timestamp', 'playerInfo', 'map', 'Parsing Player Info', 'te', 'Parsing Private State', 'Parsing Player Map', 'g Player Globals', 'items', 'levels', 'Parsing Game Items', 'Parsing Player Globals', 'Parsing Levels', 'g Sounds', 'Parsing Social Items', 'sounds', 'Parsing Sounds', 'expansion_prices', 'Parsing Expansions', 'tournaments', 'Parsing Tournaments', 'attacks', 'Parsing Dragon Attacks', 'opposite_elements', 'Parsing Fighting Opposite Effects', 'breed_oposite', 'Parsing Breeding Options', 'goals', 'Parsing Goals', 'treasure_items', 'Parsing Treasures', 'iphone_config', 'Parsing iPhone Configuration', 'android_store_packs', 'android_promotions', 'Parsing Offers', 'iphone_tutorial', 'Parsing Tutorial', 'resource_gifts', 'Parsing Resource Gifts', 'requests', 'Parsing Requests Config', 'collect_game_items', 'Parsing collect game items (Central Island)', 'collect_game', 'Parsing Central Island data', 'collect_game_quests', 'Parsing collect game quests', 'collect_game_probabilities', 'Parsing collect game probabilities', 'collect_game_item_containers', 'collect_game_i18n', 'iphone_non_blocking_tutorial', 'Parsing Non-blocking Tutorials', 'collections', 'Parsing collections', 'expansions', 'Parsing expansions', 'starter_package', 'Parsing starter package', 'dragon_feed_costs', 'Parsing dragon feed costs', 'payment_products_offers', 'Parsing Payment Products Offers', 'google_play', 'hidden_reward']
+PlayerInfo::parsePlayerInfo(hydra::AttrDictionary const&)) 
+     ['pid', 'cash', 'food', 'xp', 'level', 'completed_tutorial', 'pvpLevel', 'tsReg']
+PrivateState::parseDragonsGifts(hydra::AttrList const&)) 
+     ['iid', 'lvl']
+PrivateState::parseGifts(hydra::AttrDictionary const&)) 
+     ['dragons']
+PrivateState::createGoalsCenter()) 
+     ['FIRST_GOAL_ANDROID']
+PrivateState::parsePrivateState(hydra::AttrDictionary const&)) 
+     ['bonusNextId', 'id', 'timestampLastBonus', 'timestampLastAllianceBonus', 'timestampLastTrade', 'numTradesDone', 'resourcesTraded', 'timestampLastChapter', 'idCurrentMission', 'currentTournament', 'beginTournamentTs', 'endTournamentTs', 'attacksSent', 'teams', 'goals', 'completedGoals', 'gifts', 'mobileFbLoginRewarded', 'neighborAssists', 'collectGame', 'completedCollection', 'starterPackageOwned', 'activeHiddenReward', 'tiple lines']
+UserMap::initExpansionManager()) 
+     ['ISLANDS_COSTS']
+UserMap::parseEggsMap(hydra::AttrDictionary const&)) 
+     ['id', 'ts']
+UserMap::parseDragonsMap(hydra::AttrDictionary const&)) 
+     ['habitatId', 'name', 'work_id', 'xp', 'nbKill', 'attack']
+UserMap::parseMap(hydra::AttrDictionary const&)) 
+     ['items', 'eggs', 'islandNumber', 'work', 'resourceAlliesMarket', 'ownedDragons', 'store', 'universAttackWin', 'receivedAssists']

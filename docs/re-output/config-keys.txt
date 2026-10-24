@@ -1,0 +1,64 @@
+GoalsParser::parseActive(hydra::AttrList const&)) 
+     ['ios']
+GoalsParser::parseReward(hydra::AttrDictionary const&)) 
+     ['c', 'g']
+GoalsParser::parseGoal(hydra::AttrDictionary const&, std::map<int, GoalData*, std::) 
+     ['headline_iphone', 'description_iphone', 'StartBreed', 'BuyBuilding', 'PlaceDragonWithId', 'PlaceDragonWithElement', 'GrowFood', 'SpeedUpBreed', 'SpeedUpObstacle', 'SpeedUpHatchWithId', 'SpeedUpHatchWithElement', 'FeedDragon', 'ClearObstacle', 'CollectBuilding', 'InviteFriend', 'BuyExpansion', 'UpgradeBuilding', 'WinTournament', 'WinLeague', 'BuyEggWithId', 'BuyEggWithElement', 'FinishBreed', 'RenameDragon', 'OpenSocialBuilding', 'BuyIsland', 'AchieveExpansion', 'GetDragonFromTabern', 'BuyFood', 'LogToFacebook', 'WinFriend', 'SellBuilding', 'FeedDragonWithId', 'StartBreedUniqueDragon', 'PlaceDragon', 'FirstCombat', 'VisitFriend', 'VisitDeus', 'id', 'steps', 'goal_target_id', 'goal_target_id_2', 'active_on_not_fb', 'completed_by_goal_id', 'undoable_goal_iphone', 'tutorial_id_iphone', 'nb_tutorial_id_iphone', 'completion_on_activation', 'reward_android', 'active_on_android', 'next_goal_android']
+GoalsParser::createGoalsData(hydra::AttrDictionary const&, std::map<int, GoalData*, std::) 
+     ['event_type']
+Collection::{ctor}(hydra::AttrDictionary const&)) 
+     ['id', 'c', 'dragon_ids', 'reward', 'urlImage', 'urlImageComplete']
+GameData::parseRequestsConfig(hydra::AttrDictionary const&)) 
+     ['config']
+ExpansionData::{ctor}(hydra::AttrDictionary const&)) 
+     ['id', 'y', 'offsetX', 'offsetY']
+CentralIslandData::{ctor}(hydra::AttrDictionary const&)) 
+     ['id', 'duration', 'min_level', 'game_type', 'combat_retry_price', 'combat_speedup_price', 'game_data']
+GameData::parseLimits(hydra::AttrDictionary const&)) 
+     ['value']
+GameData::parseActive(hydra::AttrList const&)) 
+     ['ios']
+ExpansionPrice::parseExpansion(hydra::AttrDictionary const&)) 
+     ['abtest_b', 'abtest_d', 'coins', 'inventory_qte', 'neighbors']
+Global::parseGlobal(hydra::AttrDictionary const&)) 
+     ['abtest_b', 'abtest_d']
+Attack::parseAttack(hydra::AttrDictionary const&)) 
+     ['id', 'type', 'canvas_damage', 'effect_atk', 'effect_def', 'effect_sfx', 'training_time', 'button_style']
+CentralIslandItemsData::{ctor}(hydra::AttrDictionary const&)) 
+     ['id', 'type', 'tooltip', 'required', 'cost_item', 'cost_last_item']
+GameData::parseCentralIslandQuestData(hydra::AttrList const&)) 
+     ['collect_game']
+GameData::parseCentralIslandData(hydra::AttrList const&)) 
+     ['id']
+StarterPackage::parseRewards(hydra::AttrList const&, hydra::AttrList const&)) 
+     ['type', 'amount', 'gold', 'food', 'cash', 'item', 'd', 'game_island', 'flagColorIndex']
+StarterPackage::{ctor}(hydra::AttrDictionary const&)) 
+     ['starter_package', 'active', 'id', 'showHUDIcon', 'm', 'ountApplicable', 'rewards', 'info', 'descriptionTop', 'descriptionBot', 'yellowBadgeText', 'idInAppPurchase']
+GameData::setDailyReward(hydra::AttrList const&)) 
+     ['id', 'reward', 'g', 'f', 'c']
+Level::parseLevel(hydra::AttrDictionary const&)) 
+     ['abtest_b', 'abtest_d', 'name', 'reward', 'xp_needed', 'xp_required']
+Tournament::parseTournament(hydra::AttrDictionary const&)) 
+     ['id', 'reward', 'resources']
+StorePack::parseStorePack(hydra::AttrDictionary const&)) 
+     ['from', 'dollars', 'order', 'resources', 'image', 'availability', 'to']
+GameData::parseDragonFeedCosts(hydra::AttrList const&)) 
+     ['food']
+StorePack::parseStorePackOffer(hydra::AttrDictionary const&)) 
+     ['from', 'id', 'order', 'type', 'starter_package', 'title', 'price', 'resources', 'items', 'imagePath', 'activeIn', 'start', 'discountApplicable', 'availability', 'to', 'inStore']
+CentralIslandItemProbabilities::{ctor}(hydra::AttrDictionary const&)) 
+     ['itPerSec', 'resourcePerSec', 'prob_vars', 'type', 'collect_game', 'fixedItPerSec']
+GameData::setItemOfferActive(Offer*)) 
+     ['in_store']
+Offer::parseOffer(hydra::AttrDictionary const&)) 
+     ['itemType', 'id', 'endOfferTS', 'description', 'descriptionBot', 'costs', 'amountMultiplier', 'user_level', 'pop_enabled', 'icon_enabled', 'description_text', 'title_text', 'showBannerBadge', 'showMarketBadge', 'descriptionMarketTop', 'descriptionMarketBot', 'itunesId', 'baseItunesId', 'offerType', 'buyMethod', 'reward']
+GameData::parseGlobals(hydra::AttrDictionary const&)) 
+     ['LIMITS']
+GameData::parseIPhoneGlobals(hydra::AttrList const&)) 
+     ['name', 'value']
+GameData::parseSounds(hydra::AttrList const&)) 
+     ['category']
+CentralIslandManager::createBuilding()) 
+     ['position']
+CentralIslandManager::parseCollectGameItems(hydra::AttrDictionary const&)) 
+     ['items']
