@@ -3,7 +3,7 @@
  * Paths are relative to src/assets (e.g. "HD/Engine/night_islands.plist") and matched case-insensitively,
  * because the APK mixes ".dds"/".DDS" and the plists reference the lowercase form.
  */
-const loaders = import.meta.glob("/src/assets/**/*.{png,jpg,dds,plist,xml,ccbi,fnt,txt}", {
+const loaders = import.meta.glob("/src/assets/**/*.{png,jpg,dds,plist,xml,ccbi,fnt,txt,zip}", {
     query: "?url",
     import: "default",
 })
@@ -11,7 +11,18 @@ const loaders = import.meta.glob("/src/assets/**/*.{png,jpg,dds,plist,xml,ccbi,f
 const PREFIX = "/src/assets/"
 
 const index = new Map<string, () => Promise<unknown>>()
-for (const [key, load] of Object.entries(loaders)) index.set(key.slice(PREFIX.length).toLowerCase(), load)
+const originals = new Map<string, string>()
+for (const [key, load] of Object.entries(loaders)) {
+    const path = key.slice(PREFIX.length)
+    index.set(path.toLowerCase(), load)
+    originals.set(path.toLowerCase(), path)
+}
+
+/** Paths (original case) of the shipped files that start with `prefix`. */
+export const findAssets = (prefix: string): string[] => {
+    const wanted = normalize(prefix)
+    return [...originals].filter(([lower]) => lower.startsWith(wanted)).map(([, path]) => path)
+}
 
 export const hasAsset = (path: string) => index.has(normalize(path))
 

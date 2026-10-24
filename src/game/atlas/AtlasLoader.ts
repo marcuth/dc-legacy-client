@@ -1,7 +1,8 @@
 import { Assets, Rectangle, Texture } from "pixi.js"
 
 import { parseAtlasPlist, parseStarlingAtlas, type Atlas } from "./atlas"
-import { assetUrl, dirname, fetchAssetText, hasAsset, joinPath } from "./assetFiles"
+import { assetUrl, dirname, fetchAssetBuffer, fetchAssetText, hasAsset, joinPath } from "./assetFiles"
+import { textureFromDds } from "./ddsTexture"
 
 export type AtlasTextures = {
     atlas: Atlas
@@ -16,10 +17,8 @@ const ROTATED_CW = 2
 
 const cache = new Map<string, Promise<AtlasTextures>>()
 
-const loadSheetTexture = async (path: string): Promise<Texture> => {
-    const texture = await Assets.load<Texture>(await assetUrl(path))
-    return texture
-}
+const loadSheetTexture = async (path: string): Promise<Texture> =>
+    path.toLowerCase().endsWith(".dds") ? textureFromDds(await fetchAssetBuffer(path)) : Assets.load<Texture>(await assetUrl(path))
 
 const build = async (path: string): Promise<AtlasTextures> => {
     const xml = await fetchAssetText(path)
@@ -34,7 +33,11 @@ const build = async (path: string): Promise<AtlasTextures> => {
         sheetPath = png
     }
 
-    const sheet = await loadSheetTexture(sheetPath)
+    return texturesFromSheet(atlas, await loadSheetTexture(sheetPath), path)
+}
+
+/** Cuts the frames of an already parsed atlas out of its sheet texture. */
+export const texturesFromSheet = (atlas: Atlas, sheet: Texture, label = "atlas"): AtlasTextures => {
     const textures = new Map<string, Texture>()
     for (const f of atlas.frames.values()) {
         textures.set(
@@ -54,7 +57,7 @@ const build = async (path: string): Promise<AtlasTextures> => {
         atlas,
         get(name) {
             const texture = textures.get(name)
-            if (!texture) throw new Error(`Atlas ${path}: no frame "${name}"`)
+            if (!texture) throw new Error(`${label}: no frame "${name}"`)
             return texture
         },
         has: (name) => textures.has(name),
