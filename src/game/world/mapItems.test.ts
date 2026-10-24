@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
 
-import { buildingsFromMap } from "./mapItems.ts"
+import { buildingsFromMap, dragonsFromMap } from "./mapItems.ts"
 
 const config = { items: { "16": { group_type: "farm", width: 3, height: 3 }, "1011": { group_type: "dragon" } } }
 
@@ -17,4 +17,10 @@ test("skips dragons and malformed entries", () => {
     const user = { map: { items: { a: [1011, 1, 1], b: "nope", c: [16, "x", 2] } } }
     assert.deepEqual(buildingsFromMap(user, config), [])
     assert.deepEqual(buildingsFromMap(undefined, undefined), [])
+})
+
+test("reads the dragons that live in a habitat", () => {
+    const user = { map: { ownedDragons: { d1: { type: 1011, habitatId: 3, name: "Terra" }, d2: { type: 1011 }, d3: { habitatId: "3" } } } }
+    assert.deepEqual(dragonsFromMap(user), [{ id: "d1", itemId: 1011, habitatId: "3" }])
+    assert.deepEqual(dragonsFromMap(undefined), [])
 })

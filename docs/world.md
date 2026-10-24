@@ -36,10 +36,32 @@ Tudo aqui foi lido do binário (`tools/re/rdis.py`) ou conferido contra o APK. I
   era baixado do servidor (`LegacyAssetsManager`). Sem arte, o jogo usa `Engine/defaultBuilding.png`.
 * Tamanhos em tiles: a largura do sprite em pontos dividida por 54 (fazenda 3 × 3, habitat 4 × 4, incubadora 6 × 6) **[?]**;
   o valor real vem de `config.items`.
-* Os `.mask` (`Engine/*.mask`) guardam a máscara de toque por pixel de cada construção; os `*_right.bin` ainda não foram lidos.
-* Dragões são esqueletos animados (`.xml` de partes + `.bin` de animação): ainda não implementados.
+* Os `.mask` (`Engine/*.mask`) guardam a máscara de toque por pixel de cada construção (ainda não lidos); os `*_right.bin` são os caminhos dos dragões.
+* Dragões são esqueletos animados: veja a seção abaixo.
 
 ## Texturas
 
 Os `.dds` são DXT1/3/5. Alguns têm altura que não é múltipla de 4 (habitat 436 × 334), que o WebGL recusa; por isso
 `src/game/atlas/dds.ts` decodifica o primeiro nível em RGBA na CPU (conferido contra o Pillow).
+
+## Dragões e esqueletos (`cocos2d::extension::skeleton`)
+
+Os arquivos `.bin` de animação (`CCBinaryAnimParser::parseFile` @0x62115c) têm este formato (little endian; uma string é
+um `int16` de tamanho seguido de caracteres UTF-16):
+
+    animação* := string nome, string atlas, int32 comprimento, int32 nPartes, parte*nPartes
+    parte     := string nome, int32 camada, int32 frames, quadro* (até as repetições somarem `frames`)
+    quadro    := int32 início, int32 repetições, float alpha, anchorX, anchorY, x, y, scaleX, scaleY, rotationX, rotationY
+
+* A ordem dos campos do quadro vem de `CCFrameInfo::{ctor}` @0x61f940 e dos getters; posições em pontos com y para cima,
+  rotações em graus, âncoras normalizadas. Alpha ≤ 0 esconde a parte (`CCPartSprite::applyFrameInfo` @0x61c97c).
+* Todos os `.bin` do APK (31 caminhos e as animações dos dragões) são lidos até o último byte (`anim.test.ts`).
+* Um dragão é `NNNN_nome_<estágio>.zip`: atlas das partes para o mapa (`*_map.xml/.dds`) e as animações `walk`, `breathe`,
+  `levelup`, `special1`, `special2`. O APK só traz o estágio 1 do dragão de terra (1011).
+* A transformação de cada parte é a de `CCNode::nodeToParentTransform` com rotações separadas em x e y, convertida para y para baixo.
+* `Engine/NNNN_nome_right.bin` é o **caminho** que os dragões percorrem dentro da construção (`CCAnimPathParser` usa o mesmo
+  formato: cada parte é um caminho e cada quadro um ponto). As coordenadas são medidas a partir do canto superior esquerdo
+  da imagem da construção, y para cima; o caminho do habitat de terra é um oval no centro do losango, com 143 pontos.
+* A velocidade é 30 quadros por segundo **[?]**: `CCBaseSkeleton::update` avança um quadro por chamada (o atraso padrão é 0) e o
+  intervalo de animação é definido pelo lado Java.
+* O dragão se vira para o lado em que anda; a camada maior é desenhada na frente **[?]**.

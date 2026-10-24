@@ -2,6 +2,9 @@ import { Container, Graphics, Rectangle, Sprite, type FederatedPointerEvent, typ
 
 import { loadBuildingArt } from "./buildingArt"
 import { createBackground, createGround } from "./ground"
+import { DragonActor } from "./DragonActor"
+import { createDragonSkeleton, loadDragonArt } from "./skeleton/dragonArt"
+import { loadHabitatPath } from "./skeleton/habitatPath"
 import { nodeZIndex, pixelToTile, tileToPixel, type Point } from "./iso"
 
 /** `LoadState::createGraphicScene` passes 0.3 and 1.5 as the zoom limits and sets the layer scale to 0.6. */
@@ -26,6 +29,14 @@ export type WorldBuilding = {
     height: number
 }
 
+export type WorldDragon = {
+    id: string
+    /** Item id of the dragon (1011 is the earth dragon). */
+    itemId: number
+    /** Id of the habitat building the dragon lives in. */
+    habitatId: string
+}
+
 export type IsoWorldOptions = {
     /** Draws the footprint of every building (useful to check the art against the tile grid). */
     debugFootprints?: boolean
@@ -45,7 +56,8 @@ export class IsoWorld {
     private width = DESIGN.width
     private height = DESIGN.height
     private zoom = START_ZOOM
-    private buildings = new Map<string, Container>()
+    private buildings = new Map<string, { node: Container; itemId: number; sourceWidth: number; sourceHeight: number }>()
+    private dragons: DragonActor[] = []
     private dragging: { x: number; y: number; moved: boolean; pointer: number } | null = null
 
     constructor(private readonly options: IsoWorldOptions = {}) {
@@ -107,7 +119,8 @@ export class IsoWorld {
 
     /** Replaces the buildings with `list`; art is loaded as it arrives. */
     async setBuildings(list: WorldBuilding[]): Promise<void> {
-        for (const node of this.buildings.values()) node.removeFromParent()
+        this.clearDragons()
+        for (const { node } of this.buildings.values()) node.removeFromParent()
         this.buildings.clear()
         await Promise.all(list.map((building) => this.addBuilding(building)))
     }
@@ -145,7 +158,46 @@ export class IsoWorld {
             this.options.onBuildingTap?.(building)
         })
         this.nodes.addChild(node)
-        this.buildings.set(building.id, node)
+        this.buildings.set(building.id, {
+            node,
+            itemId: building.itemId,
+            sourceWidth: art.texture.orig.width / PIXELS_PER_POINT,
+            sourceHeight: art.texture.orig.height / PIXELS_PER_POINT,
+        })
+    }
+
+    private clearDragons() {
+        for (const dragon of this.dragons) dragon.skeleton.removeFromParent()
+        this.dragons = []
+    }
+
+    /** Puts dragons into their habitats, walking the paths of the original game. Dragons without art are skipped. */
+    async setDragons(list: WorldDragon[]): Promise<void> {
+        this.clearDragons()
+        const perHabitat = new Map<string, WorldDragon[]>()
+        for (const dragon of list) perHabitat.set(dragon.habitatId, [...(perHabitat.get(dragon.habitatId) ?? []), dragon])
+
+        await Promise.all(
+            [...perHabitat].flatMap(([habitatId, residents]) => {
+                const habitat = this.buildings.get(habitatId)
+                if (!habitat) return []
+                return residents.map(async (dragon, index) => {
+                    const [art, path] = await Promise.all([loadDragonArt(dragon.itemId), loadHabitatPath(habitat.itemId)])
+                    if (!art || !path) return
+                    const skeleton = createDragonSkeleton(art)
+                    // The path is measured from the top-left corner of the building image, y up.
+                    const actor = new DragonActor(skeleton, path, { x: -habitat.sourceWidth / 2, y: -habitat.sourceHeight }, index / residents.length)
+                    actor.skeleton.zIndex = 1
+                    habitat.node.addChild(actor.skeleton)
+                    this.dragons.push(actor)
+                })
+            }),
+        )
+    }
+
+    /** Advances the animations; call once per frame with the elapsed seconds. */
+    update(deltaSeconds: number): void {
+        for (const dragon of this.dragons) dragon.update(deltaSeconds)
     }
 
     private onDown = (event: FederatedPointerEvent) => {

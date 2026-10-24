@@ -1,4 +1,4 @@
-import type { WorldBuilding } from "./IsoWorld"
+import type { WorldBuilding, WorldDragon } from "./IsoWorld"
 
 type Dict = Record<string, unknown>
 
@@ -34,4 +34,20 @@ export const buildingsFromMap = (user: Dict | undefined, config: Dict | undefine
         })
     }
     return buildings
+}
+
+/**
+ * Dragons from `user.map.ownedDragons`. Each value carries `habitatId` and `name` (the keys the recovered parser
+ * reads); the item id is taken from `type` [?], which that parser does not list.
+ */
+export const dragonsFromMap = (user: Dict | undefined): WorldDragon[] => {
+    const owned = dict(dict(user?.map).ownedDragons)
+    const dragons: WorldDragon[] = []
+    for (const [id, raw] of Object.entries(owned)) {
+        const dragon = dict(raw)
+        const itemId = Number(dragon.type)
+        if (!Number.isFinite(itemId) || dragon.habitatId === undefined || dragon.habitatId === null) continue
+        dragons.push({ id, itemId, habitatId: String(dragon.habitatId) })
+    }
+    return dragons
 }
