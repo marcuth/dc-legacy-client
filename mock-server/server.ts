@@ -193,7 +193,12 @@ export class MockServer {
                     tsReg: now,
                 },
                 map: {
-                    items: {},
+                    // [itemId, x, y, parentId, frame, flag, attributes]; x, y is the front corner of the footprint.
+                    items: {
+                        "1": [1, 22, 71, 0, 0, 0, {}],
+                        "2": [16, 22, 63, 0, 0, 0, {}],
+                        "3": [26, 28, 63, 0, 0, 0, {}],
+                    },
                     eggs: {},
                     islandNumber: 1,
                     work: {},

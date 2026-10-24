@@ -23,10 +23,14 @@ const levels = () => {
     return table
 }
 
+/**
+ * Item ids and footprints (in tiles) follow the art the APK ships: the engine zips are named after the item id and
+ * a footprint is as many tiles wide as the sprite is wide in 54-point tile diamonds.
+ */
 const items = {
-    "1": { id: 1, name: "Farm", group_type: "farm", costs: { g: 100 }, width: 3, height: 3 },
-    "2": { id: 2, name: "Earth Habitat", group_type: "habitat", type: "earth", costs: { g: 100 }, capacity: 2, width: 4, height: 4 },
-    "3": { id: 3, name: "Hatchery", group_type: "incubator", costs: { g: 50 }, width: 2, height: 2 },
+    "1": { id: 1, name: "Hatchery", group_type: "incubator", costs: { g: 0 }, width: 6, height: 6 },
+    "16": { id: 16, name: "Farm", group_type: "farm", costs: { g: 100 }, width: 3, height: 3 },
+    "26": { id: 26, name: "Earth Habitat", group_type: "habitat", type: "earth", costs: { g: 100 }, capacity: 2, width: 4, height: 4 },
     "1011": { id: 1011, name: "Terra Dragon", group_type: "dragon", type: "earth", img_name: "dragon_earth_a", starting_coins: 5, coins_added: 1 },
     "1012": { id: 1012, name: "Flame Dragon", group_type: "dragon", type: "fire", img_name: "dragon_fire_a", starting_coins: 6, coins_added: 1 },
 }

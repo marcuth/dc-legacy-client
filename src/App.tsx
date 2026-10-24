@@ -1,11 +1,14 @@
-import { Application, Container } from "pixi.js"
+import { Application, Container, Sprite } from "pixi.js"
 import { useEffect, useRef } from "react"
 
 import { fetchAssetBuffer } from "@/game/atlas/assetFiles"
+import { loadAtlas } from "@/game/atlas/AtlasLoader"
 import { buildCCB } from "@/game/ccb/build"
 import { parseCCB } from "@/game/ccb/reader"
 import { loadCCBResources } from "@/game/ccb/resources"
 import { boot } from "@/game/boot"
+import { IsoWorld } from "@/game/world/IsoWorld"
+import { buildingsFromMap } from "@/game/world/mapItems"
 import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
 import { GameSession } from "@/game/session/GameSession"
@@ -26,6 +29,40 @@ const fitTo = (app: Application, view: Container) => {
 }
 
 const localeOf = (params: URLSearchParams) => loadLocale((params.get("lang") as LocaleCode) ?? "en")
+
+/** /?atlas=HD/Engine/s3tc/night_islands.plist : lays every frame of an atlas out on a grid. */
+const atlasViewer = async (app: Application, path: string) => {
+    const atlas = await loadAtlas(path)
+    const view = new Container()
+    app.stage.addChild(view)
+    let x = 0, y = 0, row = 0
+    for (const name of atlas.names()) {
+        const sprite = new Sprite(atlas.get(name))
+        if (x + sprite.width > app.screen.width) { x = 0; y += row + 4; row = 0 }
+        sprite.position.set(x, y)
+        view.addChild(sprite)
+        x += sprite.width + 4
+        row = Math.max(row, sprite.height)
+    }
+}
+
+/** /?world&tile=22,63 : the island with a few test buildings and their footprints. */
+const worldViewer = async (app: Application, params: URLSearchParams) => {
+    const world = new IsoWorld({ debugFootprints: true, onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y) })
+    app.stage.addChild(world.view)
+    await world.load()
+    const [tx, ty] = (params.get("tile") ?? "22,63").split(",").map(Number)
+    world.centerOnTile({ x: tx, y: ty })
+    await world.setBuildings([
+        { id: "a", itemId: 16, x: tx, y: ty, width: 3, height: 3 },
+        { id: "b", itemId: 26, x: tx + 6, y: ty, width: 4, height: 4 },
+        { id: "c", itemId: 1, x: tx, y: ty + 8, width: 6, height: 6 },
+        { id: "d", itemId: 999, x: tx + 8, y: ty + 8, width: 2, height: 2 },
+    ])
+    app.renderer.on("resize", () => world.resize(app.screen.width, app.screen.height))
+    world.resize(app.screen.width, app.screen.height)
+    ;(window as unknown as { world: unknown }).world = world
+}
 
 /** /?ccb=CCB/SplashScreen.ccbi&seq=show_gift : shows one ccbi as it is stored. */
 const viewer = async (app: Application, params: URLSearchParams) => {
@@ -65,11 +102,18 @@ const game = async (app: Application, params: URLSearchParams) => {
     const context = { locale: await loadLocale(language), design: DESIGN }
     const session = GameSession.create({ language })
 
+    // The island fills the window; the 480 x 320 interface sits above it.
+    const world = new IsoWorld({
+        debugFootprints: params.has("debug"),
+        onBuildingTap: (building) => console.log("building", building),
+        onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y),
+    })
     const view = new Container()
-    app.stage.addChild(view)
+    app.stage.addChild(world.view, view)
     fitTo(app, view)
     const bootHost = new Container()
     view.addChild(bootHost)
+    app.renderer.on("resize", () => world.resize(app.screen.width, app.screen.height))
 
     const layer = new PopupLayer(DESIGN)
     let hud: Awaited<ReturnType<typeof createHud>> | undefined
@@ -81,7 +125,11 @@ const game = async (app: Application, params: URLSearchParams) => {
     }
 
     await boot({ context, host: bootHost, onTick, autoLogin: remembered() && !params.has("fresh") }, session, async (report) => {
-        report(0.2, "Loading")
+        report(0.1, "Loading")
+        await world.load()
+        world.resize(app.screen.width, app.screen.height)
+        await world.setBuildings(buildingsFromMap(session.user, session.config))
+        report(0.7)
         hud = await createHud(context, session.store, {
             onFood: () => {
                 // A round trip through /packet/execution and /player/info: the server adds food, the HUD follows.
@@ -106,7 +154,7 @@ const game = async (app: Application, params: URLSearchParams) => {
     }
 
     view.addChild(hud!.view.root, layer.root)
-    ;(window as unknown as { game: unknown }).game = { session, layer, hud, context }
+    ;(window as unknown as { game: unknown }).game = { session, layer, hud, context, world }
 }
 
 export default function App() {
@@ -120,7 +168,7 @@ export default function App() {
             if (disposed) return app.destroy(true)
             host.current?.appendChild(app.canvas)
             const params = new URLSearchParams(location.search)
-            await (params.has("ccb") ? viewer(app, params) : game(app, params))
+            await (params.has("world") ? worldViewer(app, params) : params.has("atlas") ? atlasViewer(app, params.get("atlas")!) : params.has("ccb") ? viewer(app, params) : game(app, params))
         }
         void start().catch((error) => console.error(error))
         return () => {
