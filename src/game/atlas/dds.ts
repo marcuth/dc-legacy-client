@@ -18,22 +18,38 @@ const DXT3 = fourCC("DXT3")
 const DXT5 = fourCC("DXT5")
 const HEADER_SIZE = 128
 
-const expand565 = (value: number) => [
-    ((value >> 11) & 31) * 255 / 31,
-    ((value >> 5) & 63) * 255 / 63,
-    (value & 31) * 255 / 31,
-]
+const palette = new Uint8Array(16)
+const alphaTable = new Uint8Array(8)
 
-/** The four colours of a DXT colour block, as [r, g, b, a] arrays. */
-const colorPalette = (c0: number, c1: number, allowTransparent: boolean): number[][] => {
-    const a = expand565(c0)
-    const b = expand565(c1)
-    const mix = (x: number[], y: number[], wx: number, wy: number, divisor: number) =>
-        [0, 1, 2].map((i) => (x[i] * wx + y[i] * wy) / divisor)
+/** Fills `palette` with the four RGBA colours of a DXT colour block. */
+const fillPalette = (c0: number, c1: number, allowTransparent: boolean) => {
+    const r0 = Math.round((((c0 >> 11) & 31) * 255) / 31)
+    const g0 = Math.round((((c0 >> 5) & 63) * 255) / 63)
+    const b0 = Math.round(((c0 & 31) * 255) / 31)
+    const r1 = Math.round((((c1 >> 11) & 31) * 255) / 31)
+    const g1 = Math.round((((c1 >> 5) & 63) * 255) / 63)
+    const b1 = Math.round(((c1 & 31) * 255) / 31)
+    palette.set([r0, g0, b0, 255, r1, g1, b1, 255])
     if (c0 > c1 || !allowTransparent) {
-        return [[...a, 255], [...b, 255], [...mix(a, b, 2, 1, 3), 255], [...mix(a, b, 1, 2, 3), 255]]
+        palette.set([Math.round((2 * r0 + r1) / 3), Math.round((2 * g0 + g1) / 3), Math.round((2 * b0 + b1) / 3), 255], 8)
+        palette.set([Math.round((r0 + 2 * r1) / 3), Math.round((g0 + 2 * g1) / 3), Math.round((b0 + 2 * b1) / 3), 255], 12)
+    } else {
+        palette.set([Math.round((r0 + r1) / 2), Math.round((g0 + g1) / 2), Math.round((b0 + b1) / 2), 255], 8)
+        palette.set([0, 0, 0, 0], 12)
     }
-    return [[...a, 255], [...b, 255], [...mix(a, b, 1, 1, 2), 255], [0, 0, 0, 0]]
+}
+
+/** Fills `alphaTable` with the eight alpha values of a DXT5 alpha block. */
+const fillAlphaTable = (a0: number, a1: number) => {
+    alphaTable[0] = a0
+    alphaTable[1] = a1
+    if (a0 > a1) {
+        for (let k = 1; k <= 6; k++) alphaTable[k + 1] = Math.round(((7 - k) * a0 + k * a1) / 7)
+    } else {
+        for (let k = 1; k <= 4; k++) alphaTable[k + 1] = Math.round(((5 - k) * a0 + k * a1) / 5)
+        alphaTable[6] = 0
+        alphaTable[7] = 255
+    }
 }
 
 export const decodeDds = (buffer: ArrayBuffer): DecodedImage => {
@@ -62,31 +78,29 @@ export const decodeDds = (buffer: ArrayBuffer): DecodedImage => {
                 }
                 color += 8
             } else if (format === DXT5) {
-                const a0 = view.getUint8(offset)
-                const a1 = view.getUint8(offset + 1)
-                const table =
-                    a0 > a1
-                        ? [a0, a1, ...[1, 2, 3, 4, 5, 6].map((k) => ((7 - k) * a0 + k * a1) / 7)]
-                        : [a0, a1, ...[1, 2, 3, 4].map((k) => ((5 - k) * a0 + k * a1) / 5), 0, 255]
-                // 16 three-bit indices packed little-endian into 6 bytes.
-                let bits = 0n
-                for (let i = 0; i < 6; i++) bits |= BigInt(view.getUint8(offset + 2 + i)) << BigInt(8 * i)
-                for (let i = 0; i < 16; i++) alpha[i] = table[Number((bits >> BigInt(3 * i)) & 7n)]
+                fillAlphaTable(view.getUint8(offset), view.getUint8(offset + 1))
+                // Sixteen three-bit indices in 6 bytes: two groups of 24 bits.
+                const low = view.getUint8(offset + 2) | (view.getUint8(offset + 3) << 8) | (view.getUint8(offset + 4) << 16)
+                const high = view.getUint8(offset + 5) | (view.getUint8(offset + 6) << 8) | (view.getUint8(offset + 7) << 16)
+                for (let i = 0; i < 8; i++) {
+                    alpha[i] = alphaTable[(low >> (3 * i)) & 7]
+                    alpha[i + 8] = alphaTable[(high >> (3 * i)) & 7]
+                }
                 color += 8
             }
 
-            const palette = colorPalette(view.getUint16(color, true), view.getUint16(color + 2, true), format === DXT1)
+            fillPalette(view.getUint16(color, true), view.getUint16(color + 2, true), format === DXT1)
             const indices = view.getUint32(color + 4, true)
             for (let i = 0; i < 16; i++) {
                 const x = bx * 4 + (i & 3)
                 const y = by * 4 + (i >> 2)
                 if (x >= width || y >= height) continue
-                const [r, g, b, a] = palette[(indices >> (2 * i)) & 3]
+                const source = ((indices >> (2 * i)) & 3) * 4
                 const target = (y * width + x) * 4
-                out[target] = Math.round(r)
-                out[target + 1] = Math.round(g)
-                out[target + 2] = Math.round(b)
-                out[target + 3] = Math.round(format === DXT1 ? a : alpha[i])
+                out[target] = palette[source]
+                out[target + 1] = palette[source + 1]
+                out[target + 2] = palette[source + 2]
+                out[target + 3] = format === DXT1 ? palette[source + 3] : alpha[i]
             }
         }
     }

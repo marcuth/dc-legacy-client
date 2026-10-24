@@ -3,7 +3,7 @@
  * Paths are relative to src/assets (e.g. "HD/Engine/night_islands.plist") and matched case-insensitively,
  * because the APK mixes ".dds"/".DDS" and the plists reference the lowercase form.
  */
-const loaders = import.meta.glob("/src/assets/**/*.{png,jpg,dds,plist,xml,ccbi,fnt,txt,zip}", {
+const loaders = import.meta.glob("/src/assets/**/*.{png,jpg,dds,plist,xml,ccbi,fnt,txt,zip,bin}", {
     query: "?url",
     import: "default",
 })
