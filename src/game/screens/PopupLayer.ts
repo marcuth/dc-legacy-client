@@ -33,7 +33,7 @@ export class PopupLayer {
         const holder = this.open.get(popup)
         if (!holder) return
         this.open.delete(popup)
-        holder.destroy({ children: true })
+        holder.removeFromParent()
         popup.dispose?.()
     }
 

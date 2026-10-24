@@ -42,6 +42,8 @@ export type CCBScene = {
     labels: Map<string, LabelHandle>
     /** Buttons assigned to a member variable. */
     buttons: Map<string, ButtonHandle>
+    /** Nine-slice sprites assigned to a member variable. */
+    scale9: Map<string, ResizableHandle>
     /** Every button, assigned or not, with its `ccControl` binding. */
     controls: ButtonHandle[]
     /** Content size in points of a node built by this scene. */
@@ -53,7 +55,17 @@ export type CCBScene = {
 
 export type Dims = { width: number; height: number }
 
-type Content = { view: Container; size: Dims; handlesOpacity?: boolean; label?: LabelHandle; button?: ButtonHandle }
+/** A nine-slice whose size the code changes at runtime (progress bars). */
+export type ResizableHandle = { setSize(width: number, height: number): void }
+
+type Content = {
+    view: Container
+    size: Dims
+    handlesOpacity?: boolean
+    label?: LabelHandle
+    button?: ButtonHandle
+    resizable?: ResizableHandle
+}
 
 type Animated = {
     container: Container
@@ -80,6 +92,7 @@ class Builder {
     readonly members = new Map<string, Container>()
     readonly labels = new Map<string, LabelHandle>()
     readonly buttons = new Map<string, ButtonHandle>()
+    readonly scale9 = new Map<string, ResizableHandle>()
     readonly controls: ButtonHandle[] = []
     readonly sizes = new Map<Container, Dims>()
     readonly animated: Animated[] = []
@@ -143,6 +156,7 @@ class Builder {
         const member = node.memberVar
         if (member) this.members.set(member.name, container)
         if (content?.label && member) this.labels.set(member.name, content.label)
+        if (content?.resizable && member) this.scale9.set(member.name, content.resizable)
         if (content?.button) {
             content.button.attach(container, size.width, size.height)
             this.controls.push(content.button)
@@ -264,7 +278,14 @@ class Builder {
                 slice.scale.set(k)
                 slice.tint = tint()
                 slice.alpha = num("opacity", 255) / 255
-                return { view: slice, size, handlesOpacity: true }
+                const resizable: ResizableHandle = {
+                    setSize: (width, height) => {
+                        slice.width = width / k
+                        slice.height = height / k
+                        resize({ width, height })
+                    },
+                }
+                return { view: slice, size, handlesOpacity: true, resizable }
             }
             case "DCBackgroundPopup":
                 return this.createPopupBackground(this.readSize(prop("contentSize"), parent))
@@ -403,7 +424,7 @@ class Builder {
             },
             setText: (next, localized = false) => {
                 source = next
-                for (const child of view.removeChildren()) child.destroy({ children: true })
+                view.removeChildren()
                 current = render(localized ? next : localize(next))
                 view.addChild(current.view)
                 resize(current.size)
@@ -446,7 +467,7 @@ class Builder {
         let state: ButtonState = 1
 
         const renderTitle = () => {
-            for (const child of title.removeChildren()) child.destroy({ children: true })
+            title.removeChildren()
             if (!font || !titleText) return
             const label = layoutLabel(font, titleText, { fill: colorOf(state), strokeWidth: 0 }, { fontSize, width: 0, align: 1, fit: false })
             label.view.position.set(ax * size.width - label.size.width / 2, (1 - ay) * size.height - label.size.height / 2)
@@ -590,6 +611,7 @@ export const buildCCB = (doc: CCBDocument, resources: CCBResources, options: Bui
         members: builder.members,
         labels: builder.labels,
         buttons: builder.buttons,
+        scale9: builder.scale9,
         controls: builder.controls,
         sizeOf: (node) => builder.sizes.get(node) ?? { width: 0, height: 0 },
         sequences: doc.sequences,
