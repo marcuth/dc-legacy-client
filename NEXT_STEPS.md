@@ -16,6 +16,7 @@ as imagens/fontes/textos de `src/assets`. O cliente Flash (`Base_sec_2.2.5`) est
 | Textos localizados | `src/game/locale/` | 8 idiomas, chave = texto em inglês |
 | Telas ligadas ao jogo | `src/game/screens/` | HUD ligado ao `GameStore`; popups de confirmação de conta e de acelerar procriação |
 | Mapa isométrico | `src/game/world/` | chão (`night_islands` a 3,6×), céu, construções de `map.items` com a arte do APK, arrastar e zoom 0,3–1,5; notas em `docs/world.md` |
+| Toque | `src/game/world/touchMask.ts`, `IsoWorld.hitTest` | máscaras `.mask` por pixel, pegada em tiles quando não há máscara, seleção da construção tocada |
 | Dragões | `src/game/world/skeleton/`, `DragonActor.ts` | esqueletos `.bin` + atlas do mapa; dragões andam pelos caminhos `Engine/*_right.bin` dos habitats |
 | Texturas DXT | `src/game/atlas/dds.ts` | decodificador em CPU (o WebGL recusa alturas não múltiplas de 4) |
 | Boot | `src/game/boot.ts` | tela do logo, depois a tela de carregamento (`SplashScreen.ccbi`) com a escolha de login e a barra de progresso, depois o HUD |
@@ -45,7 +46,7 @@ Testes: `npx tsx --test <arquivo>` (ccb, atlas, locale, screens, session, mock-s
 
 ## Próximos passos sugeridos
 
-1. Toque por máscara (`Engine/*.mask`), mover/vender construções, ovos e outros estágios dos dragões (faltam no APK).
+1. Menu da construção selecionada (`CCB/HUDMenuButtons`), mover/vender construções, ovos e os estágios 0, 2 e 3 dos dragões (faltam no APK; o carregador acha qualquer `NNNN_nome_<estágio>.zip` colocado em `HD/Engine/s3tc`).
 2. Loja, expansões do terreno (`expansionsImages`) e mercado de dragões (`CCB/Store`, `CCB/DragonMarket`) ligados aos comandos `buy`, `sell`, `move`.
 3. Criar/chocar ovos e procriação (`CCB/Breeding`) com `breed_dragon_2`, `finish_breeding_2`, `hatch_egg`.
 4. Tutorial e metas (`CCB/Tutorial`, `config.goals`).

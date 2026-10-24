@@ -36,7 +36,7 @@ Tudo aqui foi lido do binário (`tools/re/rdis.py`) ou conferido contra o APK. I
   era baixado do servidor (`LegacyAssetsManager`). Sem arte, o jogo usa `Engine/defaultBuilding.png`.
 * Tamanhos em tiles: a largura do sprite em pontos dividida por 54 (fazenda 3 × 3, habitat 4 × 4, incubadora 6 × 6) **[?]**;
   o valor real vem de `config.items`.
-* Os `.mask` (`Engine/*.mask`) guardam a máscara de toque por pixel de cada construção (ainda não lidos); os `*_right.bin` são os caminhos dos dragões.
+* Os `.mask` (`Engine/NNNN_nome.mask`) são a máscara de toque de cada construção (seção abaixo); os `*_right.bin` são os caminhos dos dragões.
 * Dragões são esqueletos animados: veja a seção abaixo.
 
 ## Texturas
@@ -65,3 +65,14 @@ um `int16` de tamanho seguido de caracteres UTF-16):
 * A velocidade é 30 quadros por segundo **[?]**: `CCBaseSkeleton::update` avança um quadro por chamada (o atraso padrão é 0) e o
   intervalo de animação é definido pelo lado Java.
 * O dragão se vira para o lado em que anda; a camada maior é desenhada na frente **[?]**.
+
+## Toque por máscara (`TouchMask`, `GraphicScene::performMaskBasedTouchDetection`)
+
+* Um `.mask` tem um byte por pixel, linha a linha de cima para baixo, `1` onde se pode tocar e `0` nas áreas transparentes.
+  O tamanho **não** está no arquivo (`TouchMaskManager::createTouchMask(nome, largura, altura, …)` recebe de quem chama):
+  é a imagem HD da construção a meio tamanho, em pontos (habitat 216 × 165, incubadora 324 × 276, fazenda 162 × 132, uma linha
+  a menos que a imagem). O alinhamento é pelo canto superior esquerdo; a silhueta bate com a transparência da arte em cerca de 95 %
+  dos pixels (a diferença são as bordas suaves).
+* Sem máscara (arte ausente), o original usa `performTileBasedTouchDetection`: vale a pegada da construção em tiles.
+* O cliente novo testa, da frente para trás: dragões (pelos limites do esqueleto), construções (máscara ou tiles) e, por fim, o chão.
+  Um toque numa área transparente de uma construção passa para o que está atrás dela. `?masks` pinta as máscaras de vermelho.

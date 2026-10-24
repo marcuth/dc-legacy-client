@@ -1,6 +1,8 @@
-import { Container, Graphics, Rectangle, Sprite, type FederatedPointerEvent, type FederatedWheelEvent } from "pixi.js"
+import { Container, Graphics, Rectangle, Sprite, Texture, type FederatedPointerEvent, type FederatedWheelEvent } from "pixi.js"
 
 import { loadBuildingArt } from "./buildingArt"
+import { loadTouchMask } from "./touchMaskLoader"
+import type { TouchMask } from "./touchMask"
 import { createBackground, createGround } from "./ground"
 import { DragonActor } from "./DragonActor"
 import { createDragonSkeleton, loadDragonArt } from "./skeleton/dragonArt"
@@ -40,9 +42,29 @@ export type WorldDragon = {
 export type IsoWorldOptions = {
     /** Draws the footprint of every building (useful to check the art against the tile grid). */
     debugFootprints?: boolean
+    /** Tints the touchable pixels of every building (useful to check the masks against the art). */
+    debugMasks?: boolean
     onBuildingTap?(building: WorldBuilding): void
+    onDragonTap?(dragon: WorldDragon): void
     onEmptyTileTap?(tile: Point): void
 }
+
+/** What is under a point of the map, from front to back: dragons, buildings (by mask or by tile), then the ground. */
+export type WorldHit = { kind: "dragon"; dragon: WorldDragon } | { kind: "building"; building: WorldBuilding } | { kind: "tile"; tile: Point }
+
+type BuildingEntry = {
+    building: WorldBuilding
+    node: Container
+    sprite: Sprite
+    itemId: number
+    sourceWidth: number
+    sourceHeight: number
+    /** Null when the APK has no mask: touches then use the tiles of the footprint. */
+    mask: TouchMask | null
+}
+
+/** Tint of the selected building (stands in for `IsoBuilding::setDefaultSelectionColour`). */
+const SELECTED_TINT = 0xffffaa
 
 /**
  * The island: sky, ground and buildings in map pixels (points), with the pan and zoom of `hydra::GraphicScene`.
@@ -56,8 +78,9 @@ export class IsoWorld {
     private width = DESIGN.width
     private height = DESIGN.height
     private zoom = START_ZOOM
-    private buildings = new Map<string, { node: Container; itemId: number; sourceWidth: number; sourceHeight: number }>()
-    private dragons: DragonActor[] = []
+    private buildings = new Map<string, BuildingEntry>()
+    private dragons: { actor: DragonActor; dragon: WorldDragon }[] = []
+    private selected: string | null = null
     private dragging: { x: number; y: number; moved: boolean; pointer: number } | null = null
 
     constructor(private readonly options: IsoWorldOptions = {}) {
@@ -127,6 +150,9 @@ export class IsoWorld {
 
     private async addBuilding(building: WorldBuilding): Promise<void> {
         const art = await loadBuildingArt(building.itemId)
+        const sourceWidth = art.texture.orig.width / PIXELS_PER_POINT
+        const sourceHeight = art.texture.orig.height / PIXELS_PER_POINT
+        const mask = art.placeholder ? null : await loadTouchMask(building.itemId, sourceWidth)
         const node = new Container({ label: `building ${building.id}` })
         const feet = tileToPixel(building.x, building.y)
         node.position.set(feet.x, feet.y)
@@ -150,24 +176,32 @@ export class IsoWorld {
         sprite.scale.set(art.placeholder ? 0.5 : 1 / PIXELS_PER_POINT)
         node.addChild(sprite)
 
-        node.eventMode = "static"
-        node.cursor = "pointer"
-        node.on("pointertap", (event: FederatedPointerEvent) => {
-            if (this.dragging?.moved) return
-            event.stopPropagation()
-            this.options.onBuildingTap?.(building)
-        })
+        if (this.options.debugMasks && mask) {
+            const overlay = new Sprite(this.maskTexture(mask))
+            overlay.position.set(-sourceWidth / 2, -sourceHeight)
+            overlay.alpha = 0.45
+            overlay.tint = 0xff0000
+            node.addChild(overlay)
+        }
+
         this.nodes.addChild(node)
-        this.buildings.set(building.id, {
-            node,
-            itemId: building.itemId,
-            sourceWidth: art.texture.orig.width / PIXELS_PER_POINT,
-            sourceHeight: art.texture.orig.height / PIXELS_PER_POINT,
-        })
+        this.buildings.set(building.id, { building, node, sprite, itemId: building.itemId, sourceWidth, sourceHeight, mask })
+        if (this.selected === building.id) sprite.tint = SELECTED_TINT
+    }
+
+    private maskTexture(mask: TouchMask): Texture {
+        const canvas = document.createElement("canvas")
+        canvas.width = mask.width
+        canvas.height = mask.height
+        const context = canvas.getContext("2d")!
+        const image = context.createImageData(mask.width, mask.height)
+        image.data.set(mask.toRgba())
+        context.putImageData(image, 0, 0)
+        return Texture.from(canvas)
     }
 
     private clearDragons() {
-        for (const dragon of this.dragons) dragon.skeleton.removeFromParent()
+        for (const { actor } of this.dragons) actor.skeleton.removeFromParent()
         this.dragons = []
     }
 
@@ -189,7 +223,7 @@ export class IsoWorld {
                     const actor = new DragonActor(skeleton, path, { x: -habitat.sourceWidth / 2, y: -habitat.sourceHeight }, index / residents.length)
                     actor.skeleton.zIndex = 1
                     habitat.node.addChild(actor.skeleton)
-                    this.dragons.push(actor)
+                    this.dragons.push({ actor, dragon })
                 })
             }),
         )
@@ -197,7 +231,7 @@ export class IsoWorld {
 
     /** Advances the animations; call once per frame with the elapsed seconds. */
     update(deltaSeconds: number): void {
-        for (const dragon of this.dragons) dragon.update(deltaSeconds)
+        for (const { actor } of this.dragons) actor.update(deltaSeconds)
     }
 
     private onDown = (event: FederatedPointerEvent) => {
@@ -220,8 +254,55 @@ export class IsoWorld {
         const drag = this.dragging
         this.dragging = null
         if (!drag || drag.moved) return
-        const local = this.map.toLocal(event.global)
-        this.options.onEmptyTileTap?.(pixelToTile(local.x, local.y))
+
+        const hit = this.hitTest(event.global)
+        if (hit.kind === "dragon") this.options.onDragonTap?.(hit.dragon)
+        else if (hit.kind === "building") {
+            this.select(hit.building.id)
+            this.options.onBuildingTap?.(hit.building)
+        } else {
+            this.select(null)
+            this.options.onEmptyTileTap?.(hit.tile)
+        }
+    }
+
+    /**
+     * What a tap at window position `global` touches (`GraphicScene::performMaskBasedTouchDetection`): buildings are
+     * tried from the front, each by the pixels of its mask, or by the tiles it covers when it has none.
+     */
+    hitTest(global: Point): WorldHit {
+        for (const { actor, dragon } of this.dragons) {
+            if (actor.skeleton.getBounds().containsPoint(global.x, global.y)) return { kind: "dragon", dragon }
+        }
+
+        const local = this.map.toLocal(global)
+        const tile = pixelToTile(local.x, local.y)
+        const front = [...this.buildings.values()].sort((a, b) => b.node.zIndex - a.node.zIndex)
+        for (const entry of front) {
+            if (entry.mask) {
+                // The mask is aligned with the top-left corner of the building image; the node stands on its bottom centre.
+                const x = Math.floor(local.x - entry.node.x + entry.sourceWidth / 2)
+                const y = Math.floor(local.y - entry.node.y + entry.sourceHeight)
+                if (entry.mask.isTouchable(x, y)) return { kind: "building", building: entry.building }
+            } else {
+                const { building } = entry
+                if (tile.x > building.x - building.width && tile.x <= building.x && tile.y > building.y - building.height && tile.y <= building.y) {
+                    return { kind: "building", building }
+                }
+            }
+        }
+        return { kind: "tile", tile }
+    }
+
+    /** Highlights one building (or none). */
+    select(id: string | null): void {
+        if (this.selected) {
+            const previous = this.buildings.get(this.selected)
+            if (previous) previous.sprite.tint = 0xffffff
+        }
+        this.selected = id
+        const current = id ? this.buildings.get(id) : undefined
+        if (current) current.sprite.tint = SELECTED_TINT
     }
 
     private onWheel = (event: FederatedWheelEvent) => {

@@ -48,7 +48,13 @@ const atlasViewer = async (app: Application, path: string) => {
 
 /** /?world&tile=22,63 : the island with a few test buildings and their footprints. */
 const worldViewer = async (app: Application, params: URLSearchParams) => {
-    const world = new IsoWorld({ debugFootprints: true, onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y) })
+    const world = new IsoWorld({
+        debugFootprints: true,
+        debugMasks: params.has("masks"),
+        onBuildingTap: (building) => console.log("building", building.id, building.itemId),
+        onDragonTap: (dragon) => console.log("dragon", dragon.id),
+        onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y),
+    })
     app.stage.addChild(world.view)
     await world.load()
     const [tx, ty] = (params.get("tile") ?? "22,63").split(",").map(Number)
@@ -110,6 +116,7 @@ const game = async (app: Application, params: URLSearchParams) => {
     // The island fills the window; the 480 x 320 interface sits above it.
     const world = new IsoWorld({
         debugFootprints: params.has("debug"),
+        debugMasks: params.has("masks"),
         onBuildingTap: (building) => console.log("building", building),
         onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y),
     })
