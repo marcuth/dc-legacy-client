@@ -162,10 +162,16 @@ const loadFont = async (variant: Variant, file: string): Promise<LoadedFont | nu
 }
 
 /** Loads every texture and font a document references, so building the scene can stay synchronous. */
-export const loadCCBResources = async (documents: CCBDocument[], variant: Variant = "HD"): Promise<CCBResources> => {
+export const loadCCBResources = async (
+    documents: CCBDocument[],
+    variant: Variant = "HD",
+    /** Images the code puts on sprites later (not referenced by the ccbi), relative to the variant folder. */
+    extraFiles: string[] = [],
+): Promise<CCBResources> => {
     const frameRefs = new Map<string, [string, string]>()
     const fontRefs = new Set<string>([DEFAULT_FONT])
     for (const doc of documents) collect(doc.root, frameRefs, fontRefs)
+    for (const file of extraFiles) frameRefs.set(`|${file}`, ["", file])
 
     const missing = new Set<string>()
     const atlases = new Map<string, AtlasTextures | null>()

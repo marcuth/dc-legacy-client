@@ -31,8 +31,11 @@ function normalize(path: string) {
 }
 
 export const assetUrl = async (path: string): Promise<string> => {
-    const load = index.get(normalize(path))
+    const key = normalize(path)
+    const load = index.get(key)
     if (!load) throw new Error(`Asset not found: ${path}`)
+    // The dev server serves the files where they are; importing each one as a module only adds a request per asset.
+    if (import.meta.env.DEV) return encodeURI(`/src/assets/${originals.get(key)}`)
     return (await load()) as string
 }
 

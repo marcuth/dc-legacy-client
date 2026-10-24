@@ -1,10 +1,10 @@
 import type { Container } from "pixi.js"
 
 import { fetchAssetBuffer } from "../atlas/assetFiles"
-import { buildCCB, type CCBScene, type Dims, type LabelHandle } from "../ccb/build"
+import { buildCCB, type CCBScene, type Dims, type LabelHandle, type SpriteHandle } from "../ccb/build"
 import type { ButtonHandle } from "../ccb/button"
 import { parseCCB } from "../ccb/reader"
-import { loadCCBResources, type Variant } from "../ccb/resources"
+import { loadCCBResources, type CCBResources, type Variant } from "../ccb/resources"
 import type { Locale } from "../locale/locale"
 
 export type ScreenContext = {
@@ -38,6 +38,12 @@ export class CCBView {
         const label = this.scene.labels.get(name)
         if (!label) throw new Error(`No label member "${name}" in this screen`)
         return label
+    }
+
+    sprite(name: string): SpriteHandle {
+        const sprite = this.scene.sprites.get(name)
+        if (!sprite) throw new Error(`No sprite member "${name}" in this screen`)
+        return sprite
     }
 
     button(name: string): ButtonHandle {
@@ -81,6 +87,21 @@ export class CCBView {
             this.design.height / 2 + (this.root.pivot.y - size.height / 2),
         )
         return this
+    }
+}
+
+/** A ccbi loaded once that can be instantiated many times (the map menu builds one button per entry). */
+export type ScreenFactory = {
+    create(): CCBView
+    resources: CCBResources
+}
+
+export const loadScreenFactory = async (name: string, context: ScreenContext, extraFiles: string[] = []): Promise<ScreenFactory> => {
+    const doc = parseCCB(await fetchAssetBuffer(`CCB/${name}.ccbi`))
+    const resources = await loadCCBResources([doc], context.variant ?? "HD", extraFiles)
+    return {
+        resources,
+        create: () => new CCBView(buildCCB(doc, resources, { size: context.design, localize: context.locale.tr }), context.design),
     }
 }
 

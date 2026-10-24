@@ -44,6 +44,8 @@ export type CCBScene = {
     buttons: Map<string, ButtonHandle>
     /** Nine-slice sprites assigned to a member variable. */
     scale9: Map<string, ResizableHandle>
+    /** Sprites assigned to a member variable. */
+    sprites: Map<string, SpriteHandle>
     /** Every button, assigned or not, with its `ccControl` binding. */
     controls: ButtonHandle[]
     /** Content size in points of a node built by this scene. */
@@ -55,6 +57,11 @@ export type CCBScene = {
 
 export type Dims = { width: number; height: number }
 
+/** A sprite whose image the code swaps at runtime (button icons). */
+export type SpriteHandle = {
+    setTexture(texture: Texture): void
+}
+
 /** A nine-slice whose size the code changes at runtime (progress bars). */
 export type ResizableHandle = { setSize(width: number, height: number): void }
 
@@ -65,6 +72,7 @@ type Content = {
     label?: LabelHandle
     button?: ButtonHandle
     resizable?: ResizableHandle
+    sprite?: SpriteHandle
 }
 
 type Animated = {
@@ -93,6 +101,7 @@ class Builder {
     readonly labels = new Map<string, LabelHandle>()
     readonly buttons = new Map<string, ButtonHandle>()
     readonly scale9 = new Map<string, ResizableHandle>()
+    readonly sprites = new Map<string, SpriteHandle>()
     readonly controls: ButtonHandle[] = []
     readonly sizes = new Map<Container, Dims>()
     readonly animated: Animated[] = []
@@ -157,6 +166,7 @@ class Builder {
         if (member) this.members.set(member.name, container)
         if (content?.label && member) this.labels.set(member.name, content.label)
         if (content?.resizable && member) this.scale9.set(member.name, content.resizable)
+        if (content?.sprite && member) this.sprites.set(member.name, content.sprite)
         if (content?.button) {
             content.button.attach(container, size.width, size.height)
             this.controls.push(content.button)
@@ -259,7 +269,13 @@ class Builder {
                     }
                 }
                 sprite.alpha = num("opacity", 255) / 255
-                return { view: sprite, size, handlesOpacity: true }
+                const handle: SpriteHandle = {
+                    setTexture: (next) => {
+                        sprite.texture = next
+                        resize({ width: next.orig.width * k, height: next.orig.height * k })
+                    },
+                }
+                return { view: sprite, size, handlesOpacity: true, sprite: handle }
             }
             case "CCScale9Sprite": {
                 const texture = this.frame(prop("spriteFrame"))
@@ -612,6 +628,7 @@ export const buildCCB = (doc: CCBDocument, resources: CCBResources, options: Bui
         labels: builder.labels,
         buttons: builder.buttons,
         scale9: builder.scale9,
+        sprites: builder.sprites,
         controls: builder.controls,
         sizeOf: (node) => builder.sizes.get(node) ?? { width: 0, height: 0 },
         sequences: doc.sequences,
