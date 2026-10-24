@@ -7,6 +7,7 @@ import { createBackground, createGround } from "./ground"
 import { DragonActor } from "./DragonActor"
 import { createDragonSkeleton, loadDragonArt } from "./skeleton/dragonArt"
 import { loadHabitatPath } from "./skeleton/habitatPath"
+import { coversTile, overlaps, snapMove, type Footprint } from "./footprint"
 import { nodeZIndex, pixelToTile, tileToPixel, type Point } from "./iso"
 
 /** `LoadState::createGraphicScene` passes 0.3 and 1.5 as the zoom limits and sets the layer scale to 0.6. */
@@ -44,10 +45,18 @@ export type IsoWorldOptions = {
     debugFootprints?: boolean
     /** Tints the touchable pixels of every building (useful to check the masks against the art). */
     debugMasks?: boolean
+    /** Called whenever the building being moved changes tile or becomes (in)valid; null when the move ends. */
+    onMoveChange?(move: MoveState | null): void
     onBuildingTap?(building: WorldBuilding): void
     onDragonTap?(dragon: WorldDragon): void
     onEmptyTileTap?(tile: Point): void
 }
+
+/** A building being dragged to a new place (the original's move state, confirmed with OK or CANCEL). */
+export type MoveState = { id: string; original: Point; current: Point; valid: boolean }
+
+/** Tint of a building that cannot be dropped where it is. */
+const INVALID_TINT = 0xff7777
 
 /** What is under a point of the map, from front to back: dragons, buildings (by mask or by tile), then the ground. */
 export type WorldHit = { kind: "dragon"; dragon: WorldDragon } | { kind: "building"; building: WorldBuilding } | { kind: "tile"; tile: Point }
@@ -81,7 +90,13 @@ export class IsoWorld {
     private buildings = new Map<string, BuildingEntry>()
     private dragons: { actor: DragonActor; dragon: WorldDragon }[] = []
     private selected: string | null = null
-    private dragging: { x: number; y: number; moved: boolean; pointer: number } | null = null
+    private dragging: { x: number; y: number; moved: boolean; pointer: number; building?: Point } | null = null
+    private move: MoveState | null = null
+
+    /** Replaces the callbacks (they often need objects built after the world). */
+    setHandlers(handlers: Pick<IsoWorldOptions, "onBuildingTap" | "onDragonTap" | "onEmptyTileTap" | "onMoveChange">): void {
+        Object.assign(this.options, handlers)
+    }
 
     constructor(private readonly options: IsoWorldOptions = {}) {
         this.view.eventMode = "static"
@@ -236,6 +251,22 @@ export class IsoWorld {
 
     private onDown = (event: FederatedPointerEvent) => {
         this.dragging = { x: event.global.x, y: event.global.y, moved: false, pointer: event.pointerId }
+        const move = this.move
+        const entry = move && this.buildings.get(move.id)
+        if (move && entry) {
+            const hit = this.hitTest(event.global)
+            if (hit.kind === "building" && hit.building.id === move.id) {
+                // Grabbing the building: it keeps the point under the finger.
+                const pointer = this.continuousTile(event.global)
+                this.dragging.building = { x: move.current.x - pointer.x, y: move.current.y - pointer.y }
+            }
+        }
+    }
+
+    /** Continuous tile coordinates under a window position (not ceiled, unlike `pixelToTile`). */
+    private continuousTile(global: Point): Point {
+        const local = this.map.toLocal(global)
+        return { x: (local.y / 13.5 + local.x / 27) / 2, y: (local.y / 13.5 - local.x / 27) / 2 }
     }
 
     private onMove = (event: FederatedPointerEvent) => {
@@ -245,6 +276,10 @@ export class IsoWorld {
         const dy = event.global.y - drag.y
         if (!drag.moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return
         drag.moved = true
+        if (drag.building && this.move) {
+            this.moveTo(snapMove(this.continuousTile(event.global), drag.building))
+            return
+        }
         this.map.position.set(this.map.x + dx, this.map.y + dy)
         drag.x = event.global.x
         drag.y = event.global.y
@@ -254,6 +289,8 @@ export class IsoWorld {
         const drag = this.dragging
         this.dragging = null
         if (!drag || drag.moved) return
+        // While a building is being moved, taps do not select anything else.
+        if (this.move) return
 
         const hit = this.hitTest(event.global)
         if (hit.kind === "dragon") this.options.onDragonTap?.(hit.dragon)
@@ -284,14 +321,67 @@ export class IsoWorld {
                 const x = Math.floor(local.x - entry.node.x + entry.sourceWidth / 2)
                 const y = Math.floor(local.y - entry.node.y + entry.sourceHeight)
                 if (entry.mask.isTouchable(x, y)) return { kind: "building", building: entry.building }
-            } else {
-                const { building } = entry
-                if (tile.x > building.x - building.width && tile.x <= building.x && tile.y > building.y - building.height && tile.y <= building.y) {
-                    return { kind: "building", building }
-                }
+            } else if (coversTile(entry.building, tile)) {
+                return { kind: "building", building: entry.building }
             }
         }
         return { kind: "tile", tile }
+    }
+
+    get moving(): MoveState | null {
+        return this.move
+    }
+
+    /** Starts dragging a building. Its footprint is checked against the others while it moves. */
+    beginMove(id: string): boolean {
+        const entry = this.buildings.get(id)
+        if (!entry || this.move) return false
+        const at = { x: entry.building.x, y: entry.building.y }
+        this.move = { id, original: at, current: at, valid: true }
+        this.select(id)
+        this.options.onMoveChange?.(this.move)
+        return true
+    }
+
+    private moveTo(tile: Point) {
+        const move = this.move
+        const entry = move && this.buildings.get(move.id)
+        if (!move || !entry || (tile.x === move.current.x && tile.y === move.current.y)) return
+
+        const candidate: Footprint = { ...entry.building, x: tile.x, y: tile.y }
+        const valid = ![...this.buildings.values()].some((other) => other !== entry && overlaps(candidate, other.building))
+        const feet = tileToPixel(tile.x, tile.y)
+        entry.node.position.set(feet.x, feet.y)
+        entry.node.zIndex = nodeZIndex(tile.x, tile.y, entry.building.width)
+        entry.sprite.tint = valid ? SELECTED_TINT : INVALID_TINT
+        this.move = { ...move, current: tile, valid }
+        this.options.onMoveChange?.(this.move)
+    }
+
+    /** Drops the building where it is. Returns null (and keeps moving) when that place is taken. */
+    commitMove(): { id: string; x: number; y: number } | null {
+        const move = this.move
+        const entry = move && this.buildings.get(move.id)
+        if (!move || !entry || !move.valid) return null
+        entry.building.x = move.current.x
+        entry.building.y = move.current.y
+        entry.sprite.tint = SELECTED_TINT
+        this.move = null
+        this.options.onMoveChange?.(null)
+        return { id: move.id, x: move.current.x, y: move.current.y }
+    }
+
+    /** Puts the building back where it was. */
+    cancelMove(): void {
+        const move = this.move
+        const entry = move && this.buildings.get(move.id)
+        if (!move || !entry) return
+        const feet = tileToPixel(move.original.x, move.original.y)
+        entry.node.position.set(feet.x, feet.y)
+        entry.node.zIndex = nodeZIndex(move.original.x, move.original.y, entry.building.width)
+        entry.sprite.tint = SELECTED_TINT
+        this.move = null
+        this.options.onMoveChange?.(null)
     }
 
     /** Highlights one building (or none). */

@@ -76,3 +76,17 @@ um `int16` de tamanho seguido de caracteres UTF-16):
 * Sem máscara (arte ausente), o original usa `performTileBasedTouchDetection`: vale a pegada da construção em tiles.
 * O cliente novo testa, da frente para trás: dragões (pelos limites do esqueleto), construções (máscara ou tiles) e, por fim, o chão.
   Um toque numa área transparente de uma construção passa para o que está atrás dela. `?masks` pinta as máscaras de vermelho.
+
+## Menu da construção selecionada (`MenuItemInfo`, `HUDButton`)
+
+* `MenuItemInfo::create(tipo, id, ação)` @0x5c988c escolhe título e ícone por um `switch` (tipos 0 a 31: 0 MOVE, 1 INFO, 8 TRAIN,
+  9 GROW FOOD, 10 BREED, 12 BUY EGG, 22 UPGRADE, 23/24 COLLECT, 25 OK, 26 CANCEL…); a tabela completa está em
+  `src/game/world/menu/menuItems.ts`. O ícone de GOALS (`ic-goals.png`) não vem no APK.
+* Cada estado de construção monta a sua lista (`*States::getDefaultMenuItems`, `getMenuButtons`): todas têm MOVE e INFO; fazenda,
+  habitat e incubadora somam UPGRADE; a fazenda parada soma GROW FOOD e, pronta, COLLECT; o habitat soma BUY EGG; a caverna de
+  procriação soma BREED ou TAKE EGG; o centro de treino soma TRAIN; o mercado de dragões soma DRAGON MARKET.
+* O estado de mover (`MoveState::getMoveMenuItems`) mostra só OK e CANCEL.
+* Cada botão é uma instância de `CCB/MainMenu/HUDButton.ccbi` (`image`, `title`, `button`…), em fila no `selectedBuildingButtonsPlaceholder`
+  do HUD (faixa de 80 pontos, 5 acima da borda de baixo). O espaçamento entre botões (6 pontos) é meu **[?]**.
+* Mover: o `move` leva `[uid, x, y, flip]`; o cliente novo recusa soltar a construção sobre a pegada de outra. A regra de terreno
+  construível (`Map::isConstructibleTile`) depende das expansões e não foi implementada.
