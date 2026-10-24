@@ -1,0 +1,1635 @@
+
+// No comment provided by engineer.
+" and " = " i ";
+
+// No comment provided by engineer.
+" or " = " lub ";
+
+// Combat status
+"%1$@ attack scored %2$d damage points" = "Atak %1$@ zabrał %2$d punktów";
+
+// Combat status
+"%1$@ calls %2$@ (%3$@) to the ring" = "%1$@ wyzywa %2$@ (%3$@) na ring";
+
+// Combat status
+"%1$@ does a %2$@ attack" = "%1$@ wykonuje atak %2$@";
+
+// No comment provided by engineer.
+"%1$@ has a new %2$@" = "%1$@ ma nowy %2$@";
+
+// No comment provided by engineer.
+"%1$@ has reached level %2$d in Dragon City" = "%1$@ osiągnął poziom %2$d w Dragon City.";
+
+// No comment provided by engineer.
+"%1$d of %2$s" = "%1$d z %2$s";
+
+// Daily Bonus
+"%1$s got %2$d food as a daily bonus on Dragon City" = "%1$s otrzymał %2$d pożywienia jako dzienny bonus w Dragon City.";
+
+// Daily Bonus
+"%1$s got %2$d gems as a daily bonus on Dragon City" = "%1$s otrzymał %2$d klejnotów jako dzienny bonus w Dragon City.";
+
+// Daily Bonus
+"%1$s got %2$d gold as a daily bonus on Dragon City" = "%1$s otrzymał %2$d złota jako dzienny bonus w Dragon City.";
+
+// No comment provided by engineer.
+"%@ can now expand his land of dragons with new buildings, habitats and decorations! Play Dragon City to discover more!" = "%@ może teraz rozbudować swoją smoczą ziemię o budynki, siedliska i dekoracje! Graj w Dragon City aby odkryć więcej!";
+
+// No comment provided by engineer.
+"%@ can't be sold right now because it has dragons inside" = "%@ nie może być teraz sprzedany, ponieważ w środku są smoki.";
+
+// No comment provided by engineer.
+"%@ can't be sold right now because it's working" = "%@ nie może być teraz sprzedany, ponieważ jest w trakcie pracy.";
+
+// No comment provided by engineer.
+"%@ can't be stored right now because it has dragons inside" = "%@ nie może zostać teraz przechowany, ponieważ są w nim smoki.";
+
+// No comment provided by engineer.
+"%@ can't be stored right now because it's working" = "%@ nie może zostać teraz przechowany, ponieważ jest w trakcie pracy.";
+
+// No comment provided by engineer.
+"%@ completed!" = "Zakończono %@!";
+
+// Food Daily Bonus Popup
+"%@ food" = "%@ pożywienia";
+
+// Gems Daily Bonus Popup
+"%@ gems" = "%@ klejnotów";
+
+// gold Daily Bonus Popup
+"%@ gold" = "%@ złota";
+
+// No comment provided by engineer.
+"%@ has bought an expansion in Dragon City!" = "%@ kupił rozbudowę w Dragon City!";
+
+// No comment provided by engineer.
+"%@ has bought an island in Dragon City!" = "%@ kupił wyspę w Dragon City!";
+
+// No comment provided by engineer.
+"%@ has unlocked new dragon eggs, buildings and other cool things. Take a look at Dragon City and reach your own dragon kingdom!" = "%@ odblokował nowe smocze jaja, budowle i inne fajne rzeczy. Rozejrzyj się po Dragon City i zbuduj swoje własne smocze królestwo!";
+
+// Combat status
+"%@ is DEFEATED" = "%@ został POKONANY";
+
+// No comment provided by engineer.
+"%@ is too important to be sold" = "%@ jest zbyt ważny by sprzedać";
+
+// No comment provided by engineer.
+"%@ is too important to be stored" = "%@ jest zbyt ważny by przechować";
+
+// No comment provided by engineer.
+"%@ just won a dragon tournament!" = "%@ właśnie wygrał smoczy turniej!";
+
+/* N Thousands */
+"%@ K" = "%@ K";
+
+// N Million
+"%@ M" = "%@ M";
+
+// No comment provided by engineer.
+"%@'s dragon has won a combat!" = "Smok należący do %@ wygrał walkę!";
+
+// No comment provided by engineer.
+"%@'s dragons are getting extremely strong and have just won a dragon tournament. Play Dragon City, join in on the dragon combats and win generous prizes!" = "Smoki należące do %@ stają się coraz silniejsze i właśnie wygrały smoczy turniej. Graj w Dragon City i bierz udział w walkach aby wygrywać wartościowe nagrody!";
+
+// No comment provided by engineer.
+"%@'s dragons are getting super strong and have just defeated a friend in a combat. Play Dragon City, join the dragon combats and win generous prizes!" = "Smoki należące do %@ stają się super silne i właśnie pokonały znajomego w walce. Graj w Dragon City i bierz udział w walkach aby wygrywać wartościowe nagrody!";
+
+// No comment provided by engineer.
+"%@'s island has just been expanded! Check the magical islands that allow you to breed the coolest dragons." = "Wyspa należąca do %@ właśnie została powiększona! Zobacz magiczne wyspy, na których możesz rozmnażać najfajniejsze smoki.";
+
+// No comment provided by engineer.
+"%d/MIN" = "%d/MIN";
+
+// No comment provided by engineer.
+"+%@" = "+%@";
+
+// Welcome Combat World Info popup
+"- Combat one competitors Island at a time, defeat them and win precious Gems.\n- You can combat three times every 6 hours.\n- Advance in leagues as you progress.\n- You won't lose any dragons in combats." = "- Walcz z jedną Wyspą przeciwnika na raz, pokonaj ją i wygraj wartościowe Klejnoty.\n- Możesz walczyć trzy razy co 6 godzin.\n- Awansuj w ligach dokonując postępów.\n- W walkach nie stracisz żadnego smoka.";
+
+// No comment provided by engineer.
+"A connection error has ocurred processing the message data. Please try it again later." = "Podczas przetwarzania polecenia wystąpił błąd. Spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"A friend assisted you" = "Znajomy ci asystował";
+
+// Start Hatching Popup View
+"A new %@ egg will be placed in the hatchery." = "Nowe jajko %@ zostanie umieszczone w wylęgarni.";
+
+// No comment provided by engineer.
+"A new version is available!\nUpdate the game to continue playing." = "Dostępna jest nowa wersja!\nUaktualnij grę aby kontynuować.";
+
+// No comment provided by engineer.
+"ACCEPT" = "AKCEPTUJ";
+
+// No comment provided by engineer.
+"ACCEPT AND SEND BACK" = "AKCEPTUJ I ODEŚLIJ";
+
+// No comment provided by engineer.
+"ACCEPT EGG" = "AKCEPTUJ JAJO";
+
+// No comment provided by engineer.
+"ACCEPT GEMS" = "AKCEPTUJ KLEJNOTY";
+
+// No comment provided by engineer.
+"ACCEPT JOB" = "AKCEPTUJ ZADANIE";
+
+// No comment provided by engineer.
+"Accepted. Check your storage!" = "Zaakceptowano. Sprawdź swój schowek!";
+
+// No comment provided by engineer.
+"ACCOUNT CONFIRMATION" = "POTWIERDZENIE KONTA";
+
+// No comment provided by engineer.
+"ADD FRIENDS" = "DODAJ ZNAJOMYCH";
+
+// No comment provided by engineer.
+"Address Book denied access. Please, enable access from your device Settings." = "Odmowa dostępu do Książki Adresowej. Umożliw dostęp zmieniając swoje ustawienia.";
+
+// No comment provided by engineer.
+"ADDRESS BOOK ERROR" = "BŁĄD KSIĄŻKI ADRESOWEJ";
+
+// No comment provided by engineer.
+"ADDRESS BOOK PERMISSIONS" = "POZWOLENIA KSIĄŻKI ADRESOWEJ";
+
+// 2 month notification reminder
+"All dragons are starving! Do something, hurry up!!" = "Wszystkie smoki są wygłodzone! Zrób coś, szybko!";
+
+// No comment provided by engineer.
+"All your staff is ready! Wait till the time ends to open your Dragon Market!" = "Twoi pracownicy są gotowi! Poczekaj aż skończy się czas by otworzyć swój Smoczy Market!";
+
+// No comment provided by engineer.
+"An error has occurred during the battle load. Please try it again later." = "Podczas ładowania walki wystąpił błąd. Spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"An error has occurred loading the messages data. Please try it again later." = "Podczas ładowania poleceń wystąpił błąd. Spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"An error has occurred loading the opponent data. Please try it again later." = "Podczas ładowania informacji przeciwnika wystąpił błąd. Spróbuj ponownie później.";
+
+// In App purchase items load failed message
+"An error occurred while loading the Packs items." = "Podczas ładowania Zastawów wystąpił błąd.";
+
+// No comment provided by engineer.
+"Are you sure you want to continue with your FACEBOOK progress?" = "Jesteś pewny, że chcesz kontynuować na FACEBOOKU?";
+
+// No comment provided by engineer.
+"Are you sure you want to continue with your MOBILE progress?" = "Jesteś pewny, że chcesz kontynuować na TELEFONIE?";
+
+// No comment provided by engineer.
+"Are you sure you want to log out?" = "Czy na pewno chcesz się wylogować?";
+
+// Combat quit message
+"Are you sure you want to quit?\nBy quitting you will lose the fight" = "Czy na pewno chcesz wyjść?\nWychodząc przegrasz walkę";
+
+// No comment provided by engineer.
+"Are you sure you want to sell %1$@ for %2$d gold?" = "Czy na pewno chcesz sprzedać %1$@ za %2$d złota?";
+
+// No comment provided by engineer.
+"Are you sure you want to sell for %@ gold?" = "Czy na pewno chcesz sprzedać za %@ złota?";
+
+// No comment provided by engineer.
+"Are you sure you want to sell your %1$@ for %2$d gold?" = "Czy na pewno chcesz sprzedać %1$@ za %2$d złota?";
+
+// No comment provided by engineer.
+"Arranging Shop items!" = "Przygotowywanie przedmiotów sklepowych!";
+
+// verb
+"Assist" = "Asystuj";
+
+// No comment provided by engineer.
+"Assist received" = "Otrzymano asystę";
+
+// noun
+"ASSISTS" = "POMOCNICY";
+
+// Combat World refill finished Notification
+"Attacks are now refilled in the Combat World! Ready?" = "Ataki są teraz uzupełnione w Świecie Walki! Gotowy?";
+
+// Attack refilled title popup
+"ATTACKS REFILLED" = "ATAKI UZUPEŁNIONE";
+
+// No comment provided by engineer.
+"BACK" = "WSTECZ";
+
+// No comment provided by engineer.
+"Battle" = "Walka";
+
+// Battle main Button title
+"BATTLE" = "WALKA";
+
+// No comment provided by engineer.
+"BATTLE ERROR" = "BŁĄD WALKI";
+
+// tournament wait popup
+"Before you can play your next tournament." = "Zanim będziesz mógł wziąć udział w następnym turnieju.";
+
+// Wait send gift
+"Before you can send another gift to your friend" = "Zanim będziesz mógł wysłać kolejny prezent znajomemu";
+
+// Wait send gift
+"Before you can send another gift to your friends" = "Zanim będziesz mógł wysłać kolejne prezenty znajomym";
+
+// Wait send invite request
+"Before you can send another help request" = "Zanim będziesz mógł wysłać kolejną prośbę o pomoc";
+
+// No comment provided by engineer.
+"BREED" = "ROZMNAŻAJ";
+
+// No comment provided by engineer.
+"BREEDING" = "ROZMNAŻANIE";
+
+// SpeedUp Breeding description
+"Breeding will finish in %1$@, do you want\nto finish it now for %2$d gems?" = "Rozmnażanie zakończy się za %1$@, czy chcesz zakończyć teraz za %2$d klejnotów?";
+
+// No comment provided by engineer.
+"Build a new %@ Habitat from the Shop!" = "Stwórz nowe Siedlisko %@ ze Sklepu!";
+
+// No comment provided by engineer.
+"BUILDING" = "BUDYNEK";
+
+// No comment provided by engineer.
+"BUILDING UPGRADE" = "ULEPSZANIE BUDYNKU";
+
+// Building finished Notification
+"Building's been improved! Check it out!" = "Budynek został ulepszony! Sprawdź go teraz!";
+
+// No comment provided by engineer.
+"BUILDINGS" = "BUDYNKI";
+
+// No comment provided by engineer.
+"BUSY COMBAT DRAGONS" = "SMOKI ZAJĘTE WALKĄ";
+
+// No comment provided by engineer.
+"BUY EGG" = "KUP JAJO";
+
+// No comment provided by engineer.
+"Buy Expansion With Gems" = "Kup Rozbudowę Za Klejnoty";
+
+// No comment provided by engineer.
+"Buy Expansion With Gold" = "Kup Rozbudowę Za Złoto";
+
+// No comment provided by engineer.
+"BUY FOR:" = "KUP ZA:";
+
+// No comment provided by engineer.
+"CAN'T BE UPGRADED!" = "NIE MOŻNA ULEPSZYĆ!";
+
+// No comment provided by engineer.
+"CANCEL" = "ANULUJ";
+
+// No comment provided by engineer.
+"CANNOT EXPAND" = "NIE MOŻNA ROZBUDOWAĆ";
+
+// No comment provided by engineer.
+"CATEGORY" = "KATEGORIA";
+
+// No comment provided by engineer.
+"Caterpillar Lily" = "Gąsienica Lily";
+
+// Tournament central button
+"CHANGE\nDRAGON" = "ZMIEŃ\nSMOKA";
+
+// No comment provided by engineer.
+"CHANGE DRAGON" = "ZMIEŃ SMOKA";
+
+// No comment provided by engineer.
+"Check out this game!" = "Wypróbuj tą grę!";
+
+// No comment provided by engineer.
+"CHOOSE AN ACCOUNT" = "WYBIERZ KONTO";
+
+// No comment provided by engineer.
+"Choose dragons" = "Wybierz smoki";
+
+// No comment provided by engineer.
+"CLEAR" = "USUŃ";
+
+// No comment provided by engineer.
+"CLEAR %@" = "USUŃ: %@";
+
+// Dragon Market finished Notification Button Action
+"Collect" = "Zbierz";
+
+// No comment provided by engineer.
+"COLLECT" = "ZBIERZ";
+
+// Building finished Notification Button Action
+"Collect Food" = "Zbierz Pożywienie";
+
+// Collect Gold Notification Button Action
+"Collect Gold" = "Zbierz Złoto";
+
+// No comment provided by engineer.
+"COMBAT" = "WALKA";
+
+// No comment provided by engineer.
+"COMBAT RESULT" = "WYNIKI WALKI";
+
+// Combat status
+"Combat started!" = "Walka się rozpoczęła!";
+
+// No comment provided by engineer.
+"COMBAT WORLD" = "ŚWIAT WALKI";
+
+// No comment provided by engineer.
+"COMBAT WORLD ERROR" = "BŁĄD ŚWIATA WALKI";
+
+// No comment provided by engineer.
+"COMBAT WORLD WARNING" = "OSTRZEŻENIE ŚWIATA WALKI";
+
+// No comment provided by engineer.
+"Combats left %d" = "Pozostało %d walk";
+
+// Item on shop is not still available
+"Coming soon" = "Wkrótce";
+
+// No comment provided by engineer.
+"COMING SOON!" = "WKRÓTCE!";
+
+// No comment provided by engineer.
+"COMPLETE %@" = "ZAKOŃCZ %@";
+
+// No comment provided by engineer.
+"COMPLETE BREEDING" = "ZAKOŃCZ ROZMNAŻANIE";
+
+// No comment provided by engineer.
+"COMPLETE GROWING FOOD" = "ZAKOŃCZ UPRAWĘ POŻYWIENIA";
+
+// No comment provided by engineer.
+"COMPLETE HATCHING" = "ZAKOŃCZ WYLĘGANIE";
+
+// No comment provided by engineer.
+"CONGRATULATIONS!" = "GRATULACJE!";
+
+// Tournament won message
+"Congratulations! You won the %1$@!\nNow you can enjoy your hard earned rest and come back in %2$d hours." = "Gratulacje! Wygrałeś %1$@!\nTeraz możesz cieszyć się zasłużonym odpoczynkiem i wróć za %2$d godziny.";
+
+// No comment provided by engineer.
+"Connection Error" = "Błąd Połączenia";
+
+// Building finished Notification
+"Construction complete! Ready for the opening?" = "Budowa zakończona! Gotowy na otwarcie?";
+
+// No comment provided by engineer.
+"Continue with\nFB PROGRESS" = "Kontynuuj\nGRĘ NA FB";
+
+// No comment provided by engineer.
+"Continue with\nMOBILE PROGRESS" = "Kontynuuj\nGRĘ NA TELEFONIE";
+
+// No comment provided by engineer.
+"Could not finish purchase. Please check your network connection and try again" = "Nie udało się zakończyć zakupu. Sprawdź swoje połączenie internetowe i spróbuj ponownie.";
+
+// No comment provided by engineer.
+"Could not login. Please check your network connection and try again" = "Logowanie nie powiodło się. Sprawdź swoje połączenie internetowe i spróbuj ponownie.";
+
+// No comment provided by engineer.
+"Could not login. We are experiencing some problems. Please try again later" = "Logowanie nie powiodło się. Mamy chwilowe problemy. Spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"Could not start purchase. Please check your network connection and try again" = "Nie udało się rozpocząć zakupu. Sprawdź swoje połączenie internetowe i spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"CREDITS" = "KREDYTY";
+
+// High efectiveness combat screen
+"CRITICAL" = "KRYTYCZNY";
+
+// No comment provided by engineer.
+"Current device" = "Obecne urządzenie";
+
+// No comment provided by engineer.
+"Daily Bonus" = "Dzienny Bonus";
+
+// Daily bonus popup title
+"DAILY BONUS" = "DZIENNY BONUS";
+
+// Daily Bonus finished Notification
+"Daily Bonus available! Don't miss it!" = "Dostępny jest Dzienny Bonus! Nie przegap go!";
+
+// No comment provided by engineer.
+"Dark" = "Mroczny";
+
+// No comment provided by engineer.
+"DECOR" = "DEKORACJA";
+
+// No comment provided by engineer.
+"DECORATION" = "DEKORACJA";
+
+// Defy Combat World popup
+"DEFY" = "ODRZUĆ";
+
+// Deus Mentor name
+"Deus" = "Deus";
+
+// No comment provided by engineer.
+"Did you like the battle? We hope you did! To keep on battling enter the Combat World or reach level %d and buy Stadium from the Shop." = "Podobała ci się walka? Mamy nadzieję, że tak! Aby walczyć dalej wejdź do Świata Walki lub kup Stadion w Sklepie po osiągnięciu poziomu %d.";
+
+// No comment provided by engineer.
+"Discover this amazing creature and make your own Dragon City!" = "Odryj to niesamowite stworzenie i stwórz swoje własne Dragon City!";
+
+// No comment provided by engineer.
+"DO YOU WANT MORE?" = "CHCESZ WIĘCEJ?";
+
+// No comment provided by engineer.
+"Don't wait and buy an extra expansion right now!" = "Nie zwlekaj i kup dodatkową rozbudowę teraz!";
+
+// No comment provided by engineer.
+"DRAGON" = "SMOK";
+
+// No comment provided by engineer.
+"Dragon Bell" = "Smoczy Dzwonek";
+
+// No comment provided by engineer.
+"DRAGON BUSY" = "SMOK JEST ZAJĘTY";
+
+// No comment provided by engineer.
+"DRAGON CITY" = "DRAGON CITY";
+
+// Dragon City Reminder Notification Button Action
+"Dragon City" = "Dragon City";
+
+// No comment provided by engineer.
+"Dragon City Friends" = "Znajomi z Dragon City";
+
+// No comment provided by engineer.
+"DRAGON CITY FRIENDS" = "ZNAJOMI Z DRAGON CITY";
+
+// No comment provided by engineer.
+"DRAGON GIFT" = "SMOCZY PREZENT";
+
+// Welcome Combat World popup
+"DRAGON LEAGUES" = "SMOCZE LIGI";
+
+// Map Button
+"DRAGON MARKET" = "SMOCZY MARKET";
+
+// No comment provided by engineer.
+"Dragon Market collect time has finished! Get your resources now!" = "Czas na zbieranie ze Smoczego Marketu skończył się! Zbierz swoje zasoby teraz!";
+
+// Dragon Market finished Notification
+"Dragon Market is bursting with resources: collect them!" = "Smoczy Market jest pełen zasobów: zbierz je!";
+
+// No comment provided by engineer.
+"DRAGONS" = "SMOKI";
+
+// No comment provided by engineer.
+"Dragons are getting ready!" = "Smoki szykują się!";
+
+// No comment provided by engineer.
+"Dragons are ready to get funny names!" = "Smoki są gotowe aby nadać im zabawne imiona!";
+
+// Breeding finished Notification
+"Dragons have finished breeding! Hatch the egg!" = "Smoki skończyły się rozmnażać! Wylęgaj jajko!";
+
+// No comment provided by engineer.
+"Dragons: %d" = "Smoki: %d";
+
+// No comment provided by engineer.
+"e-Mail" = "e-Mail";
+
+// No comment provided by engineer.
+"EARNINGS" = "DOCHODY";
+
+// No comment provided by engineer.
+"Electric" = "Elektryczny";
+
+// Welcome tournament popup - enter
+"ENTER" = "WEJDŹ";
+
+// No comment provided by engineer.
+"Error" = "Błąd";
+
+// No comment provided by engineer.
+"ERROR" = "BŁĄD";
+
+// Login to Facebook Popup
+"Error connecting to Facebook" = "Wystąpił błąd podczas łączenia się z Facebookiem";
+
+// No comment provided by engineer.
+"Error happened while accessing Address Book" = "Wystąpił błąd dostępu do Książki Adresowej";
+
+// No comment provided by engineer.
+"Error sharing with Facebook" = "Błąd podczas dzielenia się z Facebookiem";
+
+// No comment provided by engineer.
+"Establishing game goals!" = "Ustalanie celów gry!";
+
+// No comment provided by engineer.
+"EXPAND" = "ROZBUDUJ";
+
+// No comment provided by engineer.
+"EXPERIENCE" = "DOŚWIADCZENIE";
+
+// No comment provided by engineer.
+"EXTRA" = "DODATKOWY";
+
+// No comment provided by engineer.
+"Facebook" = "Facebook";
+
+// No comment provided by engineer.
+"FAQ" = "FAQ";
+
+// No comment provided by engineer.
+"FARM" = "FARMA";
+
+// No comment provided by engineer.
+"FEED" = "NAKARM";
+
+// Combat screen
+"Fight!" = "Walcz!";
+
+// No comment provided by engineer.
+"Fill for" = "Wypełnij za";
+
+// No comment provided by engineer.
+"Finishing Habitats maintenance!" = "Kończenie konserwacji Siedlisk!";
+
+// No comment provided by engineer.
+"Flame" = "Płomień";
+
+// No comment provided by engineer.
+"Flesh Eaters" = "Pożeracze Ciał";
+
+// No comment provided by engineer.
+"FOOD" = "POŻYWIENIE";
+
+// No comment provided by engineer.
+"food" = "pożywienie";
+
+// Building finished Notification
+"Food is ready to collect! Time to feed your dragons!" = "Pożywienie jest gotowe do zbioru! Czas nakarmić twoje smoki!";
+
+// Textfield is very small, translation should fit in about 8 characters or less
+"FOR FREE" = "ZA DARMO";
+
+// No comment provided by engineer.
+"Friend" = "Znajomy";
+
+// No comment provided by engineer.
+"Friends" = "Znajomi";
+
+// No comment provided by engineer.
+"Game Center" = "Centrum Gier";
+
+// No comment provided by engineer.
+"gems" = "klejnoty";
+
+// No comment provided by engineer.
+"GEMS" = "KLEJNOTY";
+
+// No comment provided by engineer.
+"Get a friend!" = "Zdobądź znajomego!";
+
+// No comment provided by engineer.
+"GET MORE" = "ZDOBĄDŹ WIĘCEJ";
+
+// No comment provided by engineer.
+"Get reward!" = "Zdobądź nagrodę!";
+
+// Textfield is very small, translation should fit in about 16 characters or less
+"GET THIS DRAGON" = "ZDOBĄDŹ TEGO SMOKA";
+
+// No comment provided by engineer.
+"Get your reward and start next League!!!" = "Otrzymaj swoją nagrodę i rozpocznij następną Ligę!!!";
+
+// No comment provided by engineer.
+"Getting rewards ready!" = "Przygotowywanie nagród!";
+
+// No comment provided by engineer.
+"GIFTS" = "PREZENTY";
+
+// No comment provided by engineer.
+"GO" = "IDŹ";
+
+// Facebook invitation Text
+"Go ahead and breed the cutest and rarest dragons you could ever imagine! Master them and teach them different skills! Create your special dragons kingdom on the floating island in the sky." = "Stwórz najsłodsze i najbardziej nietypowe smoki jakie możesz sobie wyobrazić! Zawładnij nimi i naucz przeróżnych umiejętności! Stwórz swoje specjalne smocze królestwo na wyspach unoszących się w przestworzach.";
+
+// No comment provided by engineer.
+"Go to Feed" = "Idź Karmić";
+
+// No comment provided by engineer.
+"Go to Shop" = "Idź do Sklepu";
+
+// No comment provided by engineer.
+"GO TO STORAGE" = "IDŹ DO SCHOWKA";
+
+// No comment provided by engineer.
+"GOAL COMPLETED" = "CEL WYKONANY";
+
+// No comment provided by engineer.
+"GOALS" = "CELE";
+
+// No comment provided by engineer.
+"GOLD" = "ZŁOTO";
+
+// No comment provided by engineer.
+"gold" = "złoto";
+
+// No comment provided by engineer.
+"GOOD LUCK!" = "POWODZENIA!";
+
+// No comment provided by engineer.
+"GROW FOOD" = "UPRAWIAJ ŻYWNOŚĆ";
+
+// HOURS
+"H" = "H";
+
+// HOURS
+"h" = "h";
+
+// No comment provided by engineer.
+"HABITAT" = "SIEDLISKO";
+
+// No comment provided by engineer.
+"HABITAT IN PROGRESS!" = "SIEDLISKO W TRAKCIE BUDOWY!";
+
+// No comment provided by engineer.
+"HABITATS" = "SIEDLISKA";
+
+// No comment provided by engineer.
+"HATCH" = "WYLĘGAJ";
+
+// Breeding finished Notification Button Action
+"Hatch Egg" = "Wylęgaj Jaja";
+
+// 3 days notification reminder
+"Have you checked your dragons lately? They're waiting!" = "Zaglądałeś ostatnio do swoich smoków? One czekają!";
+
+// No comment provided by engineer.
+"Help Us" = "Pomóż Nam";
+
+// No comment provided by engineer.
+"Help your friends by clicking on his dragon habitats!" = "Pomóż swoim znajomym klikając na jego smocze siedliska!";
+
+// No comment provided by engineer.
+"Here is %@ for you! Hope you like it." = "Oto %@ dla ciebie! Mam nadzieje, że ci się podoba.";
+
+// No comment provided by engineer.
+"Hey!\nYou know what I've been up to recently? Breeding and collecting all the special dragons in Dragon City.\nIt's the new game I'm addicted to and I'm sure you'll like it too!\nWant to be my neighbor? Let's play together!" = "Cześć!\nWiesz co nowego u mnie? Hoduję i zbieram wszystkie specjalne smoki w Dragon City.\nTo nowa gra od której nie mogę się oderwać i jestem pewny, że tobie również się spodoba!\nChcesz zostać moim sąsiadem? Zagrajmy razem!";
+
+// No comment provided by engineer.
+"Hi friend! I'm sending you a mystery egg! Do you want to know what's inside?" = "Witaj Kolego! Wysyłam ci tajemnicze jajo! Chcesz wiedzieć co jest w środku?";
+
+// No comment provided by engineer.
+"HIRE FRIENDS" = "ZATRUDNIJ ZNAJOMYCH";
+
+// No comment provided by engineer.
+"Hire Friends" = "Zatrudnij Znajomych";
+
+// No comment provided by engineer.
+"Hiring Friends..." = "Zatrudnianie znajomych...";
+
+// No comment provided by engineer.
+"HOME" = "DOM";
+
+// No comment provided by engineer.
+"Hot Dragon Chili" = "Ostra Smocza Papryczka";
+
+// No comment provided by engineer.
+"I just started playing Dragon City and all those cute little dragons are awesome! I'm sure you'll like it! Try it!" = "Właśnie zacząłem grać w Dragon City i te wszystkie słodkie smoki są wspaniałe! Na pewno tobie też się spodobają! Spróbuj!";
+
+// No comment provided by engineer.
+"I sent you a gift!" = "Wysłałem ci prezent!";
+
+// No comment provided by engineer.
+"Ice" = "Lodowy";
+
+// Daily bonus popup info text
+"If you play on consecutive days you get bigger prices!" = "Jeśli grasz codziennie dostaniesz lepsze nagrody!";
+
+// No comment provided by engineer.
+"If you store a Social Building you will loose all the workers, are you sure you want to store it?" = "Jeśli przechowasz Budynek Socjalny stracisz wszystkich pracowników. Czy na pewno chcesz to zrobic?";
+
+// No comment provided by engineer.
+"IGNORE" = "IGNORUJ";
+
+// No comment provided by engineer.
+"Impossible to send SMS" = "Nie można wysłać SMS";
+
+// No comment provided by engineer.
+"Info" = "Info";
+
+// No comment provided by engineer.
+"INFO" = "INFO";
+
+// No comment provided by engineer.
+"INFORMATION" = "INFORMACJA";
+
+// No comment provided by engineer.
+"Invite" = "Zaproś";
+
+// No comment provided by engineer.
+"INVITE" = "ZAPROŚ";
+
+// No comment provided by engineer.
+"Invite 3 new friends and get Special Dragons for free!" = "Zaproś 3 nowych znajomych a dostaniesz Specjalnego Smoka za darmo!";
+
+// No comment provided by engineer.
+"INVITE NEW FRIENDS" = "ZAPROŚ NOWYCH ZNAJOMYCH!";
+
+// No comment provided by engineer.
+"Inviting Friends..." = "Zapraszanie znajomych...";
+
+// No comment provided by engineer.
+"Islands: %d" = "Wyspy: %d";
+
+// No comment provided by engineer.
+"It was not possible to visit your Friend. Please check your network connection and try it again." = "Nie udało się odwiedzić twojego znajomego. Sprawdź swoje połączenie internetowe i spróbuj ponownie.";
+
+// No comment provided by engineer.
+"Item %@ has been purchased correctly" = "Przedmiot %@ został kupiony poprawnie.";
+
+// No comment provided by engineer.
+"ITEM PURCHASED" = "KUPIONY PRZEDMIOT";
+
+// Combat World lose message
+"KEEP TRYING HARDER!" = "MUSISZ STARAĆ SIĘ MOCNIEJ!";
+
+// No comment provided by engineer.
+"Ladybird Blossom" = "Kwiat Biedronkowy";
+
+// Rate app popup remind later button text
+"LATER" = "PÓŹNIEJ";
+
+// No comment provided by engineer.
+"Latest news being updated!" = "Najnowsze wiadomości są aktualizowane!";
+
+// No comment provided by engineer.
+"League %d Reward:" = "Nagroda Ligi %d:";
+
+// No comment provided by engineer.
+"League Progress" = "Postęp Ligi";
+
+// No comment provided by engineer.
+"Legend" = "Legendarny";
+
+// No comment provided by engineer.
+"Level" = "Poziom";
+
+// No comment provided by engineer.
+"LEVEL" = "POZIOM";
+
+// No comment provided by engineer.
+"LEVEL %d" = "POZIOM %d";
+
+// No comment provided by engineer.
+"Level %d" = "Poziom %d";
+
+// No comment provided by engineer.
+"Level up to be able to upgrade!" = "Podnieś swój poziom aby móc ulepszyć!";
+
+// No comment provided by engineer.
+"LEVEL UP!" = "POZIOM W GÓRĘ!";
+
+// No comment provided by engineer.
+"LOAD ERROR" = "BŁĄD ŁADOWANIA";
+
+// No comment provided by engineer.
+"Loading your friend's islands!" = "Wczytywanie wysp twoich znajomych!";
+
+// combat screen
+"LOCKED" = "ZABLOKOWANY";
+
+// No comment provided by engineer.
+"LOG IN" = "ZALOGUJ SIĘ";
+
+// No comment provided by engineer.
+"LOG OUT" = "WYLOGUJ SIĘ";
+
+// No comment provided by engineer.
+"Login and start playing" = "Zaloguj się i zacznij grę";
+
+// No comment provided by engineer.
+"Login to Facebook" = "Zaloguj się do Facebooka";
+
+// No comment provided by engineer.
+"Login to Facebook to connect\nwith your friends!" = "Zaloguj się do Facebooka\naby połączyć się ze znajomymi!";
+
+// No comment provided by engineer.
+"Login to Facebook to have a better game experience and be able to play with friends!" = "Zaloguj się do Facebooka aby mocniej doświadczać zabawy i grać ze znajomymi!";
+
+// No comment provided by engineer.
+"Login to Facebook to hire your friends!" = "Zaloguj się do Facebooka aby zatrudnić znajomych!";
+
+// No comment provided by engineer.
+"Login to Facebook to send gifts\nto your friends!" = "Zaloguj się do Facebooka aby wysyłać prezenty\nswoim znajomym!";
+
+// No comment provided by engineer.
+"Login to Facebook to share your combats with your friends" = "Zaloguj się do Facebooka aby podzielić się walkami ze swoimi znajomymi.";
+
+// No comment provided by engineer.
+"Login to Facebook to share your progress with your friends" = "Zaloguj się do Facebooka aby podzielić się swoimi postępami ze znajomymi.";
+
+// No comment provided by engineer.
+"Login to Facebook to visit your friends!" = "Zaloguj się do Facebooka aby odwiedzić znajomych!";
+
+// No comment provided by engineer.
+"Login to Facebook..." = "Zaloguj się do Facebooka...";
+
+// MINUTES
+"m" = "m";
+
+// No comment provided by engineer.
+"MAIL ACCOUNT" = "KONTO MAILOWE";
+
+// No comment provided by engineer.
+"MAX DRAGONS" = "MAX SMOKÓW";
+
+// No comment provided by engineer.
+"MAX GOLD" = "MAX ZŁOTA";
+
+// No comment provided by engineer.
+"MAXIMUM LEVEL!" = "MAKSYMALNY POZIOM!";
+
+// No comment provided by engineer.
+"MENU" = "MENU";
+
+// No comment provided by engineer.
+"Message" = "Wiadomość";
+
+// No comment provided by engineer.
+"MESSAGE CENTER ERROR" = "BŁĄD CENTRUM WIADOMOŚCI";
+
+// No comment provided by engineer.
+"Messages" = "Wiadomości";
+
+// No comment provided by engineer.
+"Messages:" = "Wiadomości:";
+
+// No comment provided by engineer.
+"Metal" = "Metalowy";
+
+// MINUTES
+"MIN" = "MIN";
+
+// No comment provided by engineer.
+"More Combats in:" = "Więcej Walk za:";
+
+// No comment provided by engineer.
+"MOVE" = "PRZESUŃ";
+
+// No comment provided by engineer.
+"MUSIC" = "MUZYKA";
+
+// No comment provided by engineer.
+"Nature" = "Natura";
+
+// No comment provided by engineer.
+"NETWORK STATUS" = "STATUS SIECI";
+
+// goals 'NEW' label inside circle. 5 chars maximum
+"NEW" = "NOWE";
+
+// No comment provided by engineer.
+"NEW VERSION" = "NOWA WERSJA";
+
+// No comment provided by engineer.
+"News" = "Wiadomości";
+
+// No comment provided by engineer.
+"NEWS" = "WIADOMOŚCI";
+
+// No comment provided by engineer.
+"NEXT LEAGUE" = "NASTĘPNA LIGA";
+
+// Tournament won message
+"NICE!" = "SUPER!";
+
+// No comment provided by engineer.
+"NO" = "NIE";
+
+// No comment provided by engineer.
+"No" = "Nie";
+
+// None efectiveness combat screen
+"NO EFFECT" = "BRAK EFEKTU";
+
+// No comment provided by engineer.
+"NO FRIENDS" = "BRAK ZNAJOMYCH";
+
+// No comment provided by engineer.
+"No Thanks" = "Nie Dziękuję";
+
+// No comment provided by engineer.
+"NO VALID HABITAT!" = "BRAK ODPOWIEDNIEGO SIEDLISKA!";
+
+// Rate app popup no button text
+"NO, THANKS" = "NIE, DZIĘKI";
+
+// No comment provided by engineer.
+"NOT BREEDABLE!" = "NIE MOŻNA ROZMNOŻYĆ!";
+
+// No comment provided by engineer.
+"NOT ENOUGH DRAGONS" = "ZA MAŁO SMOKÓW";
+
+// Not enought food popup info
+"NOT ENOUGH FOOD" = "ZA MAŁO POŻYWIENIA";
+
+// Not enought gems popup info
+"NOT ENOUGH GEMS" = "ZA MAŁO KLEJNOTÓW";
+
+// No comment provided by engineer.
+"Not enough Gems to expand" = "Za mało Klejnotów na rozbudowę.";
+
+// Not enought gold popup info
+"NOT ENOUGH GOLD" = "ZA MAŁO ZŁOTA";
+
+// No comment provided by engineer.
+"Not enough Gold to expand" = "Za mało Złota na rozbudowę.";
+
+// No comment provided by engineer.
+"Not enough neighbours to buy an expansion with GOLD" = "Za mało sąsiadów by kupić rozbudowę za ZŁOTO.";
+
+// No comment provided by engineer.
+"NOT ENOUGH SPACE" = "ZA MAŁO MIEJSCA";
+
+// No comment provided by engineer.
+"NOTIFICATIONS" = "ZAWIADOMIENIA";
+
+// Daily Bonus Share
+"Now %s can get new dragons and decorations! Only available in Dragon City!" = "Teraz %s może zdobyć nowe smoki i dekoracje! Dostępne tylko w Dragon City!";
+
+// No comment provided by engineer.
+"OBSTACLE" = "PRZESZKODA";
+
+// No comment provided by engineer.
+"OK" = "OK";
+
+// No comment provided by engineer.
+"OKAY" = "OKEJ";
+
+// Building finished Notification Button Action
+"Open Building" = "Otwórz Budynek";
+
+// No comment provided by engineer.
+"Open Building!" = "Otwórz Budynek!";
+
+// Combat status
+"OPPONENT" = "PRZECIWNIK";
+
+// Combat dragon status
+"OPPONENT'S TURN" = "KOLEJ PRZECIWNIKA";
+
+// No comment provided by engineer.
+"OPTIONS" = "OPCJE";
+
+// No comment provided by engineer.
+"PACKS" = "ZESTAWY";
+
+// In App purchase items load failed title
+"PACKS LOADING ERROR" = "BŁĄD ŁADOWANIA ZESTAWÓW";
+
+// No comment provided by engineer.
+"PENDING PURCHASE" = "OCZEKUJĄCE ZAMÓWIENIE";
+
+// No comment provided by engineer.
+"PLACE" = "UMIEŚĆ";
+
+// Hatching finished Notification Button Action
+"Place Dragon" = "Umieść Smoka";
+
+// No comment provided by engineer.
+"Play Dragon City!" = "Zagraj w Dragon City!";
+
+// Combat status
+"PLAYER" = "GRACZ";
+
+// No comment provided by engineer.
+"Please help me to open the %@" = "Proszę pomóż mi otworzyć %@";
+
+// No comment provided by engineer.
+"Please help me to open the Dragon Market" = "Proszę pomóż mi otworzyć Smoczy Market!";
+
+// No comment provided by engineer.
+"Please help me to open the Recruitment Tavern" = "Proszę pomóż mi otworzyć Tawernę Rekrutacyjną!";
+
+// No comment provided by engineer.
+"Please select at least 1 dragon" = "Wybierz przynajmniej 1 smoka.";
+
+// No comment provided by engineer.
+"Posting to Facebook..." = "Umieszczanie na Facebooku...";
+
+// No comment provided by engineer.
+"Prizes are waiting for you!" = "Nagrody czekają na ciebie!";
+
+// No comment provided by engineer.
+"PROGRESS" = "POSTĘP";
+
+// Button title for failed In App purchase
+"PURCHASE ERROR" = "BŁĄD ZAKUPU";
+
+// No comment provided by engineer.
+"Purchasing item..." = "Kupowanie przedmiotu...";
+
+// No comment provided by engineer.
+"Pure" = "Czystości";
+
+// No comment provided by engineer.
+"Pure Dark" = "Czystego Mroku";
+
+// No comment provided by engineer.
+"Pure Electric" = "Czystej Elektryczności";
+
+// No comment provided by engineer.
+"Pure Flame" = "Czystego Płomienia";
+
+// No comment provided by engineer.
+"Pure Ice" = "Czystego Lodu";
+
+// No comment provided by engineer.
+"Pure Metal" = "Czystego Metalu";
+
+// No comment provided by engineer.
+"Pure Nature" = "Czystej Natury";
+
+// No comment provided by engineer.
+"Pure Sea" = "Czystego Morza";
+
+// No comment provided by engineer.
+"Pure Terra" = "Czysta Terra";
+
+// Combat quit popup title
+"QUIT CONFIRM" = "POTWIERDZENIE WYJŚCIA";
+
+// No comment provided by engineer.
+"Rainbow Flower" = "Kwiat Tęczowy";
+
+// No comment provided by engineer.
+"Raising floating islands!" = "Wznoszenie unoszących się wysp!";
+
+// No comment provided by engineer.
+"RANK" = "RANKING";
+
+// No comment provided by engineer.
+"Rank information" = "Informacja o rankingu";
+
+// Rate app popup yes button text
+"RATE IT NOW" = "OCEŃ TO TERAZ";
+
+// Rate app popup title
+"RATE THIS APP" = "OCEŃ TĄ APLIKACJĘ";
+
+// No comment provided by engineer.
+"Reach level %1$s to build %2$s more buildings of this kind." = "Musisz być na poziomie %1$s aby zbudować %2$s więcej budynków tego typu.";
+
+// No comment provided by engineer.
+"Reach level %d to enable this mode and win large amounts of gems" = "Musisz być na poziomie %d aby aktywować ten tryb i wygrać dużo klejnotów.";
+
+// No comment provided by engineer.
+"Reach level %s to build more buildings of this kind." = "Osiągnij poziom %s aby stworzyć więcej budynków tego typu.";
+
+// No comment provided by engineer.
+"READY IN" = "GOTOWY ZA";
+
+// Wait Stadium finished Notification
+"Ready to fight? Prove who's the best Dragon Master!" = "Gotowy do walki? Udowodnij kto jest najlepszym Władcą Smoków!";
+
+// Combat screen
+"Ready?" = "Gotowy?";
+
+// No comment provided by engineer.
+"RECRUIT" = "REKRUTUJ";
+
+// No comment provided by engineer.
+"RECRUITMENT" = "REKRUTACJA";
+
+// No comment provided by engineer.
+"Recruitment completed!\nChoose your Dragon and get your Reward!" = "Rekrutacja zakończona!\nWybierz swojego Smoka i odbierz Nagrodę!";
+
+// No comment provided by engineer.
+"RELOAD" = "ŁADUJ PONOWNIE";
+
+// No comment provided by engineer.
+"REMOVE" = "USUŃ";
+
+// No comment provided by engineer.
+"REQUIRES LEVEL %d" = "WYMAGANY POZIOM %d";
+
+// No comment provided by engineer.
+"Requires: %1$d neighbours\nYou have: %2$d neighbours" = "Potrzeba: %1$d sąsiadów\nTy masz: %2$d sąsiadów";
+
+// Tournament results title
+"RESULTS" = "WYNIKI";
+
+// No comment provided by engineer.
+"Returning Home" = "Powrót do Domu";
+
+// No comment provided by engineer.
+"REVENUES" = "WPŁYWY";
+
+// No comment provided by engineer.
+"REWARD" = "NAGRODA";
+
+// goals rewards
+"Rewards:" = "Nagrody:";
+
+// SECONDS
+"s" = "s";
+
+// No comment provided by engineer.
+"Scattering objects across the island!" = "Rozrzucanie przedmiotów po całej wyspie!";
+
+// No comment provided by engineer.
+"Sea" = "Morski";
+
+// No comment provided by engineer.
+"Searching friends..." = "Szukanie znajomych...";
+
+// SECONDS
+"SEC" = "SEC";
+
+// No comment provided by engineer.
+"SELECT" = "WYBIERZ";
+
+// No comment provided by engineer.
+"SELECT 50" = "WYBIERZ 50";
+
+// No comment provided by engineer.
+"SELECT ALL" = "WYBIERZ WSZYSTKO";
+
+// No comment provided by engineer.
+"Select at least 1 friend" = "Wybierz przynajmniej 1 znajomego.";
+
+// No comment provided by engineer.
+"SELECT DRAGON" = "WYBIERZ SMOKA";
+
+// No comment provided by engineer.
+"Select dragons" = "Wybierz smoki";
+
+// No comment provided by engineer.
+"SELECT DRAGONS" = "WYBIERZ SMOKI";
+
+// Title for select friends to send gift popup
+"SELECT FRIENDS" = "WYBIERZ ZNAJOMYCH";
+
+// No comment provided by engineer.
+"Select the resource you want to acquire" = "Wybierz zasoby, które chcesz nabyć.";
+
+// No comment provided by engineer.
+"SELECT YOUR DRAGONS" = "WYBIERZ SWOJE SMOKI";
+
+// No comment provided by engineer.
+"Selected Dragon is already breeding" = "Wybrany Smok już się rozmnaża.";
+
+// No comment provided by engineer.
+"SELL" = "SPRZEDAJ";
+
+// No comment provided by engineer.
+"SELL %@" = "SPRZEDAJ %@";
+
+// No comment provided by engineer.
+"SELL DRAGON" = "SPRZEDAJ SMOKA";
+
+// No comment provided by engineer.
+"SELL EGG" = "SPRZEDAJ JAJKO";
+
+// No comment provided by engineer.
+"Send a Gift" = "Wyślij Prezent";
+
+// No comment provided by engineer.
+"SEND FREE GIFTS" = "WYŚLIJ DARMOWE PREZENTY";
+
+// Title for send gift button
+"SEND GIFT" = "WYŚLIJ PREZENT";
+
+// No comment provided by engineer.
+"Send Gifts" = "Wyślij Prezenty";
+
+// No comment provided by engineer.
+"Send gifts to your friends so they'll send you some back" = "Wysyłaj prezenty do znajomych a oni też ci odeślą!";
+
+// No comment provided by engineer.
+"SEND ONE BACK!" = "ODEŚLIJ JEDEN!";
+
+// No comment provided by engineer.
+"SEND!" = "WYŚLIJ!";
+
+// No comment provided by engineer.
+"Sending Gift..." = "Wysyłanie Prezentu...";
+
+// No comment provided by engineer.
+"Sending Gifts..." = "Wysyłanie Prezentów...";
+
+// Tournament share button
+"SHARE" = "PODZIEL SIĘ";
+
+// Daily bonus popup share button title
+"SHARE!" = "PODZIEL SIĘ!";
+
+// No comment provided by engineer.
+"Shared with Facebook" = "Przesłane na Facebooka";
+
+// Shared Daily Bonus Popup
+"Shared!" = "PODZIELONO SIĘ!";
+
+// No comment provided by engineer.
+"SHOP" = "SKLEP";
+
+// No comment provided by engineer.
+"Show All" = "Pokaż wszystko";
+
+// No comment provided by engineer.
+"SMS" = "SMS";
+
+// No comment provided by engineer.
+"SMS ERROR" = "BŁĄD SMS";
+
+// No comment provided by engineer.
+"SOCIAL" = "SOCJALNY";
+
+// No comment provided by engineer.
+"Social Building" = "Budynek Socjalny";
+
+// No comment provided by engineer.
+"Social Point Staff" = "Staff Social Point";
+
+// No comment provided by engineer.
+"Some of your previously selected combat dragons are busy right now, please select new ones." = "Niektóre z poprzednio wybranych smoków do walki są teraz zajęte, wybierz inne.";
+
+// No comment provided by engineer.
+"Something is not working fine.\nPlease reload the game" = "Coś nie działa prawidłowo.\nUruchom grę ponownie.";
+
+// No comment provided by engineer.
+"Something is not working fine.\nPlease try again" = "Coś nie działa prawidłowo.\nSpróbuj ponownie.";
+
+// No comment provided by engineer.
+"SOMETHING WENT WRONG" = "COŚ POSZŁO NIE TAK";
+
+// Message error for failed In App purchase
+"Something went wrong. We are working on it!\nPlease try it again in a few minutes." = "Coś poszło nie tak. Pracujemy nad tym!\nSpróbuj ponownie za kilka minut.";
+
+// Tournament lose message
+"Sorry, this time you lost. Grow higher level dragons to get more powerful attacks and come back in %d hours." = "Niestety tym razem przegrałeś. Wyhoduj smoki na wyższych poziomach aby zdobyć silniejsze ataki i wróć za %d godzin.";
+
+// No comment provided by engineer.
+"SOUNDS" = "DŹWIĘKI";
+
+// No comment provided by engineer.
+"SPEED UP" = "PRZYŚPIESZENIE";
+
+// speed up
+"Speed Up For" = "Przyśpiesz za";
+
+// No comment provided by engineer.
+"Speed up for %d          " = "Przyśpiesz za %d          ";
+
+// No comment provided by engineer.
+"Spike Balls" = "Kolczaste Kule";
+
+// No comment provided by engineer.
+"Star Shines" = "Świecące Gwiazdki";
+
+// No comment provided by engineer.
+"START BREEDING!" = "ROZPOCZNIJ ROZMNAŻANIE!";
+
+// No comment provided by engineer.
+"Start Inviting!" = "Rozpocznij Zapraszanie!";
+
+// No comment provided by engineer.
+"START!" = "START!";
+
+// No comment provided by engineer.
+"STORAGE" = "SCHOWEK";
+
+// verb
+"STORE" = "PRZECHOWALNIA";
+
+// No comment provided by engineer.
+"STORE %@" = "PRZECHOWAJ %@";
+
+// No comment provided by engineer.
+"STORE SOCIAL BUILDING" = "PRZECHOWAJ BUDYNEK SOCJALNY";
+
+// Request sent successfully
+"Success!" = "Sukces!";
+
+// No comment provided by engineer.
+"Synchronizing..." = "Synchronizowanie...";
+
+// No comment provided by engineer.
+"TAKE EGG" = "WEŹ JAJO";
+
+// No comment provided by engineer.
+"Terra" = "Terra";
+
+/* No comment provided by engineer. */
+"The dragon name must be shorter than 17 characters" = "Imię smoka może zawierać maksymalnie 16 znaków";
+
+// No comment provided by engineer.
+"Thank you for login with Facebook. Your reward is this %@! You can find it in the storage." = "Dziękujemy za zalogowanie się na FacebookU. W nagrodę otrzymujesz %@! Możesz znaleźć to w schowku.";
+
+// Rate app popup info text
+"Thanks for playing the game. If you like it, please take some time to rate it on the App Store" = "Dziękujemy za skorzystanie z gry. Jeśli ci się podobała, prosimy oceń ją w Sklepie z Aplikacjami.";
+
+// No comment provided by engineer.
+"The current purchase couldn't be started because the previous one is still being processed.\nPlease try it again later." = "Aktualny zakup nie mógł się rozpocząć, ponieważ poprzedni jeszcze nie został sfinalizowany. Spróbuj ponownie później.";
+
+// Hatching finished Notification
+"The egg is cracking! Place your newborn dragon!" = "Jajo zaczyna pękać! Umieść swojego nowonarodzonego smoka!";
+
+// No comment provided by engineer.
+"The Hatchery is full! Hatch the current eggs first." = "Wylęgarnia jest pełna! Najpierw zakończ wylęgać jaja.";
+
+// No comment provided by engineer.
+"The mystery egg contains %1$@! Check your storage" = "Tajemnicze jajo zawiera %1$@! Sprawdź swój schowek.";
+
+// No comment provided by engineer.
+"The process will finish in %1$@, do you want to finish it now for %2$d gems?" = "Proces zakończy się za %1$@, czy chcesz zakończyć teraz za %2$d klejnotów?";
+
+// No comment provided by engineer.
+"The Sun is shining!" = "Słońce świeci!";
+
+// Training Center
+"The training center will open the gates very soon!" = "Centrum Szkoleniowe już niedługo otworzy swoje bramy!";
+
+// 1 week notification reminder
+"There are lots of gold in your habitats! Take it all!" = "Na twoich siedliskach jest dużo złota! Zbierz je wszystkie!";
+
+// No comment provided by engineer.
+"There are no remaining expansions on your Island/s, please unlock the next Island" = "Na twoich Wyspach nie ma już możliwości rozbudowy, odblokuj kolejną Wyspę.";
+
+// No comment provided by engineer.
+"There is not enough space, try to move some buildings or sell them to place this new building" = "Nie ma wystarczająco dużo miejsca, przesuń niektóre budynki lub sprzedaj je aby umieścić nowy.";
+
+// No comment provided by engineer.
+"There is not enough space, try to move some buildings or sell them to upgrade this building" = "Nie ma wystarczająco dużo miejsca, przesuń niektóre budynki lub sprzedaj je aby ulepszyć ten budynek.";
+
+// No comment provided by engineer.
+"There was an error connecting with Facebook, please try again later" = "Błąd połączenia z Facebookiem, spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"There was an error retrieving information from server" = "Wystąpił błąd pobierania informacji z serwera.";
+
+// No comment provided by engineer.
+"There was an error retrieving the server information, please try again later" = "Błąd pobierania informacji z serwera, spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"This dragon needs %1$d more victories to reach the next rank. This will make %2$@ stronger!" = "Ten smok potrzebuje %1$d więcej zwycięstw aby osiągnąć wyższy ranking. To sprawi, że %2$@ będzie silniejszy!";
+
+// No comment provided by engineer.
+"This dragon was included in your combat world dragon team. Remember to replace it before start a league combat." = "Ten smok należał do twojej smoczej drużyny w świecie walki. Pamiętaj aby wymienić go przed walką ligową.";
+
+// No comment provided by engineer.
+"This item will be supported in the future." = "Ten przedmiot będzie obsługiwany w przyszłości.";
+
+// No comment provided by engineer.
+"Time Left:  %@" = "Pozostały Czas:  %@";
+
+// No comment provided by engineer.
+"Timeout Error" = "Błąd Przekroczenia Czasu";
+
+// No comment provided by engineer.
+"To battle your friends you first need to be logged in Facebook" = "Aby walczyć ze swoimi znajomymi najpierw musisz zalogować się na Facebooka.";
+
+// Today Daily Bonus Popup
+"Today" = "Dzisiaj";
+
+// Tomorrow Daily Bonus Popup
+"Tomorrow" = "Jutro";
+
+// No comment provided by engineer.
+"TOO MANY BUILDINGS" = "ZA DUŻO BUDOWLI";
+
+// No comment provided by engineer.
+"TOO SMALL!" = "ZA MAŁY!";
+
+// Welcome tournament popup - tournament
+"TOURNAMENT" = "TURNIEJ";
+
+// No comment provided by engineer.
+"TRAIN" = "TRENUJ";
+
+// No comment provided by engineer.
+"TRY AGAIN" = "SPRÓBUJ PONOWNIE";
+
+// No comment provided by engineer.
+"Unable to contact with Dragon City servers. Please try again later." = "Nie można połączyć się z serwerami Dragon City. Spróbuj ponownie później.";
+
+// No comment provided by engineer.
+"Unicorn Horns" = "Rogi Jednorożca";
+
+// No comment provided by engineer.
+"UNLOCK FOR:" = "ODBLOKUJ ZA:";
+
+// No comment provided by engineer.
+"Unlock Ivory Island" = "Odblokuj Wyspę Kości Słoniowej";
+
+// No comment provided by engineer.
+"Unlock Lava Island" = "Odblokuj Wyspę Lawy";
+
+// No comment provided by engineer.
+"Unlock Lush Island" = "Odblokuj Bujną Wyspę";
+
+// No comment provided by engineer.
+"Unlock Next Island" = "Odblokuj Następną Wyspę";
+
+// No comment provided by engineer.
+"Unlock your next island and fill it with dragons" = "Odblokuj swoją kolejną wyspę i wypełnij ją smokami!";
+
+// No comment provided by engineer.
+"UNSELECT" = "ODZNACZ";
+
+// No comment provided by engineer.
+"Update" = "Aktualizuj";
+
+// No comment provided by engineer.
+"UPGRADE" = "ULEPSZ";
+
+// No comment provided by engineer.
+"Upgrade for" = "Ulepsz za";
+
+// No comment provided by engineer.
+"USE" = "UŻYJ";
+
+// No comment provided by engineer.
+"VERSUS" = "KONTRA";
+
+// No comment provided by engineer.
+"VISIT" = "ODWIEDŹ";
+
+// No comment provided by engineer.
+"VISIT FRIEND" = "ODWIEDŹ ZNAJOMEGO";
+
+// No comment provided by engineer.
+"WAIT:" = "CZEKAJ:";
+
+// No comment provided by engineer.
+"Waiting %@" = "Czekanie %@";
+
+// No comment provided by engineer.
+"WATCH OUT!" = "UWAŻAJ!";
+
+// No comment provided by engineer.
+"We are working to add new goals.\nCome back soon!" = "Pracujemy nad dodaniem nowych celów.\nWróć niedługo!";
+
+// No comment provided by engineer.
+"We detected an error the last time you played, would you like to send us information?" = "Podczas twojej ostatniej gry wykryliśmy błąd, chciałbyś wysłać nam informacje?";
+
+// No comment provided by engineer.
+"We've seen that you have 2 accounts.\nPlease choose the one you would like to continue with." = "Posiadasz 2 konta.\nWybierz to na którym chcesz kontynuować.";
+
+// Low efectiveness combat screen
+"WEAK" = "SŁABY";
+
+// No comment provided by engineer.
+"What would you like to do with your new %@?" = "Co chcesz zrobić ze swoim nowym %@?";
+
+// No comment provided by engineer.
+"Worker" = "Pracownik";
+
+// No comment provided by engineer.
+"Would you like everybody know?" = "Chcesz aby wszyscy się dowiedzieli?";
+
+// No comment provided by engineer.
+"x%d" = "x%d";
+
+// No comment provided by engineer.
+"xp" = "Doświadczenie";
+
+// No comment provided by engineer.
+"YES" = "TAK";
+
+// No comment provided by engineer.
+"Yes" = "Tak";
+
+// No comment provided by engineer.
+"YOU ARE ABOUT TO ENTER A COMBAT!" = "ZARAZ ROZPOCZNIESZ WALKĘ!";
+
+// Welcome tournament popup
+"You are about to enter a tournament. Pick your team of Dragons\nand you can win generous rewards" = "Zaraz weźmiesz udział w turnieju. Wybierz swoją drużynę Smoków\na będziesz mógł wygrać cenne nagrody!";
+
+// No comment provided by engineer.
+"You bought a new island!" = "Kupiłeś nową wyspę!";
+
+// No comment provided by engineer.
+"You can't buy new islands before you complete the ones you have" = "Nie możesz kupić nowych wysp dopóki nie ukończysz tych które już masz.";
+
+// No comment provided by engineer.
+"You cannot add more buildings of this kind." = "Nie możesz dodać więcej budynków tego typu.";
+
+// No comment provided by engineer.
+"You don't have any friends that play the game! Invite them so they start playing!" = "Żaden z twoich znajomych nie gra w grę! Zaproś ich aby też zaczęli zabawę!";
+
+// No comment provided by engineer.
+"You don't have any Mail account configured. Please, create one before inviting your friends by mail" = "Nie masz skonfigurowanego żadnego konta mailowego. Stwórz konto zanim zaprosisz znajomych mailowo.";
+
+// No comment provided by engineer.
+"You expanded your island!" = "Rozbudowałeś swoją wyspę!";
+
+// Food Daily Bonus Popup
+"You get %@ food!" = "Dostajesz %@ jedzenia!";
+
+// Gems Daily Bonus Popup
+"You get %@ gems!" = "Dostajesz %@ klejnotów!";
+
+// Gold Daily Bonus Popup
+"You get %@ gold!" = "Dostajesz %@ złota!";
+
+// No comment provided by engineer.
+"You got new %@!" = "Dostałeś nowy %@!";
+
+// No comment provided by engineer.
+"You Have 0 Gifts" = "Masz 0 Prezentów";
+
+// No comment provided by engineer.
+"You have 0 messages." = "Masz 0 wiadomości";
+
+// No comment provided by engineer.
+"You have a %@ Habitat in progress, please wait for it to finish" = "Twoje %@ Siedlisko jest w trakcie budowy, poczekaj aż się skończy.";
+
+// No comment provided by engineer.
+"You have already unlocked all islands!" = "Już odblokowałeś wszystkie wyspy!";
+
+// No comment provided by engineer.
+"You have no more combats left.\nPlease wait %@" = "Nie masz już żadnych możliwych walk.\nZaczekaj %@";
+
+// No comment provided by engineer.
+"You have reached Level" = "Osiągnąłeś Poziom";
+
+// No comment provided by engineer.
+"You have received a very special GEMS gift" = "Otrzymałeś bardzo wyjątkowe KLEJNOTY w prezencie!";
+
+// Tournament lost title
+"YOU LOST..." = "PRZEGRAŁEŚ...";
+
+// No comment provided by engineer.
+"You must first deselect a dragon if you want to choose this one" = "Najpierw musisz odznaczyć jakiegoś smoka aby wybrać tego.";
+
+// No comment provided by engineer.
+"You must log in Game Center before access this menu" = "Musisz zalogować się do Centrum Gry aby wejść w to menu.";
+
+// No comment provided by engineer.
+"You must select two dragons to be able to breed" = "Musisz wybrać dwa smoki aby je sparować.";
+
+// No comment provided by engineer.
+"You need at least one dragon of level %d or greater to fight" = "Potrzebujesz przynajmniej jednego smoka na poziomie %d lub wyższym aby walczyć.";
+
+// No comment provided by engineer.
+"You need to allow Facebook privacy settings to Dragon City in order to play\n" = "Musisz udostępnić ustawienia prywatności Facebooka w Dragon City aby zagrać\n";
+
+// No comment provided by engineer.
+"You need to login again with facebook to reenable permissions. Please try again." = "Musisz ponownie zalogować się na facebooka aby aktywować pozwolenia. Spróbuj ponownie.";
+
+// No Friends
+"You still don't have any friend playing Dragon City!\nStart inviting them all!" = "Wciąż nie masz znajomych grających w Dragon City!\nZacznij ich zapraszać!";
+
+// No comment provided by engineer.
+"You still don't have friends playing Dragon City.\nInvite them to start sending amazing Gifts!" = "Wciąż nie masz znajomych grających w Dragon City!\nZaproś ich aby móc wysyłać wspaniałe Prezenty!";
+
+// No comment provided by engineer.
+"YOU UNLOCKED" = "ODBLOKOWAŁEŚ";
+
+// No comment provided by engineer.
+"You used all the assists! Come back soon to assist your friend again!" = "Wykorzystałeś wszystkie asysty! Wróć niedługo aby znowu asystować swoim znajomym!";
+
+// No comment provided by engineer.
+"You used all your assists! Come back soon to assist your friend again!" = "Wykorzystałeś wszystkie swoje asysty! Wróć niedługo aby znowu asystować swoim znajomym!";
+
+// No comment provided by engineer.
+"YOU WON THE LEAGUE!" = "WYGRAŁEŚ LIGĘ";
+
+// Tournament won title
+"YOU WON!" = "WYGRAŁEŚ!";
+
+// Attack refilled message popup
+"Your Combat World attacks have been refilled.\nStart fighting now!" = "Twoje ataki w Świecie Walki zostały uzupełnione.\nRozpocznij walkę!";
+
+// Combat screen attacks title
+"YOUR DRAGON ATTACKS" = "TWOJE SMOCZE ATAKI";
+
+// No comment provided by engineer.
+"Your Dragon has reached the maximum level! You can continue leveling up buying a Temple from the Shop!" = "Twój Smok osiągnął maksymalny poziom! Możesz kontynuować rozwijanie kupując Świątynię w Sklepie!";
+
+// No comment provided by engineer.
+"Your dragon is busy right now and can't be fed" = "Twój smok jest teraz zajęty i nie może być karmiony!";
+
+// No comment provided by engineer.
+"Your dragon is busy right now and can't be selected for combat" = "Twój smok jest teraz zajęty i nie można go wybrać do walki!";
+
+// No comment provided by engineer.
+"Your Dragon is too small to breed! You need to feed it to level 4! " = "Twój Smok jest za mały aby się rozmnażać! Musisz dokarmić go do poziomu 4!";
+
+// No comment provided by engineer.
+"Your Dragon is too small to combat! You need to feed it to level 4!" = "Twój Smok jest za mały aby walczył! Musisz dokarmić go do poziomu 4!";
+
+// 1 month notification reminder
+"Your dragons are feeling lonely... Where is their master?" = "Twoje smoki czują się samotne... Gdzie jest ich władca?";
+
+// 2 weeks notification reminder
+"Your dragons miss you! And they're hungry too!" = "Twoje smoki tęsknią za tobą! I są głodne!";
+
+// No comment provided by engineer.
+"Your friends can be very helpful producing more gold and food for your Dragons to grow. Every filled position gives you +%1$d of food or +%2$d of gold. Fill all Dragon Market positions and get the maximum profit! Remember that the workers go home after finishing the job." = "Twoi znajomi mogą być bardzo pomocni przy produkcji większych ilości złota i pożywienia dzięki którym twoje Smoki będą rosły. Każda zapełniona pozycja da ci +%1$d pożywienia lub +%2$d złota. Wypełnij wszystkie pozycje w Smoczym Markecie i zdobądź maksymalne zyski! Pamiętaj, że pracownicy wrócą do domu po zakończeniu pracy.";
+
+// No comment provided by engineer.
+"Your habitats for %@ dragons are all full! Build a new habitat from the Shop or empty an existing one first." = "Twoje siedliska dla smoków %@ są pełne! Stwórz nowe siedlisko ze Sklepu lub opróżnij już istniejące.";
+
+// Collect Gold finished Notification
+"Your habitats have produced tons of gold! Collect it all now!" = "Twoje siedliska wyprodukowały tony złota! Zbierz je teraz!";
+
+// Combat status
+"Your Turn" = "Twoja Kolej";
+
+// Combat dragon status
+"YOUR TURN" = "TWOJA KOLEJ";

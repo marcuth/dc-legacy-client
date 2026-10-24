@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:bfb74011372017c5f5916439a0f371cd$ -->
+<TextureAtlas imagePath="dragon_default.pvr.ccz">
+    <SubTexture name="Bitmap 1" x="461" y="811" width="438" height="187"/>
+    <SubTexture name="Bitmap 10" x="1353" y="888" width="424" height="273"/>
+    <SubTexture name="Bitmap 11" x="1424" y="596" width="437" height="290"/>
+    <SubTexture name="Bitmap 12" x="933" y="297" width="445" height="293"/>
+    <SubTexture name="Bitmap 13" x="908" y="592" width="443" height="306"/>
+    <SubTexture name="Bitmap 14" x="1424" y="296" width="447" height="298"/>
+    <SubTexture name="Bitmap 15" x="1424" y="2" width="452" height="292"/>
+    <SubTexture name="Bitmap 16" x="2" y="530" width="457" height="293"/>
+    <SubTexture name="Bitmap 17" x="688" y="1000" width="206" height="214"/>
+    <SubTexture name="Bitmap 18" x="336" y="1133" width="96" height="75"/>
+    <SubTexture name="Bitmap 19" x="2" y="1066" width="205" height="251"/>
+    <SubTexture name="Bitmap 2" x="2" y="2" width="486" height="250"/>
+    <SubTexture name="Bitmap 20" x="209" y="1198" width="92" height="65"/>
+    <SubTexture name="Bitmap 21" x="1779" y="1047" width="75" height="63"/>
+    <SubTexture name="Bitmap 22" x="343" y="1066" width="92" height="65"/>
+    <SubTexture name="Bitmap 23" x="1353" y="693" width="69" height="87"/>
+    <SubTexture name="Bitmap 24" x="537" y="1111" width="73" height="100"/>
+    <SubTexture name="Bitmap 25" x="1380" y="297" width="42" height="50"/>
+    <SubTexture name="Bitmap 26" x="1779" y="888" width="76" height="92"/>
+    <SubTexture name="Bitmap 27" x="1380" y="349" width="38" height="85"/>
+    <SubTexture name="Bitmap 28" x="1353" y="592" width="69" height="99"/>
+    <SubTexture name="Bitmap 29" x="1353" y="782" width="58" height="88"/>
+    <SubTexture name="Bitmap 3" x="2" y="825" width="435" height="239"/>
+    <SubTexture name="Bitmap 30" x="437" y="1111" width="98" height="91"/>
+    <SubTexture name="Bitmap 31" x="1779" y="1112" width="73" height="140"/>
+    <SubTexture name="Bitmap 32" x="1854" y="1218" width="135" height="215"/>
+    <SubTexture name="Bitmap 33" x="209" y="1066" width="132" height="58"/>
+    <SubTexture name="Bitmap 34" x="439" y="1000" width="247" height="109"/>
+    <SubTexture name="Bitmap 35" x="1878" y="2" width="161" height="257"/>
+    <SubTexture name="Bitmap 36" x="1878" y="261" width="152" height="276"/>
+    <SubTexture name="Bitmap 37" x="1863" y="832" width="143" height="285"/>
+    <SubTexture name="Bitmap 38" x="1873" y="539" width="169" height="291"/>
+    <SubTexture name="Bitmap 39" x="209" y="1126" width="125" height="70"/>
+    <SubTexture name="Bitmap 4" x="461" y="560" width="445" height="249"/>
+    <SubTexture name="Bitmap 40" x="1854" y="1119" width="191" height="97"/>
+    <SubTexture name="Bitmap 41" x="1380" y="349" width="38" height="85"/>
+    <SubTexture name="Bitmap 42" x="612" y="1111" width="71" height="101"/>
+    <SubTexture name="Bitmap 43" x="1353" y="782" width="58" height="88"/>
+    <SubTexture name="Bitmap 44" x="437" y="1111" width="98" height="91"/>
+    <SubTexture name="Bitmap 45" x="1779" y="982" width="75" height="63"/>
+    <SubTexture name="Bitmap 46" x="343" y="1066" width="92" height="65"/>
+    <SubTexture name="Bitmap 47" x="1353" y="693" width="69" height="87"/>
+    <SubTexture name="Bitmap 48" x="537" y="1111" width="73" height="100"/>
+    <SubTexture name="Bitmap 49" x="1380" y="297" width="42" height="50"/>
+    <SubTexture name="Bitmap 5" x="469" y="294" width="462" height="264"/>
+    <SubTexture name="Bitmap 50" x="1779" y="888" width="76" height="92"/>
+    <SubTexture name="Bitmap 6" x="2" y="254" width="465" height="274"/>
+    <SubTexture name="Bitmap 7" x="490" y="2" width="466" height="290"/>
+    <SubTexture name="Bitmap 8" x="958" y="2" width="464" height="293"/>
+    <SubTexture name="Bitmap 9" x="901" y="900" width="407" height="291"/>
+</TextureAtlas>

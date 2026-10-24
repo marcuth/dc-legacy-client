@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>boosterRadar</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{300,300}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{300,300}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>boosterRadar.dds</string>
+            <key>size</key>
+            <string>{304,304}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:e05ac3c2c34e519a9cc07eea3c4669ea$</string>
+            <key>textureFileName</key>
+            <string>boosterRadar.dds</string>
+        </dict>
+    </dict>
+</plist>

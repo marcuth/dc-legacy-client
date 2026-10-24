@@ -1,0 +1,2407 @@
+/* Used to concatenate dragon element types (e.g. Terra and Flame). See for example 'Your habitats for %@ dragons are all full! Build a new habitat from the Shop or empty an existing one first.' */
+" and " = " e ";
+
+/* Partial string from: Login with Facebook and get 10 gems and an exclusive dragon!. Respect spacing */
+" and an exclusive dragon!" = " e um dragão exclusivo!";
+
+/* Used to concatenate dragon element types (e.g. Terra or Flame). See for example 'Build a new %@ Habitat from the Shop!' */
+" or " = " ou ";
+
+/* Combat status; the first variable is the name of the attack and the second one is the amount of points in numbers */
+"%1$@ attack scored %2$d damage points" = "%s ataques feitos %d pontos de dano";
+
+/* Combat status; the first variable is the user name; the second and third one the name and type of the dragon */
+"%1$@ calls %2$@ (%3$@) to the ring" = "%s chama %s (%s) ao ringue";
+
+/* Combat status; the first variable is the name of the dragon and the second one the name of the attack */
+"%1$@ does a %2$@ attack" = "%s faz um ataque %s";
+
+/* The first variable is the name of the user and the second one a new item the user has got */
+"%1$@ has a new %2$@" = "%s tem um novo %s";
+
+/* The first variable is the name of the user; the second one is a number */
+"%1$@ has reached level %2$d in Dragon City" = "%s alcançou o nível %d em Dragon City";
+
+/* The fist variable is a number and the second one refers to a resource type (gold, food, gems or xp) */
+"%1$d of %2$s" = "%d de %s";
+
+/* Both variables are numbers */
+"%1$d out of %2$d friends" = "%d de %d amigos";
+
+/* Daily Bonus; the first variable is the name of the user and the second one is a number */
+"%1$s got %2$d food as a daily bonus on Dragon City" = "%s obteve %d em comida como bônus diário de Dragon City";
+
+/* Daily Bonus; the first variable is the name of the user and the second one is a number */
+"%1$s got %2$d gems as a daily bonus on Dragon City" = "%s obteve %d em joias como bônus diário de Dragon City";
+
+/* Daily Bonus; the first variable is the name of the user and the second one is a number */
+"%1$s got %2$d gold as a daily bonus on Dragon City" = "%s obteve %d em ouro como bônus diário de Dragon City";
+
+/* No comment provided by engineer. */
+"%d of %s" = "%d de %s";
+
+/* Both variables are numbers. */
+"%d out of %d friends" = "%d de %d amigos";
+
+/* The variable is a number. MIN is abbreviation for 'MINUTE' */
+"%d/MIN" = "%d/MIN";
+
+/* N Thousands */
+"%s K" = "%s k";
+
+/* N Million */
+"%s M" = "%s M";
+
+/* Combat status */
+"%s attack scored %d damage points" = "%s ataques feitos %d pontos de dano";
+
+/* Combat status */
+"%s calls %s (%s) to the ring" = "%s chama %s (%s) ao ringue";
+
+/* The variable is the name of the user */
+"%s can now expand his land of dragons with new buildings, habitats and decorations! Play Dragon City to discover more!" = "%s agora pode expandir sua ilha de dragões com novas construções, habitats e decorações! Jogue Dragon City para descobrir mais!";
+
+/* The variable is the name of a habitat */
+"%s can't be sold right now because it has dragons inside" = "%s não pode ser vendido no momento pois ainda contém dragões";
+
+/* The variable is the name of a building */
+"%s can't be sold right now because it's working" = "%s não pode ser vendido no momento pois está funcionando";
+
+/* The variable is the name of a habitat */
+"%s can't be stored right now because it has dragons inside" = "%s não pode ser guardado no momento pois ainda contém dragões";
+
+/* The variable is the name of a building */
+"%s can't be stored right now because it's working" = "%s não pode ser guardado no momento pois está funcionando";
+
+/* The variable is the title of a goal */
+"%s completed!" = "%s completado!";
+
+/* Combat status */
+"%s does a %s attack" = "%s faz um ataque %s";
+
+/* Food Daily Bonus Popup */
+"%s food" = "%s comida";
+
+/* Gems Daily Bonus Popup; the variable is a number */
+"%s gems" = "%s joias";
+
+/* gold Daily Bonus Popup */
+"%s gold" = "%s ouro";
+
+/* Daily Bonus */
+"%s got %d food as a daily bonus on Dragon City" = "%s obteve %d em comida como bônus diário de Dragon City";
+
+/* Daily Bonus */
+"%s got %d gems as a daily bonus on Dragon City" = "%s obteve %d em gemas como bônus diário de Dragon City";
+
+/* Daily Bonus */
+"%s got %d gold as a daily bonus on Dragon City" = "%s obteve %d em ouro como bônus diário de Dragon City";
+
+/* No comment provided by engineer. */
+"%s has a new %s" = "%s tem um novo %s";
+
+/* The variable is the name of the user */
+"%s has bought an expansion in Dragon City!" = "%s comprou uma expansão no Dragon City!";
+
+/* No comment provided by engineer. */
+"%s has bought an island in Dragon City!" = "%s comprou uma ilha no Dragon City!";
+
+/* The variable is the name of the player. No limit. */
+"%s has defeated your dragons! Now is your time to revenge!" = "%s derrotou seus dragões! Agora é sua hora de se vingar!";
+
+/* No comment provided by engineer. */
+"%s has reached level %d in Dragon City" = "%s alcançou o nível %d em Dragon City";
+
+/* The variable is the name of the user */
+"%s has unlocked new dragon eggs, buildings and other cool things. Take a look at Dragon City and reach your own dragon kingdom!" = "%s liberou novos ovos de dragão, construções e outras coisas legais. Dê uma olhada em Dragon City e busque seu próprio reino dragão!";
+
+/* Combat status */
+"%s is DEFEATED" = "%s foi DERROTADO";
+
+/* The variable is the name of a building */
+"%s is too important to be sold" = "%s é importante demais para ser vendido";
+
+/* The variable is the name of a building */
+"%s is too important to be stored" = "%s é importante demais para ser guardado";
+
+/* The variable is the user's name */
+"%s just won a dragon tournament!" = "%s acabou de vencer um torneio!";
+
+/* e.g. +20% of damage. Max 12~14 characters long. */
+"%s of damage" = "%s de dano";
+
+/* Dragon type */
+"%s!" = "%s!";
+
+/* The variable is the user's name */
+"%s's dragon has won a combat!" = "O dragão de %s venceu um combate!";
+
+/* No comment provided by engineer. */
+"%s's dragons are getting extremely strong and have just won a dragon tournament. Play Dragon City, join in on the dragon combats and win generous prizes!" = "Os dragões de %s estão se tornando muito fortes e acabaram de vencer um torneio. Jogue Dragon City e una-se nos combates de dragões para ganhar prêmios generosos!";
+
+/* The variable is the user's name */
+"%s's dragons are getting extremely strong and have just won a dragon tournament. Play Dragon City, join in the dragon combats and win generous prizes!" = "Os dragões de %s estão se tornando muito fortes e acabaram de vencer um torneio. Jogue Dragon City e una-se nos combates de dragões para ganhar prêmios generosos!";
+
+/* The variable is the user's name */
+"%s's dragons are getting super strong and have just defeated a friend in a combat. Play Dragon City, join the dragon combats and win generous prizes!" = "Os dragões de %s estão se tornando muito fortes e acabaram de derrotar um amigo em combate. Jogue Dragon City e una-se nos combates de dragões para ganhar prêmios generosos!";
+
+/* The variable is the name of the user */
+"%s's island has just been expanded! Check the magical islands that allow you to breed the coolest dragons." = "A ilha de %s foi expandida! Dê uma olhada nas ilhas mágicas onde você pode criar os dragões mais legais.";
+
+/* First variable is amount, the second is type of resource (food or gold) */
+"+%d %s!" = "+%d %s!";
+
+/* The variable is a number */
+"+%s" = "+%s";
+
+/* Comma number separator */
+"," = ",";
+
+/* Welcome Combat World Info popup */
+"- Combat one competitors Island at a time, defeat them and win precious Gems.\n- You can combat three times every 6 hours.\n- Advance in leagues as you progress.\n- You won't lose any dragons in combats." = "- Desafie uma Ilha por vez, derrote os oponentes e ganhe joias preciosas.\n- Você poderá combater três vezes a cada 6 horas.\n- Avance nas Ligas com seu progresso.\n- Você não perderá nenhum dragão em combate.";
+
+/* Decimal mark */
+"." = ",";
+
+/* Minutes ratio */
+"/MIN" = "/MIN.";
+
+/* Cardinal. Respect spacing */
+"10 " = "10 ";
+
+/* No comment provided by engineer. */
+"A connection error has ocurred processing the message data. Please try it again later." = "Um erro de conexão ocorreu durante o processamento dos dados da mensagem. Ttente novamente mais tarde.";
+
+/* Start Hatching Popup View;  the variable is the dragon type */
+"A new %s egg will be placed in the hatchery." = "Um novo ovo %s será colocado na incubadora.";
+
+/* No comment provided by engineer. */
+"A new version is available!\nUpdate the game to continue playing and receive 10 gems for free." = "Uma nova versão está disponível!\nAtualize o jogo para continuar e receba 10 joias gratuitas.";
+
+/* No comment provided by engineer. */
+"ACCEPT" = "ACEITAR";
+
+/* No comment provided by engineer. */
+"ACCEPT ALL" = "ACEITAR TODOS";
+
+/* No comment provided by engineer. */
+"ACCEPT AND SEND BACK" = "ACEITAR E ENVIAR DE VOLTA";
+
+/* No characters limit */
+"ACCEPT EGG" = "ACEITAR OVO";
+
+/* No comment provided by engineer. */
+"ACCEPT GEMS" = "ACEITAR JOIAS";
+
+/* No comment provided by engineer. */
+"ACCEPT JOB" = "ACEITAR TRABALHO";
+
+/* No comment provided by engineer. */
+"ACCOUNT CONFIRMATION" = "CONFIRMAÇÃO DE CONTA";
+
+/* No comment provided by engineer. */
+"ADD FRIENDS" = "ADICIONAR AMIGOS";
+
+/* No comment provided by engineer. */
+"ADDRESS BOOK ERROR" = "ERRO NA LISTA DE CONTATOS";
+
+/* No comment provided by engineer. */
+"ADDRESS BOOK PERMISSIONS" = "PERMISSÕES DA LISTA DE CONTATOS";
+
+/* Send invites button text */
+"ASK FRIENDS" = "CHAMAR AMIGOS";
+
+/* noun */
+"ASSISTS" = "AJUDA";
+
+/* Title label for the current attacks panel in the dragon book */
+"ATTACKS" = "ATAQUES";
+
+/* Attack refilled title popup */
+"ATTACKS REFILLED" = "ATAQUES RECARREGAGOS";
+
+/* No comment provided by engineer. */
+"Accept" = "Aceitar";
+
+/* 'Accepted' refers to gold/food */
+"Accepted. Check the amount of %s you have!" = "Aceito! Verifique a quantidade de %s que você tem.";
+
+/* 'Accepted' refers to any item except gold/food */
+"Accepted. Check your storage!" = "Aceito. Verifique seu estoque!";
+
+/* No comment provided by engineer. */
+"Address Book denied access. Please, enable access from your device Settings." = "Acesso negado à Lista de Contatos. Por favor, permita o acesso a partir das Configurações de seu aparelho.";
+
+/* Dragon name. Limit: 10 chars. */
+"Alex" = "Alex";
+
+/* Dragon name. Limit: 10 chars. */
+"Alexandre" = "Alexandre";
+
+/* Dragon name. Limit: 10 chars. */
+"Ali" = "Ali";
+
+/* No comment provided by engineer. */
+"All dragons are starving! Do something, hurry up!!" = "Seus dragões estão passando fome! Corra e faça alguma coisa!";
+
+/* No comment provided by engineer. */
+"All your staff is ready! Wait till the time ends to open your Dragon Market!" = "Sua equipe está pronta! Aguarde até que o tempo acabe para abrir seu Mercado de Dragões!";
+
+/* No comment provided by engineer. */
+"An error has occurred during the battle load. Please try it again later." = "Um erro ocorreu ao carregar a batalha. Tente novamente mais tarde.";
+
+/* No comment provided by engineer. */
+"An error has occurred loading the messages data. Please try it again later." = "Um erro ocorreu ao carregar os dados de mensagens. Tente novamente mais tarde.";
+
+/* No comment provided by engineer. */
+"An error has occurred loading the opponent data. Please try it again later." = "Um erro ocorreu ao carregar os dados do oponente. Tente novamente mais tarde.";
+
+/* Dragon name. Limit: 10 chars. */
+"Andres" = "Andres";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "Tem certeza de que deseja deslogar?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to quit?" = "Você quer mesmo sair?";
+
+/* Combat quit message */
+"Are you sure you want to quit?\nBy quitting you will lose the fight" = "Tem certeza de que deseja encerrar?\nAo encerrar você perderá a luta.";
+
+/* The variable is the dragon name */
+"Are you sure you want to sell %1$@ for %2$d gold?" = "Tem certeza de que deseja vender %s por %d de ouro?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to sell %s for %d gold?" = "Tem certeza de que deseja vender %s por %d de ouro?";
+
+/* The variable  is a number */
+"Are you sure you want to sell for %s gold?" = "Tem certeza de que deseja vender por %s de ouro?";
+
+/* The variable refers to any building */
+"Are you sure you want to sell your %1$@ for %2$d gold?" = "Tem certeza de que deseja vender %s por %d de ouro?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to sell your %s for %d gold?" = "Tem certeza de que deseja vender %s por %d de ouro?";
+
+/* No comment provided by engineer. */
+"Arranging Shop items!" = "Organizando Itens da Loja!";
+
+/* Dragon name. Limit: 10 chars. */
+"Arthur" = "Arthur";
+
+/* Combat World refill finished Notification */
+"Attacks are now refilled in the Combat World! Ready?" = "Os ataques foram renovados no Mundo de Combates! Pronto?";
+
+/* adverb */
+"BACK" = "VOLTAR";
+
+/* Battle main Button title */
+"BATTLE" = "BATALHA";
+
+/* No comment provided by engineer. */
+"BATTLE ERROR" = "ERRO DE BATALHA";
+
+/* No comment provided by engineer. */
+"BOOK" = "LIVRO";
+
+/* breed */
+"BREED" = "PROCRIAR";
+
+/* Gerund appearing as title on the breeding buildings */
+"BREEDING" = "PROCRIANDO";
+
+/* noun */
+"BUILDING" = "CONSTRUINDO";
+
+/* No comment provided by engineer. */
+"BUILDING UPGRADE" = "MELHORIA DA CONSTRUÇÃO";
+
+/* No comment provided by engineer. */
+"BUILDINGS" = "CONSTRUÇÕES";
+
+/* No comment provided by engineer. */
+"BUSY COMBAT DRAGONS" = "DRAGÕES DE COMBATE OCUPADOS";
+
+/* No comment provided by engineer. */
+"BUY EGG" = "COMPRAR OVO";
+
+/* After this string appears a numeric value followed by a Gems or Gold icon. E.g. 'BUY FOR: 3 GEMS.' */
+"BUY FOR:" = "COMPRAR PARA";
+
+/* Dragon name. Limit: 10 chars. */
+"Bart" = "Bart";
+
+/* noun */
+"Battle" = "Batalha";
+
+/* Dragon name. Limit: 10 chars. */
+"Beamy" = "Beamy";
+
+/* tournament wait popup */
+"Before you can play your next tournament." = "Antes que possa jogar seu próximo torneio.";
+
+/* Wait send gift */
+"Before you can send another gift to your friend" = "Antes que possa enviar outro presente ao seu amigo.";
+
+/* Wait send gift */
+"Before you can send another gift to your friends" = "Antes de enviar outro presente a seus amigos";
+
+/* Wait send invite request */
+"Before you can send another help request" = "Antes que possa enviar pedido de ajuda.";
+
+/* Dragon name. Limit: 10 chars. */
+"Ben" = "Ben";
+
+/* Dragon name. Limit: 10 chars. */
+"Bink" = "Bink";
+
+/* Dragon name. Limit: 10 chars. */
+"Bitz" = "Bitz";
+
+/* Dragon name. Limit: 10 chars. */
+"Bonzo" = "Bonzo";
+
+/* SpeedUp Breeding description; both variables are numbers: 1st for time and 2nd for quantiy */
+"Breeding will finish in %1$@, do you want\nto finish it now for %2$d gems?" = "A procriação será concluída em %s.\nDeseja concluir agora por %d joias?";
+
+/* SpeedUp Breeding description */
+"Breeding will finish in %s, do you want\nto finish it now for %d gems?" = "A procriação encerrará em %s. Você deseja\nencerrar agora por %d gemas?";
+
+/* Dragon name. Limit: 10 chars. */
+"Bud" = "Bud";
+
+/* The variable is the type of habitat. Can be more than one types concatenated by 'and' or by 'or' (e.g. Terra and Flame) */
+"Build a new %s Habitat from the Shop!" = "Construa um novo %s Habitat a partir da Loja!";
+
+/* Building finished Notification */
+"Building's been improved! Check it out!" = "A construção foi melhorada! Dê uma olhada!";
+
+/* Dragon name. Limit: 10 chars. */
+"Bunny" = "Bunny";
+
+/* No comment provided by engineer. */
+"Buy Expansion With Gems" = "Comprar expansão com Joias";
+
+/* No comment provided by engineer. */
+"Buy Expansion With Gold" = "Comprar Expansão com Ouro";
+
+/* No comment provided by engineer. */
+"By connecting to Facebook, you'll receive all kinds of benefits, like being able to play with your dragons on other devices, platforms, and even with your friends. Would you like to connect to Facebook now?" = "Ao conectar com o Facebook você terá várias vantagens, como jogar com seus dragões em outros aparelhos, plataformas, ou mesmo com seus amigos. Gostaria de conectar ao Facebook agora?";
+
+/* It refers to any building */
+"CAN'T BE UPGRADED!" = "NÃO PODE SER MELHORADO!";
+
+/* It is a button; verb */
+"CANCEL" = "CANCELAR";
+
+/* Popup title if expanding is not possible for some reason */
+"CANNOT EXPAND" = "NÃO PODE EXPANDIR";
+
+/* No comment provided by engineer. */
+"CATEGORY" = "CATEGORIA";
+
+/* Max. 1 line, 20 characters */
+"CHALLENGE SENT" = "DESAFIO ENVIADO";
+
+/* Popup text 2, in the first time game center combat. 1 line, 60 chars */
+"CHALLENGE YOUR GAME CENTER FRIENDS BY ATTACKING THEM WITH YOUR DRAGONS." = "DESAFIE AMIGOS DO GAME CENTER ATACANDO-OS COM SEUS DRAGÕES.";
+
+/* Tournament central button */
+"CHANGE\nDRAGON" = "MUDAR\nDRAGÃO";
+
+/* No comment provided by engineer. */
+"CHANGE DRAGON" = "MUDAR DRAGÃO";
+
+/* No comment provided by engineer. */
+"CHOOSE AN ACCOUNT" = "ESCOLHER CONTA";
+
+/* At tavern. The text in the button to claim a dragon. Maximum characters: 18 */
+"CLAIM DRAGON" = "REQUERER DRAGÃO";
+
+/* It is a button; verb */
+"CLEAR" = "REMOVER";
+
+/* The variable is the name of an obstacle such as a tree */
+"CLEAR %s" = "REMOVER %s";
+
+/* verb */
+"COLLECT" = "COLETAR";
+
+/* No comment provided by engineer. */
+"COLLECTION COMPLETE!" = "COLEÇÃO COMPLETA!";
+
+/* noun */
+"COMBAT" = "COMBATE";
+
+/* No comment provided by engineer. */
+"COMBAT RESULT" = "RESULTADO DO COMBATE";
+
+/* No comment provided by engineer. */
+"COMBAT WORLD" = "MUNDO DE COMBATES";
+
+/* No comment provided by engineer. */
+"COMBAT WORLD ERROR" = "ERRO NO MUNDO DE COMBATES";
+
+/* No comment provided by engineer. */
+"COMBAT WORLD WARNING" = "ALERTA DO MUNDO DE COMBATES";
+
+/* No comment provided by engineer. */
+"COMING SOON!" = "EM BREVE";
+
+/* The variable can refer to a building, dragon, decoration or obstacle */
+"COMPLETE %s" = "COMPLETE %s";
+
+/* No comment provided by engineer. */
+"COMPLETE BREEDING" = "COMPLETE A PROCRIAÇÃO";
+
+/* No comment provided by engineer. */
+"COMPLETE GROWING FOOD" = "COMPLETE A PRODUÇÃO DE COMIDA";
+
+/* No comment provided by engineer. */
+"COMPLETE HATCHING" = "COMPLETE A INCUBAÇÃO";
+
+/* Title of the popup */
+/* Pop-up's title after obtain the reward in the tavern */
+"CONGRATULATIONS!" = "PARABÉNS!";
+
+/* It is a button, 1 line, 20 chars */
+"CONTINUE" = "CONTINUE";
+
+/* noun */
+"CREDITS" = "CRÉDITOS";
+
+/* High efectiveness combat screen */
+"CRITICAL" = "CRÍTICO";
+
+/* No comment provided by engineer. */
+"Canceled" = "Cancelado";
+
+/* Dragon name. Limit: 10 chars. */
+"Carles" = "Carles";
+
+/* No comment provided by engineer. */
+"Caterpillar Lily" = "Lírio de Lagarta";
+
+/* Building finished Notification Button Action */
+"Central Island Fight" = "Combate na Ilha Central";
+
+/* Max. 2 lines, 7 Characters  */
+"Challenge" = "Desafiar";
+
+/* No comment provided by engineer. */
+"Check out this game!" = "Dê uma olhada nesse jogo!";
+
+/* Dragon name. Limit: 10 chars. */
+"Chifi" = "Chifi";
+
+/* Maximum of caracters: 14 */
+"Choose Dragons" = "Elege Dragões";
+
+/* No comment provided by engineer. */
+"Choose a dragon to train" = "Escolha um dragão para treinar";
+
+/* No comment provided by engineer. */
+"Choose a new attack for this dragon:" = "Escolha um novo ataque para esse dragão:";
+
+/* Maximum of characters: 14 */
+"Choose dragons" = "Escolher dragões";
+
+/* Dragon name. Limit: 10 chars. */
+"Chuckles" = "Chuckles";
+
+/* No comment provided by engineer. */
+"Claim prize" = "Reivindicar prêmio";
+
+/* No comment provided by engineer. */
+"Claim your prize and check your progress in other collections!" = "Reivindique seu prêmio e verifique seu progresso em outras coleções!";
+
+/* Dragon Market finished Notification Button Action */
+"Collect" = "Coletar";
+
+/* Building finished Notification Button Action */
+"Collect Food" = "Coletar comida";
+
+/* Collect Gold Notification Button Action */
+"Collect Gold" = "Coletar Ouro";
+
+/* Max. 1 lines, 14 Characters  */
+"Combat Now" = "Combater Agora";
+
+/* Combat status */
+"Combat started!" = "Combate iniciado!";
+
+/* The variable is a number */
+"Combats left %d" = "Combates restantes %d";
+
+/* Item on shop is not still available */
+"Coming soon" = "Em breve";
+
+/* No comment provided by engineer. */
+"Completed" = "Completada";
+
+/* The variable is the dragon name */
+"Congratulations!\n%s has finished training a new attack!" = "Parabéns!\n%s treinou um novo ataque!";
+
+/* Tournament won message; the first variable is the name of the tournament and the second one is a number */
+"Congratulations! You won the %1$@!\nNow you can enjoy your hard earned rest and come back in %2$d hours." = "Parabéns! Você venceu o %s!\nVocê pode aproveitar o merecido descanso e retornar em %d horas.";
+
+/* Tournament won message */
+"Congratulations! You won the %s!\nNow you can enjoy your hard earned rest and come back in %d hours." = "Parabéns! Você venceu o %s!\nVocê pode aproveitar o merecido descanso e retornar em %d horas.";
+
+/* no limit */
+"Connection Error" = "Erro de conexão";
+
+/* Building finished Notification */
+"Construction complete! Ready for the opening?" = "Construção concluída! Pronto para inaugurar?";
+
+/* No comment provided by engineer. */
+"Continue with\nFB PROGRESS" = "Continuar com\nPROGRESSO NO FB";
+
+/* No comment provided by engineer. */
+"Continue with\nMOBILE PROGRESS" = "Continuar com\nPROGRESSO NO CELULAR";
+
+/* No comment provided by engineer. */
+"Could not start purchase. Please check your network connection and try again." = "Não foi possível iniciar a compra. Verifique sua conexão e tente novamente.";
+
+/* No comment provided by engineer. */
+"Current Device" = "Aparelho Atual.";
+
+/* It refers to a dragon */
+"Currently training" = "Em treino";
+
+/* Daily bonus popup title */
+"DAILY BONUS" = "BÔNUS DIÁRIO";
+
+/* No comment provided by engineer. */
+"DAILY OFFER" = "OFERTA DIÁRIA";
+
+/* Plural for decorations */
+"DECOR" = "DECOR";
+
+/* No comment provided by engineer. */
+"DECORATION" = "DECORAÇÃO";
+
+/* Defy Combat World popup */
+"DEFY" = "DESAFIAR";
+
+/* No comment provided by engineer. */
+"DO YOU WANT MORE?" = "QUER MAIS?";
+
+/* No comment provided by engineer. */
+"DONWLOADING ISLAND!" = "ILHA PARA DOWNLOAD!";
+
+/* No comment provided by engineer. */
+"DRAGON" = "DRAGÃO";
+
+/* Title for the dragon book screens */
+"DRAGON BOOK" = "LIVRO DOS DRAGÕES";
+
+/* No comment provided by engineer. */
+"DRAGON BUSY" = "DRAGÃO OCUPADO";
+
+/* No comment provided by engineer. */
+"DRAGON CITY" = "DRAGON CITY";
+
+/* No comment provided by engineer. */
+"DRAGON CITY FRIENDS" = "AMIGOS DE DRAGON CITY";
+
+/* No comment provided by engineer. */
+"DRAGON GIFT" = "PRESENTE DE DRAGÃO";
+
+/* Welcome Combat World popup */
+"DRAGON LEAGUES" = "LIGAS DE DRAGÕES";
+
+/* Dragon Market Title */
+/* Map Button */
+"DRAGON MARKET" = "MERCADO DE DRAGÕES";
+
+/* No comment provided by engineer. */
+"DRAGON PICKER" = "ESCOLHA O DRAGÃO";
+
+/* Popup title, in gc combat. 1 line, 20 chars */
+"DRAGON WARS" = "DRAGON WARS";
+
+/* No comment provided by engineer. */
+"DRAGONS" = "DRAGÕES";
+
+/* No comment provided by engineer. */
+"Daily Bonus" = "Bônus Diário";
+
+/* Daily Bonus finished Notification */
+"Daily Bonus available! Don't miss it!" = "Bônus diário disponível. Não perca!";
+
+/* Dragon name. Limit: 10 chars. */
+"Dan" = "Dan";
+
+/* Dragon name. Limit: 10 chars. */
+"Dani" = "Dani";
+
+/* No comment provided by engineer. */
+"Dark" = "Escuro";
+
+/* Dragon name. Limit: 10 chars. */
+"Dave" = "Dave";
+
+/* No comment provided by engineer. */
+"Dear Social Point team," = "Querido time do Social Point,";
+
+/* Deus Mentor name */
+"Deus" = "Deux";
+
+/* The variable is a number */
+"Did you like the battle? We hope you did! To keep on battling enter the Combat World or reach level %d and buy Stadium from the Shop." = "Gostou da batalha? Esperamos que sim! Para continuar lutando entre no Mundo de Combates ou alcance o nível %d e compre um Estádio na Loja.";
+
+/* No comment provided by engineer. */
+"Discover this amazing creature and make your own Dragon City!" = "Descubra esta criatura incrível e faça sua própria Dragon City!";
+
+/* Both variables are numbers */
+"Do you want to continue with your Level %1$d account?\nWarning: The progress of the other Level %2$d account will be deleted!" = "Você deseja continuar com sua conta Nível %d?\nAviso: o progresso da outra conta Nível %d será deletado!";
+
+/* No comment provided by engineer. */
+"Do you want to continue with your Level %d account?\nWarning: The progress of the other Level %d account will be deleted!" = "Você deseja continuar com sua conta Nível %d?\nAviso: o progresso da outra conta Nível %d será deletado!";
+
+/* No comment provided by engineer. */
+"Don't wait and buy an extra expansion right now!" = "Não espere mais e compre uma expansão extra agora!";
+
+/* Dragon name. Limit: 10 chars. */
+"Dor" = "Dor";
+
+/* No comment provided by engineer. */
+"Dragon Bell" = "Sino de Dragão";
+
+/* Dragon City Reminder Notification Button Action */
+"Dragon City" = "Dragon City";
+
+/* Building finished Notification Button Action */
+"Dragon City Daily Item" = "Item diário de Dragon City";
+
+/* No comment provided by engineer. */
+"Dragon City Friends" = "Amigos de Dragon City";
+
+/* No comment provided by engineer. */
+"Dragon City issue" = "Problema do Dragon City";
+
+/* No comment provided by engineer. */
+"Dragon Market collect time has finished! Get your resources now!" = "O tempo de coleta do Mercado de Dragões acabou! Obtenha seus recursos agora!";
+
+/* Dragon Market finished Notification */
+"Dragon Market is bursting with resources: collect them!" = "O Mercado de Dragões está lotado de recursos: colete-os!";
+
+/* Max 1 line, 11 characters */
+"Dragon Wars" = "Dragon Wars";
+
+/* No comment provided by engineer. */
+"Dragons are getting ready!" = "Dragões se preparando!";
+
+/* No comment provided by engineer. */
+"Dragons are ready to get funny names!" = "Dragões prontos para receber novos nomes!";
+
+/* Breeding finished Notification */
+"Dragons have finished breeding! Hatch the egg!" = "Os dragões concluíram a procriação! Choque o ovo!";
+
+/* The variable is a number */
+"Dragons: %d" = "Dragões: %d";
+
+/* No comment provided by engineer. */
+"EARNINGS" = "GANHOS";
+
+/* Welcome tournament popup - enter */
+"ENTER" = "ENTRE";
+
+/* No comment provided by engineer. */
+"ERROR" = "ERRO";
+
+/* No comment provided by engineer. */
+"ERROR WHEN CREATING THE BATTLE" = "ERRO AO CRIAR BATALHA";
+
+/* No comment provided by engineer. */
+"EXPAND" = "EXPANDA";
+
+/* noun */
+"EXPERIENCE" = "EXPERIÊNCIA";
+
+/* No comment provided by engineer. */
+"EXTRA" = "EXTRA";
+
+/* No comment provided by engineer. */
+"Electric" = "Elétrico";
+
+/* Dragon name. Limit: 10 chars. */
+"Elliot" = "Elliot";
+
+/* Dragon name. Limit: 10 chars. */
+"Emery" = "Emery";
+
+/* 20 characters */
+"Enjoy it!" = "Aproveite!";
+
+/* No comment provided by engineer. */
+"Epic" = "Épico";
+
+/* Dragon name. Limit: 10 chars. */
+"Erie" = "Erie";
+
+/* No comment provided by engineer. */
+"Error" = "Erro";
+
+/* Login to Facebook Popup */
+"Error connecting to Facebook" = "Erro ao conectar com o Facebook";
+
+/* No comment provided by engineer. */
+"Error happened while accessing Address Book" = "Erro ao conectar com a Lista de Contatos";
+
+/* No comment provided by engineer. */
+"Error sharing with Facebook" = "Erro ao compartilhar no Facebook";
+
+/* No comment provided by engineer. */
+"Error: Share limit in Facebook reached" = "Erro: limite de compartilhamento no Facebook alcançado";
+
+/* No comment provided by engineer. */
+"Establishing game goals!" = "Estabelecendo objetivos do jogo!";
+
+/* No comment provided by engineer. */
+"Eternal" = "Eterno";
+
+/* Dragon name. Limit: 10 chars. */
+"Evia" = "Evia";
+
+/* No comment provided by engineer. */
+"FAQ" = "FAQ";
+
+/* noun */
+"FARM" = "FAZENDA";
+
+/* It is a button; verb */
+"FEED" = "ALIMENTAR";
+
+/* Title for the Dragon Book button */
+"FIND IT ON THE SHOP!" = "ENCONTRE NA LOJA!";
+
+/* No comment provided by engineer. */
+"FOOD" = "COMIDA";
+
+/* Textfield is very small, translation should fit in about 8 characters or less */
+"FOR FREE" = "GRATUITO";
+
+/* No comment provided by engineer. */
+"Facebook" = "Facebook";
+
+/* Info label in the Dragon book for young dragons */
+"Feed your Baby Dragon to discover its young version" = "Alimente o dragão bebê para descobrir sua versão jovem!";
+
+/* Info label in the Dragon book for adult dragons */
+"Feed your Young Dragon to discover its adult version" = "Alimente o dragão jovem para descobrir sua versão adulta!";
+
+/* Dragon name. Limit: 10 chars. */
+"Fernando" = "Fernando";
+
+/* Max. 1 lines, 14 Characters  */
+"Fight again" = "Lute novamente";
+
+/* Combat screen */
+"Fight!" = "Lutar!";
+
+/* It is a button which appears with a gems image */
+"Fill for" = "Preencher";
+
+/* 36 characters */
+"Find it in the storage!" = "Encontre-o no estoque!";
+
+/* No comment provided by engineer. */
+"Finishing Habitats maintenance!" = "Terminando manutenção de Habitats!";
+
+/* Dragon name. Limit: 10 chars. */
+"Finn" = "Finn";
+
+/* No comment provided by engineer. */
+"Flame" = "Chamas";
+
+/* No comment provided by engineer. */
+"Flesh Eaters" = "Comedores de Carne";
+
+/* Building finished Notification */
+"Food is ready to collect! Time to feed your dragons!" = "A comida está pronta para colheita! Hora de alimentar seus dragões!";
+
+/* No comment provided by engineer. */
+"Friend" = "Amigo";
+
+/* Friends */
+"Friends" = "Amigos";
+
+/* Dragon name. Limit: 10 chars. */
+"Frosty" = "Frosty";
+
+/* Dragon name. Limit: 10 chars. */
+"Fuffy" = "Fuffy";
+
+/* No comment provided by engineer. */
+"GEMS" = "JOIAS";
+
+/* Title for Get gems viral screen */
+"GET FREE GEMS" = "OBTENHA JOIAS GRÁTIS";
+
+/* No comment provided by engineer. */
+"GET GEMS" = "OBTER JOIAS";
+
+/* It is shown in an offer pop-up. It refers to any game item */
+"GET IT!" = "OBTENHA!";
+
+/* It refers to gems, gold or food */
+"GET MORE" = "TENHA MAIS";
+
+/* Textfield is very small, translation should fit in about 16 characters or less */
+"GET THIS DRAGON" = "PEGUE O DRAGÃO";
+
+/* noun */
+"GIFTS" = "PRESENTES";
+
+/* No comment provided by engineer. */
+"GO" = "VÁ";
+
+/* No comment provided by engineer. */
+"GO TO STORAGE" = "IR AO ESTOQUE";
+
+/* No comment provided by engineer. */
+"GOAL COMPLETED" = "OBJETIVO COMPLETADO";
+
+/* No comment provided by engineer. */
+"GOALS" = "OBJETIVOS";
+
+/* No comment provided by engineer. */
+"GOLD" = "OURO";
+
+/* No comment provided by engineer. */
+"GOOD LUCK!" = "BOA SORTE!";
+
+/* No comment provided by engineer. */
+"GROW FOOD" = "PRODUZIR COMIDA";
+
+/* Max 1 line, 11 characters */
+"Game Center" = "Game Center";
+
+/* Title for tavern virality screen. Maximum characters: 30  */
+"Get Awesome Dragons!" = "Obtenha Dragões Incríveis!";
+
+/* No comment provided by engineer. */
+"Get a friend!" = "Arranje um amigo!";
+
+/* No comment provided by engineer. */
+"Get reward!" = "Obtenha recompensa!";
+
+/* No comment provided by engineer. */
+"Get your reward and start next League!!!" = "Obtenha sua recompensa e comece a próxima Liga!!!";
+
+/* No comment provided by engineer. */
+"Getting rewards ready!" = "Pronto para recompensas!";
+
+/* Facebook invitation Text */
+"Go ahead and breed the cutest and rarest dragons you could ever imagine! Master them and teach them different skills! Create your special dragons kingdom on the floating island in the sky." = "Vá em frente e crie os dragões mais raros e fofos que sequer imaginou! Domine-os e ensine técnicas diferentes! Crie seu próprio reino dragão na ilha flutuante no céu.";
+
+/* No comment provided by engineer. */
+"Go to Feed" = "Alimentar";
+
+/* No comment provided by engineer. */
+"Go to Shop" = "Ir à Loja";
+
+/* HOURS */
+"H" = "H";
+
+/* No comment provided by engineer. */
+"HABITAT" = "HABITAT";
+
+/* No comment provided by engineer. */
+"HABITAT IN PROGRESS!" = "HABITAT EM PROGRESSO!";
+
+/* No comment provided by engineer. */
+"HABITATS" = "HABITATS";
+
+/* It is a button; verb */
+"HATCH" = "CHOCAR";
+
+/* No comment provided by engineer. */
+"HIRE FRIENDS" = "CONTRATAR AMIGOS";
+
+/* No comment provided by engineer. */
+"HOME" = "LAR";
+
+/* Respect spacing */
+"HURRY UP\n  for " = "ACELERAR\n  por ";
+
+/* Dragon name. Limit: 10 chars. */
+"Halliwell" = "Halliwell";
+
+/* Dragon name. Limit: 10 chars. */
+"Halo" = "Halo";
+
+/* Dragon name. Limit: 10 chars. */
+"Hansel" = "Hansel";
+
+/* Dragon name. Limit: 10 chars. */
+"Happy" = "Happy";
+
+/* Breeding finished Notification Button Action */
+"Hatch Egg" = "Chocar Ovo";
+
+/* no limit */
+"Hatching egg" = "Chocando ovo";
+
+/* No comment provided by engineer. */
+"Have you checked your dragons lately? They're waiting!" = "Você verificou os dragões ultimamente? Eles estão esperando!";
+
+/* No comment provided by engineer. */
+"Help Us" = "Ajude-nos";
+
+/* No comment provided by engineer. */
+"Help your friends by clicking on his dragon habitats!" = "Ajude seus amigos ao clicar em seus habitats de dragões!";
+
+/* No comment provided by engineer. */
+"Help your teammates by sending them some free gifts!" = "Ajude seus colegas enviando presentes!";
+
+/* The variable is the name of an item */
+"Here is %s for you! Hope you like it." = "Eis %s para você! Espero que goste.";
+
+/* No comment provided by engineer. */
+"Hey!\nYou know what I've been up to recently? Breeding and collecting all the special dragons in Dragon City.\nIt's the new game I'm addicted to and I'm sure you'll like it too!\nWant to be my neighbor? Let's play together!" = "Ei!\nSabe o que tenho feito? Criando e colecionando todos os dragões especiais de Dragon City.\nEstou viciado nesse novo jogo e tenho certeza de que vai gostar também!\nQuer ser meu vizinho? Vamos jogar juntos!";
+
+/* No characters limit */
+"Hi friend! I'm sending you a mystery egg! Do you want to know what's inside?" = "Olá, amigo! Enviei um ovo misterioso! Quer saber o que tem dentro?";
+
+/* No comment provided by engineer. */
+"Hire Friends" = "Contratar Amigos";
+
+/* No comment provided by engineer. */
+"Hiring Friends..." = "Contratando Amigos...";
+
+/* Dragon name. Limit: 10 chars. */
+"Horacio" = "Horacio";
+
+/* No comment provided by engineer. */
+"Hot Dragon Chili" = "Dragão Apimentado";
+
+/* No comment provided by engineer. */
+"I just started playing Dragon City and all those cute little dragons are awesome! I'm sure you'll like it! Try it!" = "Acabei de começar a jogar Dragon City e acho todos aqueles dragões lindos demais! Tenho certeza de que vai gostar! Experimente!";
+
+/* No limit */
+"I sent you a Mystery Egg!" = "Eu enviei a você um Ovo Misterioso!";
+
+/* No comment provided by engineer. */
+"I sent you a gift!" = "Enviei um presente!";
+
+/* No comment provided by engineer. */
+"I'm having the following problem or question:" = "Tenho o seguinte problema ou questão";
+
+/* No comment provided by engineer. */
+"IGNORE" = "IGNORAR";
+
+/* Abbreviation for information */
+"INFO" = "INFO";
+
+/* No comment provided by engineer. */
+"INFORMATION" = "INFORMAÇÃO";
+
+/* No comment provided by engineer. */
+"INVITE" = "CONVIDAR";
+
+/* No comment provided by engineer. */
+"INVITE NEW FRIENDS" = "CONVIDAR NOVOS AMIGOS";
+
+/* No comment provided by engineer. */
+"ISLAND CLOSED!" = "ILHA FECHADA!";
+
+/* No comment provided by engineer. */
+"ITEM PURCHASED" = "ITEM COMPRADO";
+
+/* No comment provided by engineer. */
+"Ice" = "Gelo";
+
+/* Daily bonus popup info text */
+"If you play on consecutive days you get bigger prices!" = "Se jogar por dias consecutivos poderá ganhar prêmios melhores!";
+
+/* No comment provided by engineer. */
+"If you store a Social Building you will loose all the workers, are you sure you want to store it?" = "Se guardar uma Construção Social irá perder todos os trabalhadores. Tem certeza de que quer guardar?";
+
+/* No comment provided by engineer. */
+"Ignoring..." = "Ignorando...";
+
+/* No comment provided by engineer. */
+"Impossible to send SMS" = "Impossível enviar SMS";
+
+/* Abbreviation for information */
+"Info" = "Info";
+
+/* No comment provided by engineer. */
+"Invite" = "Convidar";
+
+/* No comment provided by engineer. */
+"Invite 3 new friends and get Special Dragons for free!" = "Convide 3 novos amigos e ganhe Dragões Especiais!";
+
+/* No comment provided by engineer. */
+"Invite friends to open this building!" = "Convide amigos para inaugurar este prédio!";
+
+/* No comment provided by engineer. */
+"Invite your friends and you'll get 5 gems for each friend that starts playing Dragon City!" = "Convide seus amigos e ganhará 5 joias para cada um que começar a jogar Dragon City!";
+
+/* No comment provided by engineer. */
+"Inviting Friends..." = "Convidando Amigos...";
+
+/* The variable is a number */
+"Islands: %d" = "Ilhas: %d";
+
+/* Max 2 line, 35 characters */
+"It was not possible to connect to your Game Center. Please check your network connection and try it again." = "Não foi possível conectar ao seu Game Center. Verifique sua conexão e tente novamente.";
+
+/* No characters limit */
+"It was not possible to create the battle. Please try it again later." = "Não foi possível criar a batalha. Tente de novo mais tarde.";
+
+/* No comment provided by engineer. */
+"It was not possible to load the FAQ page. Please check your internet connection and try it again later." = "Não foi possível carregar a página de FAQs. Verifique sua conexão de internet e tente novamente mais tarde.";
+
+/* No comment provided by engineer. */
+"It was not possible to visit your Friend. Please check your network connection and try it again." = "Não foi possível visitar o seu Amigo. Verifique a sua conexão de rede e tente novamente.";
+
+/* No comment provided by engineer. */
+"Item %s has been purchased correctly" = "Item %s foi comprado com sucesso";
+
+/* Dragon name. Limit: 10 chars. */
+"JJ" = "JJ";
+
+/* Dragon name. Limit: 10 chars. */
+"Javi" = "Javi";
+
+/* Dragon name. Limit: 10 chars. */
+"Jordi" = "Jordi";
+
+/* Abbreviature for Thousands */
+"K" = "k";
+
+/* Combat World lose message */
+"KEEP TRYING HARDER!" = "CONTINUE FIRME!";
+
+/* Dragon name. Limit: 10 chars. */
+"Kasia" = "Kasia";
+
+/* Dragon name. Limit: 10 chars. */
+"Keiko" = "Keiko";
+
+/* Dragon name. Limit: 10 chars. */
+"Koko" = "Koko";
+
+/* Two lines, 12 chars per line max */
+"LARGE Mystery Egg" = "Ovo Mister. GRANDE";
+
+/* Rate app popup remind later button text */
+"LATER" = "DEPOIS";
+
+/* noun */
+"LEVEL" = "NÍVEL";
+
+/* The variable is a number */
+"LEVEL %d" = "NÍVEL %d";
+
+/* No comment provided by engineer. */
+"LEVEL UP!" = "NOVO NÍVEL";
+
+/* No comment provided by engineer. */
+"LOAD ERROR" = "ERRO DE CARREGAMENTO";
+
+/* combat screen */
+"LOCKED" = "TRAVADO";
+
+/* No comment provided by engineer. */
+"LOG IN" = "LOG IN";
+
+/* No comment provided by engineer. */
+"LOG OUT" = "LOG OUT";
+
+/* Sign up popup button */
+"LOGIN" = "LOGIN";
+
+/* No comment provided by engineer. */
+"Ladybird Blossom" = "Pássara Florência";
+
+/* No comment provided by engineer. */
+"Latest news being updated!" = "Últimas notícias atualizadas!";
+
+/* Shows Game Center Leaderboard. Max 1 line, 12 characters */
+"Leaderboard" = "Painel de liderança";
+
+/* No comment provided by engineer. */
+"League %d Reward:" = "Liga %d Recompensa";
+
+/* No comment provided by engineer. */
+"League Progress" = "Progresso na Liga";
+
+/* No comment provided by engineer. */
+"Legend" = "Lenda";
+
+/* noun */
+"Level" = "Nível";
+
+/* The variable is a number */
+"Level %d" = "Nível %d";
+
+/* No comment provided by engineer. */
+"Level up to be able to upgrade!" = "Suba de nível para adquirir melhorias!";
+
+/* Dragon name. Limit: 10 chars. */
+"Lex" = "Lex";
+
+/* No comment provided by engineer. */
+"Light" = "Luz";
+
+/* No comment provided by engineer. */
+"Loading your friend's islands!" = "Carregando as ilhas de seu amigo!";
+
+/* Dragon name. Limit: 10 chars. */
+"Lobo" = "Lobo";
+
+/* Partial string from: Login and get 10 gems */
+"Login" = "Login";
+
+/* There is an icon at the end of the string, translation should be between 14~16 and not larger than 17 characters. */
+"Login and get 10" = "Logue e ganhe 10";
+
+/* No comment provided by engineer. */
+"Login and start playing" = "Faça o login e comece a jogar!";
+
+/* No comment provided by engineer. */
+"Login to Facebook" = "Login no Facebook";
+
+/* No comment provided by engineer. */
+"Login to Facebook to share your combats with your friends!" = "Faça login no Facebook para compartilhar seus combates com os amigos!";
+
+/* No comment provided by engineer. */
+"Login to Facebook..." = "Faça login no Facebook...";
+
+/* No comment provided by engineer. */
+"Login was not possible. Please check your network connection and try it again." = "Não foi possível efetuar o login. Por favor verifique sua conexão e tente novamente.";
+
+/* No comment provided by engineer. */
+"Login was not possible. We are experiencing some problems. Please try it again later." = "Não foi possível efetuar o login. Verifique sua conexão e tente novamente.";
+
+/* Partial string from: Login with Facebook and get 10 gems and an exclusive dragon! */
+"Login with Facebook and get" = "Logue no Facebook e ganhe";
+
+/* Dragon name. Limit: 10 chars. */
+"Ludo" = "Ludo";
+
+/* Dragon name. Limit: 10 chars. */
+"Luz" = "Luz";
+
+/* Abbreviature for Millions */
+"M" = "M";
+
+/* No comment provided by engineer. */
+"MAIL ACCOUNT" = "CONTA DE E-MAIL";
+
+/* Abbreviation for 'Maximum level'. Limit: 5 characters */
+"MAX" = "MÁX.";
+
+/* No comment provided by engineer. */
+"MAX DRAGONS" = "DRAGÕES MÁX.";
+
+/* No comment provided by engineer. */
+"MAX GOLD" = "OURO MÁX.";
+
+/* No comment provided by engineer. */
+"MAXIMUM LEVEL!" = "NÍVEL MÁX.";
+
+/* Two lines, 12 chars per line max */
+"MEDIUM Mystery Egg" = "Ovo Mister. MÉDIO";
+
+/* No comment provided by engineer. */
+"MENU" = "MENU";
+
+/* No comment provided by engineer. */
+"MESSAGE CENTER ERROR" = "ERRO NA CENTRAL DE MENSAGENS";
+
+/* MINUTES */
+"MIN" = "MIN.";
+
+/* No comment provided by engineer. */
+"MISS" = "ERROU";
+
+/* Text for offers (50% MORE). This text MUST NOT be larger than 7 characters */
+"MORE" = "MAIS";
+
+/* It is a button; verb */
+"MOVE" = "MOVER";
+
+/* No comment provided by engineer. */
+"MUSIC" = "MÚSICA";
+
+/* Send mystery egg screen title, 30 characters max */
+"MYSTERY EGGS!" = "OVOS MISTERIOSOS!";
+
+/* No comment provided by engineer. */
+"Message" = "Mensagem";
+
+/* No comment provided by engineer. */
+"Messages" = "Mensagens";
+
+/* No comment provided by engineer. */
+"Messages:" = "Mensagens:";
+
+/* No comment provided by engineer. */
+"Metal" = "Metal";
+
+/* Dragon name. Limit: 10 chars. */
+"Miguel" = "Miguel";
+
+/* Dragon name. Limit: 10 chars. */
+"Milly" = "Milly";
+
+/* After: comes time in the format 00:00:00 */
+"More Combats in:" = "Mais Combates em:";
+
+/* 20 characters */
+"Mystery Revealed!" = "Mistério revelado!";
+
+/* No comment provided by engineer. */
+"NETWORK STATUS" = "STATUS DE CONEXÃO";
+
+/* goals 'NEW' label inside circle. 5 chars maximum */
+"NEW" = "NOVO";
+
+/* No comment provided by engineer. */
+"NEW VERSION" = "NOVA VERSÃO";
+
+/* No comment provided by engineer. */
+"NEWS" = "NOTÍCIAS";
+
+/* No comment provided by engineer. */
+"NEXT LEAGUE" = "PRÓXIMA LIGA";
+
+/* Tournament won message */
+"NICE!" = "BOM!";
+
+/* This is a button. 1 line 12 characters */
+"NO" = "NÃO";
+
+/* None efectiveness combat screen */
+"NO EFFECT" = "SEM EFEITO";
+
+/* No comment provided by engineer. */
+"NO FRIENDS" = "SEM AMIGOS";
+
+/* No comment provided by engineer. */
+"NO MAIL ACCOUNT" = "SEM CONTA DE E-MAIL";
+
+/* No comment provided by engineer. */
+"NO VALID HABITAT!" = "HABITAT INVÁLIDO";
+
+/* Rate app popup no button text */
+"NO, THANKS" = "NAO, OBRIGADO";
+
+/* It refers to a dragon */
+"NOT BREEDABLE!" = "IMPROCRIÁVEL";
+
+/* No comment provided by engineer. */
+"NOT ENOUGH DRAGONS" = "DRAGÕES INSUFICIENTES";
+
+/* Not enought food popup info */
+"NOT ENOUGH FOOD" = "COMIDA INSUFICIENTE";
+
+/* Not enought gems popup info */
+"NOT ENOUGH GEMS" = "JOIAS INSUFICIENTES";
+
+/* Not enought gold popup info */
+"NOT ENOUGH GOLD" = "OURO INSUFICIENTE";
+
+/* No comment provided by engineer. */
+"NOT ENOUGH SPACE" = "ESPAÇO INSUFICIENTE";
+
+/* It refers to the option of choosing one concrete account */
+"NOT RECOMMENDED!!!" = "NÃO RECOMENDADO!!!";
+
+/* It refers to a dragon */
+"NOT TRAINABLE!" = "NÃO TREINÁVEL";
+
+/* No comment provided by engineer. */
+"NOTIFICATIONS" = "NOTIFICAÇÕES";
+
+/* No comment provided by engineer. */
+"Nature" = "Natureza";
+
+/* Dragon name. Limit: 10 chars. */
+"Nessie" = "Nessie";
+
+/* No comment provided by engineer. */
+"News" = "Notícias";
+
+/* No comment provided by engineer. */
+"No" = "Não";
+
+/* No comment provided by engineer. */
+"No Thanks" = "Não, obrigado";
+
+/* Dragon name. Limit: 10 chars. */
+"Nosey" = "Nosey";
+
+/* No comment provided by engineer. */
+"Not enough Gems to expand" = "Joias insuficientes para a expansão";
+
+/* No comment provided by engineer. */
+"Not enough Gold to expand" = "Ouro insuficiente para a expansão";
+
+/* No comment provided by engineer. */
+"Not enough neighbours to buy an expansion with GOLD" = "Vizinhos insuficientes para comprar uma expansão com OURO";
+
+/* Daily Bonus Share; the variable is the name of the user */
+"Now %s can get new dragons and decorations! Only available in Dragon City!" = "Agora %s pode conseguir novos dragões e decorações! Disponível somente em Dragon City!";
+
+/* No comment provided by engineer. */
+"Now choose the current attack you want to replace:" = "Agora escolha o ataque que deseja substituir:";
+
+/* No comment provided by engineer. */
+"OBSTACLE" = "OBSTÁCULO";
+
+/* Text for offers (50% OFF). This text MUST NOT be larger than 7 characters */
+"OFF" = "MENOS";
+
+/* 8 characters */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"OKAY" = "OKAY";
+
+/* Combat status */
+"OPPONENT" = "OPONENTE";
+
+/* Combat dragon status */
+"OPPONENT'S TURN" = "VEZ DO OPONENTE";
+
+/* No comment provided by engineer. */
+"OPTIONS" = "OPÇÕES";
+
+/* 2 lines 20 chars max each line */
+"Offer valid until time expires" = "Oferta válida até o tempo expirar";
+
+/* Dragon City Reminder Notification */
+"Only %d days left to complete the Central Island! Hurry Up!" = "Restam apenas %d dias para completar a Ilha Central! Corra!";
+
+/* Building finished Notification Button Action */
+"Open Building" = "Inaugurar Construção";
+
+/* No comment provided by engineer. */
+"Open Building!" = "Inaugurar!";
+
+/* No comment provided by engineer. */
+"PACKS" = "PACOTES";
+
+/* No comment provided by engineer. */
+"PENDING PURCHASE" = "COMPRA PENDENTE";
+
+/* It is a button; verb */
+"PLACE" = "COLOCAR";
+
+/* Combat status */
+"PLAYER" = "JOGADOR";
+
+/* No comment provided by engineer. */
+"PLEASE DO NOT DELETE!" = "NÃO DELETE!";
+
+/* Popup title show when try to buy a temple without the previous */
+"PREVIOUS BUILDING MISSING" = "CONSTRUÇÃO ANTERIOR INEXISTENTE";
+
+/* noun */
+"PROGRESS" = "PROGRESSO";
+
+/* Button title for failed In App purchase */
+"PURCHASE ERROR" = "ERRO NA COMPRA";
+
+/* Dragon name. Limit: 10 chars. */
+"Parsifal" = "Parsifal";
+
+/* Dragon name. Limit: 10 chars. */
+"Pax" = "Pax";
+
+/* Hatching finished Notification Button Action */
+"Place Dragon" = "Colocar Dragão";
+
+/* No comment provided by engineer. */
+"Play Dragon City!" = "Jogar Dragon City!";
+
+/* No comment provided by engineer. */
+"Please be patient, you are downloading right now the information to play the Central Island" = "Tenha paciência, você está baixando agora a informação para jogar a ilha central.";
+
+/* Sign up popup description */
+"Please enter your email address." = "Digite seu e-mail.";
+
+/* The variable is the name of a social building */
+"Please help me to open the %s" = "Ajude-me a inaugurar o %s";
+
+/* No comment provided by engineer. */
+"Please help me to open the Dragon Market" = "Ajude-me a inaugurar o Mercado de Dragões";
+
+/* No comment provided by engineer. */
+"Please help me to open the Recruitment Tavern" = "Por favor ajude a inaugurar a Taverna de Recrutamento";
+
+/* No comment provided by engineer. */
+"Please provide a valid email address." = "Digite um e-mail válido.";
+
+/* The variable is a number */
+"Please select %d dragons" = "Selecione %d dragões";
+
+/* No comment provided by engineer. */
+"Please select at least 1 dragon" = "Selecione pelo menos 1 dragão";
+
+/* No comment provided by engineer. */
+"Please select one dragon" = "Selecione um dragão";
+
+/* No comment provided by engineer. */
+"Please set a mail account so that you can send us your feedback" = "Selecione a conta de e-mail para que possa nos enviar seu feedback";
+
+/* Dragon name. Limit: 10 chars. */
+"Pomona" = "Pomona";
+
+/* Dragon name. Limit: 10 chars. */
+"Pooky" = "Pooky";
+
+/* Dragon name. Limit: 10 chars. */
+"Porky" = "Porky";
+
+/* No comment provided by engineer. */
+"Posting to Facebook..." = "Postando no Facebook...";
+
+/* No comment provided by engineer. */
+"Prizes are waiting for you!" = "Prêmios aguardam!";
+
+/* Dragon name. Limit: 10 chars. */
+"Pura" = "Pura";
+
+/* No comment provided by engineer. */
+"Purchase was not possible. Please check your network connection and try it again." = "Não foi possível concluir a compra. Verifique sua conexão e tente novamente.";
+
+/* No comment provided by engineer. */
+"Purchasing item..." = "Comprando item...";
+
+/* No comment provided by engineer. */
+"Pure" = "Puro";
+
+/* No comment provided by engineer. */
+"Pure Dark" = "Sombrio Puro";
+
+/* No comment provided by engineer. */
+"Pure Electric" = "Elétrico Puro";
+
+/* No comment provided by engineer. */
+"Pure Flame" = "Chamas Puro";
+
+/* No comment provided by engineer. */
+"Pure Ice" = "Gelo Puro";
+
+/* No comment provided by engineer. */
+"Pure Metal" = "Metálico Puro";
+
+/* No comment provided by engineer. */
+"Pure Nature" = "Natureza Puro";
+
+/* No comment provided by engineer. */
+"Pure Sea" = "Mar Puro";
+
+/* No comment provided by engineer. */
+"Pure Terra" = "Terra Puro";
+
+/* Combat quit popup title */
+"QUIT CONFIRM" = "CONFIRMAR ENCERRAMENTO";
+
+/* No comment provided by engineer. */
+"QUIT DRAGON CITY" = "SAIR DE DRAGON CITY";
+
+/* Dragon name. Limit: 10 chars. */
+"Quinlan" = "Quinlan";
+
+/* No comment provided by engineer. */
+"RANK" = "Classe";
+
+/* Rate app popup yes button text */
+"RATE IT NOW" = "AVALIE AGORA";
+
+/* Rate app popup title */
+"RATE THIS APP" = "AVALIAR APLICTIVO";
+
+/* After this string comes time in the format 00:00:00 */
+"READY IN" = "PRONTO EM";
+
+/* This is a button; verb */
+"RECRUIT" = "RECRUTAR";
+
+/* No comment provided by engineer. */
+"RECRUITMENT" = "RECRUTAMENTO";
+
+/* No comment provided by engineer. */
+"RELOAD" = "RECARREGAR";
+
+/* This is a button; verb */
+"REMOVE" = "REMOVER";
+
+/* No comment provided by engineer. */
+"REPORT A PROBLEM" = "INFORMAR PROBLEMA";
+
+/* The variable is a number */
+"REQUIRES LEVEL %d" = "REQUER NÍVEL %d";
+
+/* Tournament results title */
+"RESULTS" = "RESULTADOS";
+
+/* No comment provided by engineer. */
+"REVENUES" = "RETORNO";
+
+/* No comment provided by engineer. */
+"REWARD" = "RECOMPENSA";
+
+/* No comment provided by engineer. */
+"Rainbow Flower" = "Flor Arco-Íris";
+
+/* No comment provided by engineer. */
+"Raising floating islands!" = "Elevando ilhas flutuantes!";
+
+/* No comment provided by engineer. */
+"Rank information" = "Informação de Classe";
+
+/* No comment provided by engineer. */
+"Reach level %1$s to build %2$s more buildings of this kind." = "Alcance o nível %s para fazer mais %s construções desse tipo.";
+
+/* The variable is a number */
+"Reach level %d to enable this mode and win large amounts of gems" = "Alcance o nível %d para habilitar este e modo e ganhar muitas joias";
+
+/* No comment provided by engineer. */
+"Reach level %s to build %s more buildings of this kind." = "Alcance o nível %s para fazer mais %s construções desse tipo.";
+
+/* No comment provided by engineer. */
+"Reach level %s to build 1 more building of this kind." = "Alcance o nível %d para fazer mais 1 construção desse tipo.";
+
+/* The variable is a number */
+"Reach level %s to build more buildings of this kind." = "Alcance o nível %s para fazer mais construções desse tipo.";
+
+/* Wait Stadium finished Notification */
+"Ready to fight? Prove who's the best Dragon Master!" = "Pronto para lutar? Prove quem é o melhor Mestre de Dragões!";
+
+/* Combat screen */
+"Ready?" = "Pronto?";
+
+/* For recruitment Tavern virality screen. Maximum characters: 100 */
+"Recruit friends to get the amazing Recruitment Tavern Dragons!" = "Recrute amigos para obter a incrível Taverna de Recrutas de Dragões!";
+
+/* No comment provided by engineer. */
+"Recruitment completed!\nChoose your Dragon and get your Reward!" = "Recrutamento concluído!\nEscolha seu dragão e pegue sua recompensa!";
+
+/* Variables are numbers */
+"Requires: %1$d neighbours\nYou have: %2$d neighbours" = "Requer: %d vizinhos\nVocê tem: %d vizinhos";
+
+/* Variables are numbers */
+"Requires: %d neighbours\nYou have: %d neighbours" = "Requer: %d vizinhos\nVocê tem: %d vizinhos";
+
+/* Variables are numbers */
+"Requires: %d neighbours\nYou have: 1 neighbour" = "Requer: %d vizinhos\nVocê tem: 1 vizinho";
+
+/* Variables are numbers */
+"Requires: 1 neighbour\nYou have: %d neighbours" = "Requer: 1 vizinho\nVocê tem: %d vizinhos";
+
+/* No comment provided by engineer. */
+"Requires: 1 neighbour\nYou have: 1 neighbour" = "Requer: 1 vizinho\nVocê tem: 1 vizinho";
+
+/* No comment provided by engineer. */
+"Returning Home" = "Voltando para o Lar";
+
+/* Max. 2 lines, 7 Characters  */
+"Revenge" = "Vingança";
+
+/* No comment provided by engineer. */
+"Reward" = "Recompensa";
+
+/* goals rewards */
+"Rewards:" = "Recompensas";
+
+/* Dragon name. Limit: 10 chars. */
+"Rocko" = "Rocko";
+
+/* Dragon name. Limit: 10 chars. */
+"Rodney" = "Rodney";
+
+/* Dragon name. Limit: 10 chars. */
+"Roger" = "Roger";
+
+/* Dragon name. Limit: 10 chars. */
+"Rollo" = "Rollo";
+
+/* Dragon name. Limit: 10 chars. */
+"Roxy" = "Roxy";
+
+/* Dragon name. Limit: 10 chars. */
+"Rusty" = "Rusty";
+
+/* SECONDS */
+"SEC" = "SEG.";
+
+/* It is a button; verb */
+"SELECT" = "SELECIONAR";
+
+/* No comment provided by engineer. */
+"SELECT 50" = "SELECIONAR 50";
+
+/* This is a button; 'all' refers to all the friends */
+"SELECT ALL" = "SELECIONAR TODOS";
+
+/* No comment provided by engineer. */
+"SELECT DRAGON" = "SELECIONAR DRAGÃO";
+
+/* No comment provided by engineer. */
+"SELECT DRAGONS" = "SELECIONAR DRAGÕES";
+
+/* Title for select friends to send gift popup */
+"SELECT FRIENDS" = "SELECIONAR AMIGOS";
+
+/* No comment provided by engineer. */
+"SELECT GIFT:" = "SELECIONAR PRESENTE:";
+
+/* No comment provided by engineer. */
+"SELECT YOUR DRAGONS" = "SELECIONE SEUS DRAGÕES";
+
+/* This is a button; verb */
+"SELL" = "VENDER";
+
+/* The variable is a game item */
+"SELL %s" = "VENDER %s";
+
+/* No comment provided by engineer. */
+"SELL DRAGON" = "VENDER DRAGÃO";
+
+/* No comment provided by engineer. */
+"SELL EGG" = "VENDER OVO";
+
+/* Send invites button text. Maximum characters: 15 */
+"SEND" = "ENVIAR";
+
+/* Send mystery egg screen send button title, 20 characers max */
+"SEND EGGS!" = "ENVIAR OVOS!";
+
+/* Title for Send gifts viral screen */
+"SEND FREE GIFTS" = "ENVIAR PRESENTES";
+
+/* Title for send gift button */
+"SEND GIFT" = "ENVIAR PRESENTE";
+
+/* No comment provided by engineer. */
+"SEND ONE BACK!" = "DEVOLVER UM";
+
+/* Send Mystery Egg information, 100 characters max */
+"SEND YOUR FRIENDS MYSTERY EGGS AND THEY WILL RECEIVE PRIZES ACCORDING TO THEIR LEVEL!" = "ENVIE OVOS MISTERIOSOS AOS AMIGOS E ELES RECEBERÃO RECOMPENSAS CONFORME O NÍVEL EM QUE ESTÃO!";
+
+/* Send gift button text */
+"SEND!" = "ENVIAR!";
+
+/* Tournament share button */
+"SHARE" = "COMPARTILHAR";
+
+/* Daily bonus popup share button title */
+"SHARE!" = "COMPARTILHE!";
+
+/* No comment provided by engineer. */
+"SHOP" = "LOJA";
+
+/* Sign up popup title */
+"SIGN UP" = "REGISTRAR";
+
+/* Two lines, 12 chars per line max */
+"SMALL Mystery Egg" = "Ovo Mister. PEQUENO";
+
+/* No comment provided by engineer. */
+"SMS" = "SMS";
+
+/* No comment provided by engineer. */
+"SMS ERROR" = "ERRO DE SMS";
+
+/* No comment provided by engineer. */
+"SOCIAL" = "SOCIAL";
+
+/* No comment provided by engineer. */
+"SOMETHING WENT WRONG" = "OCORREU UM ERRO";
+
+/* It is a button; noun */
+"SOUNDS" = "SONS";
+
+/* It is a button; verb */
+"SPEED UP" = "ACELERAR";
+
+/* No comment provided by engineer. */
+"START BREEDING!" = "PROCRIAR!";
+
+/* No comment provided by engineer. */
+"START!" = "COMEÇAR";
+
+/* 16 chars max */
+"STARTER PACK" = "PACOTE INICIANTE";
+
+/* No comment provided by engineer. */
+"STORAGE" = "ESTOQUE";
+
+/* verb */
+"STORE" = "ESTOQUE";
+
+/* The variable is a game item */
+"STORE %s" = "LOJA %s";
+
+/* No comment provided by engineer. */
+"STORE SOCIAL BUILDING" = "GUARDAR CONSTRUÇÃO SOCIAL";
+
+/* Title for the section that shows the strongnesses of a Dragon in the Dragon Book */
+"STRONG AGAINST" = "FORTE CONTRA";
+
+/* Two lines, 12 chars per line max */
+"SUPER Mystery Egg" = "Ovo Mister. SUPER";
+
+/* Dragon name. Limit: 10 chars. */
+"Sanderson" = "Sanderson";
+
+/* Dragon name. Limit: 10 chars. */
+"Sassi" = "Sassi";
+
+/* No comment provided by engineer. */
+"Scattering objects across the island!" = "Espalhando objetos pela ilha!";
+
+/* Dragon name. Limit: 10 chars. */
+"Scooter" = "Scooter";
+
+/* No comment provided by engineer. */
+"Sea" = "Mar";
+
+/* No comment provided by engineer. */
+"Searching friends..." = "Procurando amigos...";
+
+/* Unselect all friends button text */
+"Select All" = "Selecionar Tudo";
+
+/* No comment provided by engineer. */
+"Select at least 1 friend" = "Selecionar pelo menos 1 amigo";
+
+/* No comment provided by engineer. */
+"Select dragons" = "Selecionar dragões";
+
+/* No comment provided by engineer. */
+"Select the resource you want to acquire" = "Selecione os recursos que deseja adquirir";
+
+/* No comment provided by engineer. */
+"Selected Dragon is already breeding" = "O dragão selecionado já está procriando";
+
+/* No comment provided by engineer. */
+"Send Gifts" = "Enviar Presentes";
+
+/* No comment provided by engineer. */
+"Send a Gift" = "Enviar um Presente";
+
+/* No comment provided by engineer. */
+"Send gifts to your friends so they'll send you some back" = "Envie presentes para seus amigos e eles enviarão outros em resposta";
+
+/* no limit, this will be divided in multiple lines */
+"Sending Gift..." = "Enviando Presente...";
+
+/* no limit, this will be divided in multiple lines */
+"Sending Gifts..." = "Enviando Presentes...";
+
+/* no limit, this will be divided in multiple lines */
+"Sending Mystery Egg..." = "Enviando Ovo Misterioso...";
+
+/* no limit, this will be divided in multiple lines */
+"Sending Mystery Eggs..." = "Enviando Ovos Misteriosos...";
+
+/* No comment provided by engineer. */
+"Sending..." = "Enviando...";
+
+/* Dragon name. Limit: 10 chars. */
+"Sergi" = "Sergi";
+
+/* Dragon name. Limit: 10 chars. */
+"Severin" = "Severin";
+
+/* No comment provided by engineer. */
+"Shared with Facebook" = "Compartilhado com Facebook";
+
+/* Shared Daily Bonus Popup */
+"Shared!" = "Compartilhado!";
+
+/* This is a button; 'all' refers to friends */
+"Show All" = "Mostrar Todos";
+
+/* In splash screen, to login with email, the old no thanks */
+"Sign Up" = "Registrar";
+
+/* Dragon name. Limit: 10 chars. */
+"Skipper" = "Skipper";
+
+/* No comment provided by engineer. */
+"Social Building" = "CONSTRUÇÃO SOCIAL";
+
+/* No comment provided by engineer. */
+"Social Point Staff" = "Equipe do Social Point";
+
+/* No comment provided by engineer. */
+"Some of your previously selected combat dragons are busy right now, please select new ones." = "Alguns de seus dragões de combate selecionados estão ocupados. Selecione outros.";
+
+/* No comment provided by engineer. */
+"Someone" = "Alguém";
+
+/* No comment provided by engineer. */
+"Something is not working fine.\nPlease reload the game" = "Algo não está funcionando bem.\nRecarregue o jogo";
+
+/* No comment provided by engineer. */
+"Something is not working fine.\nPlease try again" = "Algo não está funcionando bem.\nTente novamente";
+
+/* Message error for failed In App purchase */
+"Something went wrong. We are working on it!\nPlease try it again in a few minutes." = "Algo deu errado mas estamos trabalhando nisso!\nTente novamente em alguns minutos.";
+
+/* No comment provided by engineer. */
+"Sorry! The remaining time of the island is over, get back soon to discover a new island!" = "Desculpe! O tempo restante na ilha terminou. Volte depois para descobrir uma nova ilha!";
+
+/* The variable is a number */
+"Sorry! To play the Central Island you need to reach level %d!" = "Desculpe! Para jogar na Ilha Central você precisa chegar ao nível %d!";
+
+/* Tournament lose message */
+"Sorry, this time you lost. Grow higher level dragons to get more powerful attacks and come back in %d hours." = "Desculpe, você perdeu dessa vez. Fortaleça seus dragões para aprender ataques mais poderosos e volte em %d horas.";
+
+/* No comment provided by engineer. */
+"Sorry, you'll have to wait until you can collect the daily item again!" = "Desculpe, você terá que esperar antes de poder coletar o item diário outra vez!";
+
+/* after this string comes the number of gems required to speed up */
+"Speed Up For" = "Acelerar por";
+
+/* after this string comes the number of gems required to speed up */
+"Speed up for %d" = "Acelerar por %d";
+
+/* No comment provided by engineer. */
+"Speed up for %d          " = "Acelerar %d              ";
+
+/* No comment provided by engineer. */
+"Spike Balls" = "Esferas Espinhosas";
+
+/* Dragon name. Limit: 10 chars. */
+"Spiky" = "Spiky";
+
+/* Dragon name. Limit: 10 chars. */
+"Splashy" = "Splashy";
+
+/* Dragon name. Limit: 10 chars. */
+"Spocky" = "Spocky";
+
+/* Dragon name. Limit: 10 chars. */
+"Spooks" = "Spooks";
+
+/* No comment provided by engineer. */
+"Star Shines" = "A Estrela Brilha";
+
+/* No comment provided by engineer. */
+"Start Inviting!" = "Comece a convidar!";
+
+/* Request sent successfully */
+"Success!" = "Sucesso!";
+
+/* Dragon name. Limit: 10 chars. */
+"Sunny" = "Sunny";
+
+/* No comment provided by engineer. */
+"Synchronizing..." = "Sincronizando...";
+
+/* No comment provided by engineer. */
+"TAKE EGG" = "LEVAR OVO";
+
+/* No comment provided by engineer. */
+"TOO MANY BUILDINGS" = "MUITOS PRÉDIOS";
+
+/* It refers to a dragon */
+"TOO SMALL!" = "MUITO PEQUENO";
+
+/* Welcome tournament popup - tournament */
+"TOURNAMENT" = "TORNEIO";
+
+/* button; verb */
+"TRAIN" = "TREINAR";
+
+/* No comment provided by engineer. */
+"TRAIN DRAGON" = "TREINAR DRAGÃO";
+
+/* Title label for the trainable attacks panel in the dragon book */
+"TRAINABLE" = "TREINÁVEL";
+
+/* No comment provided by engineer. */
+"TRAINING CENTER" = "CENTRO DE TREINAMENTO";
+
+/* No comment provided by engineer. */
+"TRY AGAIN" = "TENTE NOVAMENTE";
+
+/* No comment provided by engineer. */
+"Terra" = "Terra";
+
+/* No comment provided by engineer. */
+"Thank you for logging with Facebook.\nEnjoy your rewards!" = "Obrigado pelo login no Facebook.\nAproveite suas recompensas!";
+
+/* Rate app popup info text */
+"Thanks for playing the game. If you like it, please take some time to rate it on the App Store" = "Obrigado por jogar. Se gostou, não esqueça de avaliá-lo na App Store";
+
+/* No comment provided by engineer. */
+"The Hatchery is full! Hatch the current eggs first." = "A incubadora está cheia! Choque os ovos atuais primeiro.";
+
+/* 38 characters */
+"The Mystery Egg contains:" = "O Ovo Misterioso contém:";
+
+/* No comment provided by engineer. */
+"The Sun is shining!" = "O Sol brilha!";
+
+/* No comment provided by engineer. */
+"The current purchase couldn't be started because the previous one is still being processed.\nPlease try it again later." = "A compra atual não pôde ser iniciada porque a anterior ainda está sendo processada.\n Tente novamente mais tarde.";
+
+/* No comment provided by engineer. */
+"The dragon name must be shorter than 17 characters" = "O nome do dragão deve ter menos de 17 caracteres";
+
+/* Hatching finished Notification */
+"The egg is cracking! Place your newborn dragon!" = "O ovo está chocando! Coloque seu dragão recém-nascido!";
+
+/* The variable refers to gold/food */
+"The mystery egg contains %1$@! Check the amount of %1$@ you have!" = "O ovo misterioso tem %s! Confira a quantidade de %s! que você tem.";
+
+/* The variable refers to any item except gold/food */
+"The mystery egg contains %1$@! Check your storage" = "O ovo misterioso contém %s! Verifique seu estoque";
+
+/* The variable is the name of the player. No characters limit. */
+"The player %s has challenged you to fight against his dragons in Dragon City!" = "O jogador %s o desafiou a uma luta contra seus dragões em Dragon City!";
+
+/* No comment provided by engineer. */
+"There are lots of gold in your habitats! Take it all!" = "Há muito ouro em seus habitats! Pegue tudo!";
+
+/* No comment provided by engineer. */
+"There are no remaining expansions on your Island/s, please unlock the next Island" = "Não há expansões restantes em sua(s) Ilha(s), libere a próxima!";
+
+/* No comment provided by engineer. */
+"There is not enough space, try to move some buildings or sell them to place this new building" = "Não há espaço suficiente. Tente mover alguns prédios ou venda-os para instalar este";
+
+/* No comment provided by engineer. */
+"There is not enough space, try to move some buildings or sell them to upgrade this building" = "Não há espaço suficiente. Tente mover alguns prédios ou venda-os para melhorar este";
+
+/* No comment provided by engineer. */
+"There was an error connecting with Facebook, please try again later" = "Houve um erro ao conectar com o Facebook, tente novamente mais tarde";
+
+/* No comment provided by engineer. */
+"There was an error retrieving information from server" = "Houve um erro ao recuperar informação do servidor";
+
+/* No comment provided by engineer. */
+"There was an error retrieving the server information, please try again later" = "Houve um erro ao recuperar a informação do servidor, tente novamente mais tarde";
+
+/* Info label in the Dragon book for dragons not available in the shop */
+"This Dragon is not available in the Shop" = "Este dragão não está disponível na loja";
+
+/* No comment provided by engineer. */
+"This change will\nenable your dragon to cause:" = "Essa mudança\npermitirá a seu dragão:";
+
+/* No comment provided by engineer. */
+"This dragon can't learn more attacks!" = "Esse dragão não pode mais aprender ataques!";
+
+/* The first variable is a number and the second one the dragon name */
+"This dragon needs %1$d more victories to reach the next rank. This will make %2$@ stronger!" = "Esse dragão precisa de mais %d vitórias para alcançar a próxima classe. Isso o fará %s mais forte!";
+
+/* No comment provided by engineer. */
+"This dragon needs %d more victories to reach the next rank. This will make %s stronger!" = "Esse dragão precisa de %d mais vitórias para alcançar a próxima classe. Isso o fará %s mais forte!";
+
+/* No comment provided by engineer. */
+"This dragon was included in your combat world dragon team. Remember to replace it before start a league combat." = "Esse dragão foi incluído em sua equipe dragão do Mundo de Combates. Lembre-se de recolocá-lo antes de iniciar a liga.";
+
+/* No comment provided by engineer. */
+"This item will be supported in the future." = "Este item será compatível no futuro.";
+
+/* Time in the following format: 00:00:00 */
+"Time Left:  %s" = "Tempo Restante: %s";
+
+/* No comment provided by engineer. */
+"Time remaining:" = "Tempo restante:";
+
+/* No comment provided by engineer. */
+"Timeout Error" = "Erro de Tempo";
+
+/* Today Daily Bonus Popup */
+"Today" = "Hoje";
+
+/* Tomorrow Daily Bonus Popup */
+"Tomorrow" = "Amanhã";
+
+/* Dragon name. Limit: 10 chars. */
+"Tor" = "Tor";
+
+/* No comment provided by engineer. */
+"Total Progress" = "Progresso total";
+
+/* No comment provided by engineer. */
+"UNABLE TO LOAD" = "NÃO FOI POSSÍVEL CARREGAR";
+
+/* After this string appears a numeric value followed by a Gems or Gold icon. E.g. 'UNLOCK FOR: 100.000 GOLD.' */
+"UNLOCK FOR:" = "LIBERAR POR";
+
+/* it is a button */
+"UNSELECT" = "DESELECIONAR";
+
+/* button; verb */
+"UPGRADE" = "MELHORIA";
+
+/* This is a button; verb */
+"USE" = "USO";
+
+/* No comment provided by engineer. */
+"Unable to contact with Dragon City servers. Please try again later." = "Impossível contatar os servidores de Dragon City. Tente novamente mais tarde.";
+
+/* Dragon book attack name for undiscovered dragons */
+"Undiscovered" = "Não descoberto";
+
+/* No comment provided by engineer. */
+"Unicorn Horns" = "Chifres de Unicórnio";
+
+/* No comment provided by engineer. */
+"Unlock Desert Island" = "Desbloquear Ilha Deserto";
+
+/* No comment provided by engineer. */
+"Unlock Ivory Island" = "Liberar Ilha de Marfim";
+
+/* No comment provided by engineer. */
+"Unlock Lava Island" = "Liberar Ilha de Lava";
+
+/* No comment provided by engineer. */
+"Unlock Lush Island" = "Liberar Ilha Exuberante";
+
+/* No comment provided by engineer. */
+"Unlock Next Island" = "Liberar Próxima Ilha";
+
+/* No comment provided by engineer. */
+"Unlock Skull Island" = "Desbloquear Ilha Caveira";
+
+/* No comment provided by engineer. */
+"Unlock your next island and fill it with dragons" = "Libere sua próxima ilha e encha-a de dragões";
+
+/* Unselect all friends button text */
+"Unselect All" = "Deselecionar Tudo";
+
+/* This is a button; verb */
+"Update" = "Atualização";
+
+/* After the button comes the number of gems required to upgrade */
+"Upgrade for" = "Melhoria por";
+
+/* No comment provided by engineer. */
+"VERSUS" = "VERSUS";
+
+/* This is a button; verb */
+"VISIT" = "VISITE";
+
+/* No comment provided by engineer. */
+"VISIT FRIEND" = "VISITAR AMIGO";
+
+/* No comment provided by engineer. */
+"Visiting Friend" = "Visitando amigo";
+
+/* After it comes an amount of time in numbers */
+"WAIT:" = "AGUARDE";
+
+/* Max. 1 line, 30 characters */
+"WAITING FOR OPPONENT." = "AGUARDANDO OPONENTE.";
+
+/* No comment provided by engineer. */
+"WATCH OUT!" = "CUIDADO!";
+
+/* Low efectiveness combat screen */
+"WEAK" = "FRACO";
+
+/* Title for the section that shows the weaknesses of a Dragon in the Dragon Book */
+"WEAK AGAINST" = "FRACO CONTRA";
+
+/* 3 lines 35 characters */
+"Wait until your dragons fight against the opponent!" = "Aguarde até que seus dragões lutem contra o oponente!";
+
+/* The variable is a time format (e.g. waiting 20s) */
+"Waiting %s" = "Aguardando %s";
+
+/* Dragon name. Limit: 10 chars. */
+"Wallace" = "Wallace";
+
+/* It refers to a friend */
+"Wants to help\nyou!" = "Deseja\najudar!";
+
+/* No comment provided by engineer. */
+"War" = "Guerra";
+
+/* noun */
+"Warning" = "Aviso";
+
+/* No comment provided by engineer. */
+"We are working to add new goals.\nCome back soon!" = "Estamos trabalhando para acrescentar novos objetivos.\nVolte em breve!";
+
+/* No comment provided by engineer. */
+"We detected an error the last time you played, would you like to send us information?" = "Detectamos um erro da última vez que você jogou. Gostaria de nos enviar informações a respeito?";
+
+/* No comment provided by engineer. */
+"We have noticed that you have two accounts.\nWhich account would you like to choose?" = "Percebemos que tem duas contas.\nQual conta gostaria de escolher?";
+
+/* No comment provided by engineer. */
+"We will not publish anything in your Facebook without your permission" = "Não vamos publicar nada em seu Facebook sem sua permissão.";
+
+/* It refers to a type of dragon */
+"What would you like to do with your new %s?" = "O que gostaria de fazer com seu novo %s?";
+
+/* No comment provided by engineer. */
+"Worker" = "Trabalhador";
+
+/* No comment provided by engineer. */
+"Would you like everybody know?" = "Gostaria que todos soubessem?";
+
+/* Dragon name. Limit: 10 chars. */
+"Xavi" = "Xavi";
+
+/* Dragon name. Limit: 10 chars. */
+"Xili" = "Xili";
+
+/* It is a button. 1 line 12 characters */
+"YES" = "SIM";
+
+/* No comment provided by engineer. */
+"YOU ARE ABOUT TO ENTER A COMBAT!" = "VOCÊ ESTÁ PRESTES A ENTRAR EM COMBATE!";
+
+/* Max. 1 line, 12 characters */
+"YOU LOST!" = "DERROTA!";
+
+/* Tournament lost title */
+"YOU LOST..." = "DERROTADO...";
+
+/* Under this string is an image of what has been unlocked */
+"YOU UNLOCKED" = "VOCÊ LIBEROU";
+
+/* No comment provided by engineer. */
+"YOU WON THE LEAGUE!" = "VOCÊ VENCEU A LIGA!";
+
+/* Tournament won title */
+"YOU WON!" = "VITÓRIA!";
+
+/* Combat screen attacks title */
+"YOUR DRAGON ATTACKS" = "SEU DRAGÃO ATACA";
+
+/* Combat dragon status */
+"YOUR TURN" = "SUA VEZ";
+
+/* No comment provided by engineer. */
+"Yes" = "Sim";
+
+/* No comment provided by engineer. */
+"You Have 0 Gifts" = "Você tem 0 Presentes.";
+
+/* Welcome tournament popup */
+"You are about to enter a tournament. Pick your team of Dragons\nand you can win generous rewards" = "Você está prestes a entrar em um torneio. Escolha sua equipe de Dragões\ne ganhe prêmios generosos.";
+
+/* No comment provided by engineer. */
+"You bought a new island!" = "Você comprou uma nova ilha!";
+
+/* Text of the popup */
+"You bought a offer\nYou can find it in your storage" = "Você comprou uma oferta\nEla está no seu estoque";
+
+/* No comment provided by engineer. */
+"You can find it in your storage!" = "Você pode encontrá-los em seu estoque!";
+
+/* No comment provided by engineer. */
+"You can't buy new islands before you complete the ones you have" = "Você não pode comprar novas ilhas antes de completar as que já tem";
+
+/* No comment provided by engineer. */
+"You cannot add more buildings of this kind." = "Você não pode adicionar mais construções desse tipo.";
+
+/* No comment provided by engineer. */
+"You don't have any Mail account configured. Please, create one before inviting your friends by mail" = "Você não tem uma conta de e-mail configurada. Crie uma antes de convidar seus amigos por e-mail";
+
+/* No comment provided by engineer. */
+"You don't have any friends that play the game! Invite them so they start playing!" = "Você não tem amigos para jogar! Convide-os para que comecem!";
+
+/* No comment provided by engineer. */
+"You expanded your island!" = "Você expandiu sua ilha!";
+
+/* Food Daily Bonus Popup */
+"You get %s food!" = "Conseguiu %s de comida!";
+
+/* Gems Daily Bonus Popup; the variable is a number */
+"You get %s gems!" = "Conseguiu %s joias!";
+
+/* Gold Daily Bonus Popup */
+"You get %s gold!" = "Conseguiu %s de ouro!";
+
+/* The variable refers to a dragon type */
+"You got new %s!" = "Conseguiu um novo %s!";
+
+/* No comment provided by engineer. */
+"You have 0 messages." = "Você tem 0 mensagens.";
+
+/* The variable is the type of habitat. Can be more than one types concatenated by 'and' or by 'or' (e.g. Terra and Flame) */
+"You have a %s Habitat in progress, please wait for it to finish" = "Você tem um Habitat %s em progressão, aguarde até que termine.";
+
+/* No comment provided by engineer. */
+"You have already unlocked all islands!" = "Você já liberou todas as ilhas!";
+
+/* No comment provided by engineer. */
+"You have canceled Facebook login, you need\nto login to connect with your friends." = "Você cancelou o login pelo Facebook. Você precisa\nlogar para se conectar com seus amigos.";
+
+/* The variable refers to a collection name */
+"You have completed %s!" = "Você completou %s!";
+
+/* The variable is the amount of time in numbers */
+"You have no more combats left.\nPlease wait %s" = "Você não tem mais combates restantes.\nAguarde %s";
+
+/* Info pop-up after obtain the reward in the tavern */
+"You have obtained the reward.\nYou can find it in your storage!" = "Você obteve uma recompensa.\nBusque em seu estoque!";
+
+/* Below this string appears the image of a digit */
+"You have reached Level" = "Você alcançou Nível";
+
+/* No comment provided by engineer. */
+"You have received a very special GEMS gift" = "Você recebeu um presente de JOIAS muito especial";
+
+/* The variable is the name of the player. No limit. */
+"You have won %s in Dragon Wars! Win more Dragon Wars to lead the leaderboard!" = "Você venceu %s nas Dragon Wars! Vença mais para ascender no Painel de Liderança!";
+
+/* Popup text, in gc combat. Max: 4 lines, 28 characters per line */
+"You haven't chosen your dragons or there are empty slots. Do you want to choose them now?" = "Você ainda não escolheu os seus dragões ou há espaços vazios. Deseja escolhê-los agora?";
+
+/* No comment provided by engineer. */
+"You must first deselect a dragon if you want to choose this one" = "Precisa primeiro deselcionar um dragão se quiser escolher este";
+
+/* No comment provided by engineer. */
+"You must log into Game Center before accessing this menu" = "Você precisa logar no Game Center antes de acessar este menu";
+
+/* No comment provided by engineer. */
+"You must log into Game Center before accessing this menu. You can do it from the Game Center application." = "Você precisa logar no Game Center antes de acessar este menu. Você pode fazer isso a partir do aplicativo do Game Center.";
+
+/* No comment provided by engineer. */
+"You must select two dragons to be able to breed" = "Você precisa selecionar dois dragões para ser capaz de procriar";
+
+/* The variable is a number */
+"You need at least one dragon of level %d or greater to fight" = "Você precisa de pelo menos um dragão de nível %d ou maior para lutar";
+
+/* No comment provided by engineer. */
+"You need to allow Facebook privacy settings to Dragon City in order to play\n" = "Você precisa dar permissão ao Facebook nas configurações de privacidade para que possa jogar\n";
+
+/* Text show when try to buy a temple without the previous, the variable is the name of the temple required */
+"You need to buy first the \"%s\" = "Primeiro você precisa comprar o \"%s\";
+
+/* No comment provided by engineer. */
+"You need to login again with facebook to reenable permissions. Please try again." = "Você precisa fazer login novamente com o Facebook para reabilitar permissões. Tente novamente.";
+
+/* 30 characters per line. 4 lines. */
+"You still don't have Game Center friends playing Dragon City! Invite them from the Game Center App!" = "Você ainda não tem amigos da Game Center jogando Dragon City! Convide-os a partir do aplicativo da Game Center!";
+
+/* No Friends */
+"You still don't have any friend playing Dragon City!\nStart inviting them all!" = "Você ainda não tem nenhum amigo jogando Dragon City!\nComece a convidá-los!";
+
+/* No comment provided by engineer. */
+"You still don't have friends playing Dragon City.\nInvite them to start sending amazing Gifts!" = "Você ainda não tem amigos jogando Dragon City.\nConvide-os para começar a enviar Presentes incríveis!";
+
+/* Popup text 2, in the first time game center combat. 2 line, 80 chars */
+"You won't lose any of your dragons, either victorious or defeated.\nOnce the combat is over, you'll receive a notification!" = "Nenhum dragão será perdido, seja ele vitorioso ou derrotado.\nVocê receberá uma notificação ao fim do combate!";
+
+/* No comment provided by engineer. */
+"You're now playing without internet connection. You can continue playing but make sure to reconnect again to save your progress." = "Você agora está jogando sem conexão à Internet. Pode continuar, mas tenha certeza de que deverá reconectar para salvar seu progresso.";
+
+/* Attack refilled message popup */
+"Your Combat World attacks have been refilled.\nStart fighting now!" = "Os seus ataques no Mundo de Combate foram recarregados.\nComece a lutar agora!";
+
+/* No comment provided by engineer. */
+"Your Dragon has reached the maximum level! You can continue leveling up buying a Temple from the Shop!" = "Seu Dragão alcançou o nível máximo! Você pode continuar a evoluí-lo comprando um Templo na Loja!";
+
+/* No comment provided by engineer. */
+"Your Dragon is too small to be trained! You need to feed it to level 15!" = "Seu Dragão é muito pequeno para ser treinado! Precisa alimentá-lo até nível 15!";
+
+/* No comment provided by engineer. */
+"Your Dragon is too small to breed! You need to feed it to level 4! " = "Seu Dragão é muito pequeno para procriar! Precisa alimentá-lo pelo menos até o nível 4!";
+
+/* No comment provided by engineer. */
+"Your Dragon is too small to combat! You need to feed it to level 4!" = "Seu Dragão é muito pequeno para combater! Precisa alimentá-lo pelo menos até o nível 4!";
+
+/* No comment provided by engineer. */
+"Your Dragons are demanding some hugs." = "Seus dragões exigem abraços.";
+
+/* Combat status */
+"Your Turn" = "Sua Vez";
+
+/* Daily Item Central Island Notification */
+"Your daily item awaits you! Collect more items to get your new dragons!" = "Seu item diário aguarda! Junte mais itens para obter novos dragões!";
+
+/* No comment provided by engineer. */
+"Your dragon already has this attack." = "Seu dragão já tem este ataque.";
+
+/* No comment provided by engineer. */
+"Your dragon is busy right now and can't be fed" = "Seu dragão está ocupado no momento e não pode ser alimentado.";
+
+/* No comment provided by engineer. */
+"Your dragon is busy right now and can't be selected for combat" = "Seu dragão está ocupado no momento e não pode ser selecionado para o combate.";
+
+/* No comment provided by engineer. */
+"Your dragons are feeling lonely... Where is their master?" = "Seus dragões estão se sentindo sozinhos... onde está o dono deles?";
+
+/* No comment provided by engineer. */
+"Your dragons miss you! And they're hungry too!" = "Seus dragões sentem a sua falta, e estão com muita fome também!";
+
+/* The variable is a number */
+"Your friends can be very helpful producing more gold and food for your Dragons to grow. Every filled position gives you +%1$d of food or +%2$d of gold. Fill all Dragon Market positions and get the maximum profit! Remember that the workers go home after finishing the job." = "Seus amigos podem ser úteis na produção de ouro e comida para o crescimento de seus dragões. Cada posição preenchida confere +%d de comida ou +%d de ouro. Preencha todo o Mercado de Dragões e obtenha o lucro máximo! Lembre-se de que os trabalhadores vão para casa após o trabalho.";
+
+/* No comment provided by engineer. */
+"Your friends can be very helpful producing more gold and food for your Dragons to grow. Every filled position gives you +%d of food or +%d of gold. Fill all Dragon Market positions and get the maximum profit! Remember that the workers go home after finishing the job." = "Seus amigos podem ser úteis na produção de ouro e comida para o crescimento de seus dragões. Cada posição preenchida confere +%d de comida ou +%d de ouro. Preencha todo o Mercado de Dragões e obtenha o lucro máximo! Lembre-se de que os trabalhadores vão para casa após o trabalho.";
+
+/* The variable is the type of dragon. Can be more than one types concatenated by 'and' or by 'or' (e.g. Terra and Flame) */
+"Your habitats for %s dragons are all full! Build a new habitat from the Shop or empty an existing one first." = "Seus habitats para dragões %s estão cheios! Construa um novo habitat na Loja ou esvazie um existente.";
+
+/* Collect Gold finished Notification */
+"Your habitats have produced tons of gold! Collect it all now!" = "Seus habitats produziram quilos de ouro! Pegue-os agora!";
+
+/* Next fight Notification */
+"Your next fight awaits you! Collect more items to get your new dragons!" = "Sua próxima luta aguarda! Junte mais itens para obter novos dragões!";
+
+/* Partial string from: Login and get 10 gems */
+"and get 10" = "e ganhe 10";
+
+/* DAYS */
+"d" = "d";
+
+/* No comment provided by engineer. */
+"e-Mail" = "E-mail";
+
+/* No comment provided by engineer. */
+"food" = "Comida";
+
+/* No comment provided by engineer. */
+"gems" = "joias";
+
+/* No comment provided by engineer. */
+"gold" = "ouro";
+
+/* HOURS */
+"h" = "h";
+
+/* MINUTES */
+"m" = "min";
+
+/* SECONDS */
+"s" = "seg";
+
+/* The variable is a number */
+"x%d" = "x%d";
+
+/* Abbreviation for experience */
+"xp" = "XP";
+
+/* No comment provided by engineer. */
+"SECRET GIFT" = "PRESENTE SECRETO";
+
+/* No comment provided by engineer. */
+"Waiting for server response" = "Aguardando a resposta do servidor";
+
+/* No comment provided by engineer. */
+"When the timer stops your hidden rewards will be ready to collect." = "Quando o relógio parar, suas recompensas ocultas estarão prontas para serem coletadas.";
+
+/* No comment provided by engineer. */
+"You received a secret gift!" = "Você recebeu um presente secreto!";
+
+/* No comment provided by engineer. */
+"Get gift" = "Pegar presente";
+
+/* No comment provided by engineer. */
+"Claim now!" = "Pegue agora!";
+
+/* No comment provided by engineer. */
+"Your hidden reward is ready to collect" = "Sua recompensa oculta está pronta para coletar";
