@@ -1,4 +1,4 @@
-import { Application, Container, Sprite } from "pixi.js"
+import { Application, Assets, Container, Sprite } from "pixi.js"
 import { useEffect, useRef } from "react"
 
 import { fetchAssetBuffer } from "@/game/atlas/assetFiles"
@@ -8,6 +8,8 @@ import { parseCCB } from "@/game/ccb/reader"
 import { loadCCBResources } from "@/game/ccb/resources"
 import { boot } from "@/game/boot"
 import { IsoWorld } from "@/game/world/IsoWorld"
+import { BuildingMenu } from "@/game/world/menu/BuildingMenu"
+import { SelectionController } from "@/game/world/menu/SelectionController"
 import { buildingsFromMap, dragonsFromMap } from "@/game/world/mapItems"
 import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
@@ -117,8 +119,6 @@ const game = async (app: Application, params: URLSearchParams) => {
     const world = new IsoWorld({
         debugFootprints: params.has("debug"),
         debugMasks: params.has("masks"),
-        onBuildingTap: (building) => console.log("building", building),
-        onEmptyTileTap: (tile) => console.log("tile", tile.x, tile.y),
     })
     const view = new Container()
     app.stage.addChild(world.view, view)
@@ -144,6 +144,16 @@ const game = async (app: Application, params: URLSearchParams) => {
         await world.setBuildings(buildingsFromMap(session.user, session.config))
         await world.setDragons(dragonsFromMap(session.user))
         report(0.7)
+        const menu = await BuildingMenu.create(context)
+        const items = (session.config.items ?? {}) as Record<string, { group_type?: string }>
+        new SelectionController(world, menu, {
+            groupOf: (itemId) => items[String(itemId)]?.group_type,
+            saveMove: async (id, x, y) => {
+                await session.client.execute({ cmd: "move", args: [id, x, y, 0] })
+            },
+            onUnhandled: (type, building) => console.log("menu button without an action yet:", type, building.id),
+        })
+        view.addChild(menu.root)
         hud = await createHud(context, session.store, {
             onFood: () => {
                 // A round trip through /packet/execution and /player/info: the server adds food, the HUD follows.
@@ -178,6 +188,9 @@ export default function App() {
         const app = new Application()
         let disposed = false
         const start = async () => {
+            // Pixi decodes images in web workers by default; their start-up stalled loads on busy machines, and the
+            // decoding itself is asynchronous either way.
+            Assets.setPreferences({ preferWorkers: false })
             await app.init({ resizeTo: window, background: "#1b3a4b", antialias: true })
             if (disposed) return app.destroy(true)
             host.current?.appendChild(app.canvas)

@@ -153,6 +153,15 @@ export class MockServer {
             case "level_up":
                 info.level = Number(first) || info.level
                 break
+            case "move": {
+                // args: [uid, x, y, flip]
+                const item = (account.user.map.items as Record<string, unknown[]> | undefined)?.[String(first)]
+                if (item) {
+                    item[1] = Number(command.args[1])
+                    item[2] = Number(command.args[2])
+                }
+                break
+            }
             case "complete_tutorial":
                 info.completed_tutorial = Number(first) || 0
                 break

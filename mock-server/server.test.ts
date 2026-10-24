@@ -50,6 +50,14 @@ test("commands change the state that /player/info reports", async () => {
     assert.equal(info.food, 550)
 })
 
+test("moving a building changes the map that /player/info reports", async () => {
+    const client = new MobileClient({ baseUrl: "", fetch: connect(new MockServer()) })
+    await client.login(login)
+    await client.execute({ cmd: "move", args: ["2", 40, 50, 0] })
+    const map = (await client.playerInfo()).map as { items: Record<string, number[]> }
+    assert.deepEqual(map.items["2"].slice(0, 3), [16, 40, 50])
+})
+
 test("a resent batch is not applied twice", async () => {
     const server = new MockServer()
     const client = new MobileClient({ baseUrl: "", fetch: connect(server) })
