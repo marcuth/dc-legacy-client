@@ -53,16 +53,31 @@ export const confirmAccount = (
         }
     })
 
+/** Room for the question of the sell popup: the right half of the 400-point frame, minus its border. */
+const SELL_TEXT_WIDTH = 190
+
 /** Popups/PlaceSellPopUpView: confirms selling a building (`questionLabel`, `onSellButton`, `closeButton`). */
 export const placeSell = (
     context: ScreenContext,
     layer: PopupLayer,
-    sale: { name: string; gold: number },
+    sale: { name: string; gold: number; art?: Texture },
 ): Promise<"sell" | "close"> =>
     present("Popups/PlaceSellPopUpView", context, layer, (popup, finish) => {
-        popup.view
+        const { view } = popup
+        // The text sits to the right of the picture; wrap it so it stays inside the frame.
+        view
             .label("questionLabel")
-            .setText(context.locale.format("Are you sure you want to sell %s for %d gold?", sale.name, sale.gold), true)
+            .setText(context.locale.format("Are you sure you want to sell %s for %d gold?", sale.name, sale.gold), true, SELL_TEXT_WIDTH)
+        view.label("dragonNameLabel").setText(sale.name, true)
+        // PLACE is for moving a new item; selling only needs SELL, which takes the middle.
+        const place = view.node("placeButton")
+        const sell = view.node("sellButton")
+        place.visible = false
+        sell.x = (place.x + sell.x) / 2
+        if (sale.art) {
+            const slot = view.node("dragonPlaceholder")
+            slot.addChild(fitInto(sale.art, view.scene.sizeOf(slot)))
+        }
         return {
             onSellButton: () => finish("sell"),
             onCloseButton: () => finish("close"),

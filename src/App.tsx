@@ -155,7 +155,8 @@ const game = async (app: Application, params: URLSearchParams) => {
                 [MenuItemType.Info]: (building) => {
                     const item = items[String(building.itemId)]
                     // The payout is the mock server's rule (half the cost); the real one is not in the APK.
-                    void placeSell(context, layer, { name: item?.name ?? "", gold: Math.floor((item?.costs?.g ?? 0) / 2) }).then(async (result) => {
+                    void loadBuildingArt(building.itemId).then(async (art) => {
+                        const result = await placeSell(context, layer, { name: item?.name ?? "", gold: Math.floor((item?.costs?.g ?? 0) / 2), art: art.texture })
                         if (result !== "sell") return
                         await session.client.execute({ cmd: "sell", args: [building.id] })
                         world.removeBuilding(building.id)

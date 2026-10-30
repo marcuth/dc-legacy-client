@@ -30,8 +30,11 @@ export type BuildOptions = {
 export type LabelHandle = {
     /** Current text, before localization. */
     readonly text: string
-    /** Replaces the text; it is localized again unless `localized` says it already is. */
-    setText(text: string, localized?: boolean): void
+    /**
+     * Replaces the text; it is localized again unless `localized` says it already is. `wrapWidth` (points) breaks
+     * long text into lines at that width; it stays in force for later calls until another value is given.
+     */
+    setText(text: string, localized?: boolean, wrapWidth?: number): void
 }
 
 export type CCBScene = {
@@ -417,7 +420,8 @@ class Builder {
         if (!fnt || fnt.type !== CCBPropType.FntFile || !text || text.type !== CCBPropType.Text) return undefined
         const font = this.resources.font(fnt.value)
         if (!font) return undefined
-        const align = ((prop("horizontalAlignment") as { value?: number } | undefined)?.value ?? 0) as 0 | 1 | 2
+        // Labels that do not say otherwise are centred (the multi-line ones in the popups are laid out that way) [?].
+        const align = ((prop("horizontalAlignment") as { value?: number } | undefined)?.value ?? 1) as 0 | 1 | 2
         const fit = prop("adjustSizeToFit")
         const style = this.style(prop, num)
         const layout: LabelLayout = {
@@ -443,7 +447,8 @@ class Builder {
             get text() {
                 return source
             },
-            setText: (next, localized = false) => {
+            setText: (next, localized = false, wrapWidth) => {
+                if (wrapWidth !== undefined) layout.width = wrapWidth
                 source = next
                 view.removeChildren()
                 current = render(localized ? next : localize(next))
