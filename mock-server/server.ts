@@ -4,6 +4,7 @@ import { dirname } from "node:path"
 
 import { DEFAULT_HMAC_KEY } from "../src/game/network/mobile/signing.ts"
 import { buildConfig, sellValue } from "./catalog.ts"
+import { buildingLevel, MAX_BUILDING_LEVEL, upgradeGemCost } from "../src/game/world/upgrade.ts"
 
 export type Form = Record<string, string>
 
@@ -170,6 +171,17 @@ export class MockServer {
                     info.gold = Number(info.gold) + sellValue(item[0])
                     delete items[String(first)]
                 }
+                break
+            }
+            case "upgrade": {
+                // args: [uid]; the level lives in the attributes slot of the map item [?]
+                const item = (account.user.map.items as Record<string, unknown[]> | undefined)?.[String(first)]
+                if (!item) break
+                const level = buildingLevel(item)
+                const cost = upgradeGemCost(level)
+                if (level >= MAX_BUILDING_LEVEL || Number(info.cash) < cost) break
+                info.cash = Number(info.cash) - cost
+                item[6] = { ...(item[6] as object | undefined), level: level + 1 }
                 break
             }
             case "complete_tutorial":

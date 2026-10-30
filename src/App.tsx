@@ -15,7 +15,10 @@ import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
 import { GameSession } from "@/game/session/GameSession"
 import { PopupLayer } from "@/game/screens/PopupLayer"
-import { breedingSpeedUp, confirmAccount, placeSell } from "@/game/screens/popups"
+import { breedingSpeedUp, confirmAccount, placeSell, upgradeBuilding } from "@/game/screens/popups"
+import { loadBuildingArt } from "@/game/world/buildingArt"
+import { MenuItemType } from "@/game/world/menu/menuItems"
+import { buildingLevel, earningsAt, MAX_BUILDING_LEVEL, upgradeGemCost } from "@/game/world/upgrade"
 
 const DESIGN = { width: 480, height: 320 }
 
@@ -148,16 +151,35 @@ const game = async (app: Application, params: URLSearchParams) => {
         const items = (session.config.items ?? {}) as Record<string, { group_type?: string; name?: string; costs?: { g?: number } }>
         const selection: SelectionController = new SelectionController(world, menu, {
             groupOf: (itemId) => items[String(itemId)]?.group_type,
-            onInfo: (building) => {
-                const item = items[String(building.itemId)]
-                // The payout is the mock server's rule (half the cost); the real one is not in the APK.
-                void placeSell(context, layer, { name: item?.name ?? "", gold: Math.floor((item?.costs?.g ?? 0) / 2) }).then(async (result) => {
-                    if (result !== "sell") return
-                    await session.client.execute({ cmd: "sell", args: [building.id] })
-                    world.removeBuilding(building.id)
-                    selection.deselect()
-                    await session.refresh()
-                })
+            actions: {
+                [MenuItemType.Info]: (building) => {
+                    const item = items[String(building.itemId)]
+                    // The payout is the mock server's rule (half the cost); the real one is not in the APK.
+                    void placeSell(context, layer, { name: item?.name ?? "", gold: Math.floor((item?.costs?.g ?? 0) / 2) }).then(async (result) => {
+                        if (result !== "sell") return
+                        await session.client.execute({ cmd: "sell", args: [building.id] })
+                        world.removeBuilding(building.id)
+                        selection.deselect()
+                        await session.refresh()
+                    })
+                },
+                [MenuItemType.Upgrade]: (building) => {
+                    const item = items[String(building.itemId)]
+                    const level = buildingLevel((session.user.map as { items?: Record<string, unknown> } | undefined)?.items?.[building.id])
+                    if (level >= MAX_BUILDING_LEVEL) return
+                    void loadBuildingArt(building.itemId).then(async (art) => {
+                        const result = await upgradeBuilding(context, layer, {
+                            name: item?.name ?? "",
+                            art: art.texture,
+                            earnings: earningsAt(item?.group_type, level + 1),
+                            gemCost: upgradeGemCost(level),
+                            gems: session.store.getSnapshot()?.cash ?? 0,
+                        })
+                        if (result !== "upgrade") return
+                        await session.client.execute({ cmd: "upgrade", args: [building.id] })
+                        await session.refresh()
+                    })
+                },
             },
             saveMove: async (id, x, y) => {
                 await session.client.execute({ cmd: "move", args: [id, x, y, 0] })

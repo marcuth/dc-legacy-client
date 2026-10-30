@@ -22,6 +22,8 @@ export class CCBView {
     constructor(
         readonly scene: CCBScene,
         private readonly design: Dims,
+        /** Textures of the screen, including the extra files asked for at load time. */
+        readonly resources?: CCBResources,
     ) {}
 
     get root(): Container {
@@ -101,14 +103,14 @@ export const loadScreenFactory = async (name: string, context: ScreenContext, ex
     const resources = await loadCCBResources([doc], context.variant ?? "HD", extraFiles)
     return {
         resources,
-        create: () => new CCBView(buildCCB(doc, resources, { size: context.design, localize: context.locale.tr }), context.design),
+        create: () => new CCBView(buildCCB(doc, resources, { size: context.design, localize: context.locale.tr }), context.design, resources),
     }
 }
 
 /** Loads `CCB/<name>.ccbi` with its textures and fonts. */
-export const loadScreen = async (name: string, context: ScreenContext): Promise<CCBView> => {
+export const loadScreen = async (name: string, context: ScreenContext, extraFiles: string[] = []): Promise<CCBView> => {
     const doc = parseCCB(await fetchAssetBuffer(`CCB/${name}.ccbi`))
-    const resources = await loadCCBResources([doc], context.variant ?? "HD")
+    const resources = await loadCCBResources([doc], context.variant ?? "HD", extraFiles)
     const scene = buildCCB(doc, resources, { size: context.design, localize: context.locale.tr })
-    return new CCBView(scene, context.design)
+    return new CCBView(scene, context.design, resources)
 }

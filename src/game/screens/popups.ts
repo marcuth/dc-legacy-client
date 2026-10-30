@@ -1,3 +1,5 @@
+import { Sprite, type Texture } from "pixi.js"
+
 import { loadScreen, type ScreenContext } from "./CCBView"
 import { formatDuration } from "./format"
 import type { Popup, PopupLayer } from "./PopupLayer"
@@ -11,8 +13,9 @@ const present = async <Result extends string>(
     context: ScreenContext,
     layer: PopupLayer,
     setUp: (popup: Popup, finish: (result: Result) => void) => Record<string, (...args: never[]) => void>,
+    extraFiles: string[] = [],
 ): Promise<Result> => {
-    const view = await loadScreen(name, context)
+    const view = await loadScreen(name, context, extraFiles)
     return new Promise<Result>((resolve) => {
         const popup: Popup = { view }
         let unbind = () => {}
@@ -65,6 +68,67 @@ export const placeSell = (
             onCloseButton: () => finish("close"),
         }
     })
+
+const EARNING_ICONS = { food: "Icons/Food/ic-food.png", gold: "Icons/Gold/ic-gold.png" }
+
+/** Scales `texture` to fit inside a placeholder node and centres it there. */
+const fitInto = (texture: Texture, slot: { width: number; height: number }) => {
+    const sprite = new Sprite(texture)
+    sprite.anchor.set(0.5)
+    sprite.scale.set(Math.min(slot.width / texture.width, slot.height / texture.height, 1))
+    sprite.position.set(slot.width / 2, slot.height / 2)
+    return sprite
+}
+
+/**
+ * Popups/UpgradeBuildingPopupView: the building, what it will yield afterwards and the gems the upgrade costs.
+ * `earnings` is null for buildings that yield nothing (the hatchery); the popup then shows no earnings block.
+ */
+export const upgradeBuilding = (
+    context: ScreenContext,
+    layer: PopupLayer,
+    upgrade: {
+        name: string
+        art: Texture
+        earnings: { kind: keyof typeof EARNING_ICONS; amount: number } | null
+        gemCost: number
+        gems: number
+    },
+): Promise<"upgrade" | "close"> =>
+    present(
+        "Popups/UpgradeBuildingPopupView",
+        context,
+        layer,
+        (popup, finish) => {
+            const { view } = popup
+            view.label("titleLabel").setText("BUILDING UPGRADE", true)
+            view.label("itemLabel").setText(upgrade.name, true)
+            view.label("upgradeForValueLabel").setText(String(upgrade.gemCost), true)
+            view.button("upgradeButton").setEnabled(upgrade.gems >= upgrade.gemCost)
+
+            const item = view.node("itemPlaceholder")
+            item.addChild(fitInto(upgrade.art, view.scene.sizeOf(item)))
+
+            // The second earnings block is for buildings with two yields; none of the known ones has that.
+            view.node("twoEarningsNode").visible = false
+            const one = view.node("oneEarningNode")
+            one.visible = upgrade.earnings !== null
+            view.node("earningsLabel").visible = upgrade.earnings !== null
+            if (upgrade.earnings) {
+                view.label("oneEarningValue").setText(String(upgrade.earnings.amount), true)
+                const icon = view.resources?.frame("", EARNING_ICONS[upgrade.earnings.kind])
+                if (icon) {
+                    const slot = view.node("oneEarningPlaceholder")
+                    slot.addChild(fitInto(icon, view.scene.sizeOf(slot)))
+                }
+            }
+            return {
+                onUpgradeButton: () => finish("upgrade"),
+                onCloseButton: () => finish("close"),
+            }
+        },
+        Object.values(EARNING_ICONS),
+    )
 
 /** Popups/BreedingSpeedUpPopUpView: pay gems to finish breeding now. */
 export const breedingSpeedUp = (

@@ -9,8 +9,8 @@ export type SelectionOptions = {
     stateOf?(building: WorldBuilding): BuildingState
     /** Sends the `move` command; resolved when the server has answered. */
     saveMove(id: string, x: number, y: number): Promise<void>
-    /** INFO pressed; the owner shows the popup and, if the building is sold, calls `deselect`. */
-    onInfo?(building: WorldBuilding): void
+    /** Buttons the owner handles (popups and commands); a sold building calls `deselect`. */
+    actions?: Partial<Record<MenuItemType, (building: WorldBuilding) => void>>
     /** Buttons whose action is not implemented yet land here. */
     onUnhandled?(type: MenuItemType, building: WorldBuilding): void
 }
@@ -69,15 +69,11 @@ export class SelectionController {
                 this.world.cancelMove()
                 this.select(building)
                 break
-            case MenuItemType.Info:
-                if (this.options.onInfo) {
-                    this.options.onInfo(building)
-                    break
-                }
-                this.options.onUnhandled?.(type, building)
-                break
-            default:
-                this.options.onUnhandled?.(type, building)
+            default: {
+                const action = this.options.actions?.[type]
+                if (action) action(building)
+                else this.options.onUnhandled?.(type, building)
+            }
         }
     }
 

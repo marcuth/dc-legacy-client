@@ -68,6 +68,16 @@ test("selling a building removes it from the map and pays gold", async () => {
     assert.equal((info.playerInfo as Record<string, number>).gold, before + 50)
 })
 
+test("upgrading a building raises its level and spends gems", async () => {
+    const client = new MobileClient({ baseUrl: "", fetch: connect(new MockServer()) })
+    await client.login(login)
+    const cash = ((await client.playerInfo()).playerInfo as Record<string, number>).cash
+    await client.execute({ cmd: "upgrade", args: ["2"] })
+    const info = await client.playerInfo()
+    assert.deepEqual((info.map as { items: Record<string, unknown[]> }).items["2"][6], { level: 2 })
+    assert.equal((info.playerInfo as Record<string, number>).cash, cash - 2)
+})
+
 test("a resent batch is not applied twice", async () => {
     const server = new MockServer()
     const client = new MobileClient({ baseUrl: "", fetch: connect(server) })
