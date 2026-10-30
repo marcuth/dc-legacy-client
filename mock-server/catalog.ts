@@ -27,6 +27,12 @@ const levels = () => {
  * Item ids and footprints (in tiles) follow the art the APK ships: the engine zips are named after the item id and
  * a footprint is as many tiles wide as the sprite is wide in 54-point tile diamonds.
  */
+/** Gold paid back for selling a building: half its cost **[?]** (the real rule lives on the server). */
+export const sellValue = (itemId: number): number => {
+    const item = (items as Record<string, { costs?: { g?: number } }>)[String(itemId)]
+    return Math.floor((item?.costs?.g ?? 0) / 2)
+}
+
 const items = {
     "1": { id: 1, name: "Hatchery", group_type: "incubator", costs: { g: 0 }, width: 6, height: 6 },
     "16": { id: 16, name: "Farm", group_type: "farm", costs: { g: 100 }, width: 3, height: 3 },

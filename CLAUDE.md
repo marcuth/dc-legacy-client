@@ -78,12 +78,12 @@ Detalhes do que já funciona e do que foi inferido estão em `docs/protocol.md` 
   e `habitatId`; `map.items` usa a forma `[itemId, x, y, parentId, frame, flag, atributos]`.
 * `config.levels` é um objeto indexado pelo nível, com `xp_required` e `xp_needed`; a curva de XP e o catálogo
   (`mock-server/catalog.ts`) são inventados. Ids e tamanhos dos itens seguem a arte que o APK traz (1 incubadora, 16 fazenda, 26 habitat de terra).
-* Só `level_up`, `complete_tutorial`, `win_daily_bonus`, `set_login_rewarded` e `move` mudam o estado; os outros comandos só são confirmados.
+* Só `level_up`, `sell`, `complete_tutorial`, `win_daily_bonus`, `set_login_rewarded` e `move` mudam o estado; os outros comandos só são confirmados.
 
 ## Pendências
 
 * Facebook: o botão fica desabilitado; só existe o login sem Facebook.
-* Menu da construção: só o MOVE age; INFO, UPGRADE, GROW FOOD, BREED, BUY EGG etc. aparecem e ainda não têm popup nem comando.
+* Menu da construção: MOVE age e INFO abre o popup de venda (`PlaceSellPopUpView`, comando `sell`; o valor, metade do custo, é suposição). UPGRADE, GROW FOOD, BREED, BUY EGG etc. aparecem e ainda não têm popup nem comando.
   O estado da construção (parada, pronta, trabalhando) está fixo em "parada".
 * Dragões: só o estágio 1 do dragão de terra (1011) tem arte no APK; a fase real deveria vir do nível
   (`DragonUtils::getDragonEvolutionByLevel`). Sem toque nos dragões além da caixa do esqueleto; velocidade de 30 quadros/s é suposição.
@@ -95,7 +95,7 @@ Detalhes do que já funciona e do que foi inferido estão em `docs/protocol.md` 
 
 ## Próximos passos sugeridos
 
-1. Popups e comandos dos botões do menu (INFO com a venda, UPGRADE, GROW FOOD, BREED, BUY EGG…).
+1. Popups e comandos dos botões do menu que faltam (UPGRADE, GROW FOOD, BREED, BUY EGG…).
 2. Loja, expansões do terreno (`CCB/Store`, `expansionsImages`) e mercado de dragões (`CCB/DragonMarket`) ligados a `buy`, `sell`, `move`.
 3. Ovos, chocar e procriação (`CCB/Breeding`) com `breed_dragon_2`, `finish_breeding_2`, `hatch_egg`.
 4. Tutorial e metas (`CCB/Tutorial`, `config.goals`).

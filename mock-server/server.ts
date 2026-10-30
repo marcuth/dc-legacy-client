@@ -3,7 +3,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname } from "node:path"
 
 import { DEFAULT_HMAC_KEY } from "../src/game/network/mobile/signing.ts"
-import { buildConfig } from "./catalog.ts"
+import { buildConfig, sellValue } from "./catalog.ts"
 
 export type Form = Record<string, string>
 
@@ -159,6 +159,16 @@ export class MockServer {
                 if (item) {
                     item[1] = Number(command.args[1])
                     item[2] = Number(command.args[2])
+                }
+                break
+            }
+            case "sell": {
+                // args: [uid]
+                const items = account.user.map.items as Record<string, number[]> | undefined
+                const item = items?.[String(first)]
+                if (items && item) {
+                    info.gold = Number(info.gold) + sellValue(item[0])
+                    delete items[String(first)]
                 }
                 break
             }

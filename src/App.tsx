@@ -15,7 +15,7 @@ import { loadLocale, type LocaleCode } from "@/game/locale/loadLocale"
 import { createHud } from "@/game/screens/hud"
 import { GameSession } from "@/game/session/GameSession"
 import { PopupLayer } from "@/game/screens/PopupLayer"
-import { breedingSpeedUp, confirmAccount } from "@/game/screens/popups"
+import { breedingSpeedUp, confirmAccount, placeSell } from "@/game/screens/popups"
 
 const DESIGN = { width: 480, height: 320 }
 
@@ -145,9 +145,20 @@ const game = async (app: Application, params: URLSearchParams) => {
         await world.setDragons(dragonsFromMap(session.user))
         report(0.7)
         const menu = await BuildingMenu.create(context)
-        const items = (session.config.items ?? {}) as Record<string, { group_type?: string }>
-        new SelectionController(world, menu, {
+        const items = (session.config.items ?? {}) as Record<string, { group_type?: string; name?: string; costs?: { g?: number } }>
+        const selection: SelectionController = new SelectionController(world, menu, {
             groupOf: (itemId) => items[String(itemId)]?.group_type,
+            onInfo: (building) => {
+                const item = items[String(building.itemId)]
+                // The payout is the mock server's rule (half the cost); the real one is not in the APK.
+                void placeSell(context, layer, { name: item?.name ?? "", gold: Math.floor((item?.costs?.g ?? 0) / 2) }).then(async (result) => {
+                    if (result !== "sell") return
+                    await session.client.execute({ cmd: "sell", args: [building.id] })
+                    world.removeBuilding(building.id)
+                    selection.deselect()
+                    await session.refresh()
+                })
+            },
             saveMove: async (id, x, y) => {
                 await session.client.execute({ cmd: "move", args: [id, x, y, 0] })
             },

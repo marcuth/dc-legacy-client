@@ -58,6 +58,16 @@ test("moving a building changes the map that /player/info reports", async () => 
     assert.deepEqual(map.items["2"].slice(0, 3), [16, 40, 50])
 })
 
+test("selling a building removes it from the map and pays gold", async () => {
+    const client = new MobileClient({ baseUrl: "", fetch: connect(new MockServer()) })
+    await client.login(login)
+    const before = ((await client.playerInfo()).playerInfo as Record<string, number>).gold
+    await client.execute({ cmd: "sell", args: ["2"] })
+    const info = await client.playerInfo()
+    assert.equal((info.map as { items: Record<string, number[]> }).items["2"], undefined)
+    assert.equal((info.playerInfo as Record<string, number>).gold, before + 50)
+})
+
 test("a resent batch is not applied twice", async () => {
     const server = new MockServer()
     const client = new MobileClient({ baseUrl: "", fetch: connect(server) })

@@ -50,6 +50,22 @@ export const confirmAccount = (
         }
     })
 
+/** Popups/PlaceSellPopUpView: confirms selling a building (`questionLabel`, `onSellButton`, `closeButton`). */
+export const placeSell = (
+    context: ScreenContext,
+    layer: PopupLayer,
+    sale: { name: string; gold: number },
+): Promise<"sell" | "close"> =>
+    present("Popups/PlaceSellPopUpView", context, layer, (popup, finish) => {
+        popup.view
+            .label("questionLabel")
+            .setText(context.locale.format("Are you sure you want to sell %s for %d gold?", sale.name, sale.gold), true)
+        return {
+            onSellButton: () => finish("sell"),
+            onCloseButton: () => finish("close"),
+        }
+    })
+
 /** Popups/BreedingSpeedUpPopUpView: pay gems to finish breeding now. */
 export const breedingSpeedUp = (
     context: ScreenContext,

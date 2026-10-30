@@ -163,6 +163,20 @@ export class IsoWorld {
         await Promise.all(list.map((building) => this.addBuilding(building)))
     }
 
+    /** Takes one building off the island (sold), with the dragons living in it. */
+    removeBuilding(id: string): void {
+        const entry = this.buildings.get(id)
+        if (!entry) return
+        this.dragons = this.dragons.filter(({ actor }) => {
+            const inside = actor.skeleton.parent === entry.node
+            if (inside) actor.skeleton.removeFromParent()
+            return !inside
+        })
+        entry.node.removeFromParent()
+        this.buildings.delete(id)
+        if (this.selected === id) this.selected = null
+    }
+
     private async addBuilding(building: WorldBuilding): Promise<void> {
         const art = await loadBuildingArt(building.itemId)
         const sourceWidth = art.texture.orig.width / PIXELS_PER_POINT
