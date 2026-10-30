@@ -282,12 +282,17 @@ class Builder {
                 if (!texture) return undefined
                 const wanted = prop("preferedSize")
                 const size = wanted && wanted.type === CCBPropType.Size ? this.readSize(wanted, parent) : { width: texture.orig.width * k, height: texture.orig.height * k }
+                // Without cap insets CCScale9Sprite splits the image into thirds (the corners stay unstretched).
+                const insets = [num("insetLeft", 0), num("insetTop", 0), num("insetRight", 0), num("insetBottom", 0)].map((inset) => inset * this.resources.assetScale)
+                const [leftWidth, topHeight, rightWidth, bottomHeight] = insets.some((inset) => inset > 0)
+                    ? insets
+                    : [texture.orig.width / 3, texture.orig.height / 3, texture.orig.width / 3, texture.orig.height / 3]
                 const slice = new NineSliceSprite({
                     texture,
-                    leftWidth: num("insetLeft", 0) * this.resources.assetScale,
-                    topHeight: num("insetTop", 0) * this.resources.assetScale,
-                    rightWidth: num("insetRight", 0) * this.resources.assetScale,
-                    bottomHeight: num("insetBottom", 0) * this.resources.assetScale,
+                    leftWidth,
+                    topHeight,
+                    rightWidth,
+                    bottomHeight,
                     width: size.width / k,
                     height: size.height / k,
                 })
@@ -459,10 +464,23 @@ class Builder {
         let size = wanted && wanted.type === CCBPropType.Size ? this.readSize(wanted, parent) : natural
         if (size.width === 0 && size.height === 0) size = natural
 
-        const background = normal ? new Sprite(normal) : null
+        // CCControlButton stretches its background as a CCScale9Sprite without cap insets: thirds, so corners keep their shape.
+        const background = normal
+            ? new NineSliceSprite({
+                  texture: normal,
+                  leftWidth: normal.orig.width / 3,
+                  topHeight: normal.orig.height / 3,
+                  rightWidth: normal.orig.width / 3,
+                  bottomHeight: normal.orig.height / 3,
+                  width: normal.orig.width,
+                  height: normal.orig.height,
+              })
+            : null
         if (background) {
-            background.width = size.width
-            background.height = size.height
+            // The slice works in texture pixels; the scale brings it back to points.
+            background.scale.set(k)
+            background.width = size.width / k
+            background.height = size.height / k
             view.addChild(background)
         }
 
